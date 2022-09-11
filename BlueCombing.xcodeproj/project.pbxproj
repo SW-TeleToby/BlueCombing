@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
+		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
+		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
+		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
+		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
+		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
+		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
+		16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD328CDA3CC00995F1E /* Assets.xcassets */; };
+		16F42DD728CDA3CC00995F1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD628CDA3CC00995F1E /* Preview Assets.xcassets */; };
+		16F42DE128CDB77200995F1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DE028CDB77200995F1E /* User.swift */; };
+		16F42DE328CDB7AF00995F1E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DE228CDB7AF00995F1E /* Card.swift */; };
+		16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DE428CDB7BB00995F1E /* Attraction.swift */; };
+		16F42DE728CDB7C400995F1E /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DE628CDB7C400995F1E /* Badge.swift */; };
+		16F42DE928CDB91A00995F1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DE828CDB91A00995F1E /* GoogleService-Info.plist */; };
+		16F42DEC28CDBB3500995F1E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DEB28CDBB3500995F1E /* FirebaseAnalytics */; };
+		16F42DEE28CDBB3500995F1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DED28CDBB3500995F1E /* FirebaseAuth */; };
+		16F42DF028CDBB3500995F1E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DEF28CDBB3500995F1E /* FirebaseDatabase */; };
+		16F42DF228CDBB3500995F1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DF128CDBB3500995F1E /* FirebaseFirestore */; };
+		16F42DF428CDBB3500995F1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DF328CDBB3500995F1E /* FirebaseStorage */; };
+		16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DF628CDBFD500995F1E /* LoginHome.swift */; };
+		16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
+		168C242828CDD21200036B70 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
+		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16F42DCC28CDA3CA00995F1E /* BlueCombing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCombing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCombingApp.swift; sourceTree = "<group>"; };
+		16F42DD128CDA3CA00995F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16F42DD328CDA3CC00995F1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16F42DD628CDA3CC00995F1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16F42DE028CDB77200995F1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16F42DE228CDB7AF00995F1E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		16F42DE428CDB7BB00995F1E /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		16F42DE628CDB7C400995F1E /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		16F42DE828CDB91A00995F1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
+		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
+		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16F42DC928CDA3CA00995F1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16F42DF028CDBB3500995F1E /* FirebaseDatabase in Frameworks */,
+				16F42DF228CDBB3500995F1E /* FirebaseFirestore in Frameworks */,
+				168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */,
+				16F42DEC28CDBB3500995F1E /* FirebaseAnalytics in Frameworks */,
+				16F42DF428CDBB3500995F1E /* FirebaseStorage in Frameworks */,
+				16F42DEE28CDBB3500995F1E /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16F42DC328CDA3CA00995F1E = {
+			isa = PBXGroup;
+			children = (
+				16F42DCE28CDA3CA00995F1E /* BlueCombing */,
+				16F42DCD28CDA3CA00995F1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16F42DCD28CDA3CA00995F1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DCC28CDA3CA00995F1E /* BlueCombing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
+				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
+				16F42DDD28CDB6DF00995F1E /* Model */,
+				16F42DDE28CDB6E600995F1E /* Views */,
+				16F42DDF28CDB6EC00995F1E /* ViewModels */,
+				16F42DD328CDA3CC00995F1E /* Assets.xcassets */,
+				168C242D28CDDC2D00036B70 /* Info.plist */,
+				16F42DE828CDB91A00995F1E /* GoogleService-Info.plist */,
+				16F42DD528CDA3CC00995F1E /* Preview Content */,
+			);
+			path = BlueCombing;
+			sourceTree = "<group>";
+		};
+		16F42DD528CDA3CC00995F1E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DD628CDA3CC00995F1E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		16F42DDD28CDB6DF00995F1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DE028CDB77200995F1E /* User.swift */,
+				16F42DE228CDB7AF00995F1E /* Card.swift */,
+				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
+				16F42DE628CDB7C400995F1E /* Badge.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16F42DDE28CDB6E600995F1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
+				16F42DF528CDBF0F00995F1E /* Authenications */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16F42DDF28CDB6EC00995F1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				168C242228CDD1F500036B70 /* UserViewModel.swift */,
+				168C242428CDD20000036B70 /* CardViewModel.swift */,
+				168C242628CDD20900036B70 /* AttractionViewModel.swift */,
+				168C242828CDD21200036B70 /* BadgeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16F42DF528CDBF0F00995F1E /* Authenications */ = {
+			isa = PBXGroup;
+			children = (
+				16F42DF628CDBFD500995F1E /* LoginHome.swift */,
+				16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */,
+			);
+			path = Authenications;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16F42DCB28CDA3CA00995F1E /* BlueCombing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16F42DDA28CDA3CC00995F1E /* Build configuration list for PBXNativeTarget "BlueCombing" */;
+			buildPhases = (
+				16F42DC828CDA3CA00995F1E /* Sources */,
+				16F42DC928CDA3CA00995F1E /* Frameworks */,
+				16F42DCA28CDA3CA00995F1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueCombing;
+			packageProductDependencies = (
+				16F42DEB28CDBB3500995F1E /* FirebaseAnalytics */,
+				16F42DED28CDBB3500995F1E /* FirebaseAuth */,
+				16F42DEF28CDBB3500995F1E /* FirebaseDatabase */,
+				16F42DF128CDBB3500995F1E /* FirebaseFirestore */,
+				16F42DF328CDBB3500995F1E /* FirebaseStorage */,
+				168C242B28CDDB2700036B70 /* FacebookLogin */,
+			);
+			productName = BlueCombing;
+			productReference = 16F42DCC28CDA3CA00995F1E /* BlueCombing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16F42DC428CDA3CA00995F1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					16F42DCB28CDA3CA00995F1E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 16F42DC728CDA3CA00995F1E /* Build configuration list for PBXProject "BlueCombing" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16F42DC328CDA3CA00995F1E;
+			packageReferences = (
+				16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
+			productRefGroup = 16F42DCD28CDA3CA00995F1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16F42DCB28CDA3CA00995F1E /* BlueCombing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16F42DCA28CDA3CA00995F1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16F42DD728CDA3CC00995F1E /* Preview Assets.xcassets in Resources */,
+				16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */,
+				16F42DE928CDB91A00995F1E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16F42DC828CDA3CA00995F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
+				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
+				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
+				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
+				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
+				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
+				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
+				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
+				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
+				16F42DE128CDB77200995F1E /* User.swift in Sources */,
+				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
+				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16F42DD828CDA3CC00995F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16F42DD928CDA3CC00995F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16F42DDB28CDA3CC00995F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BlueCombing/BlueCombing.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BlueCombing/Preview Content\"";
+				DEVELOPMENT_TEAM = 79Q32HWWTW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlueCombing/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeleToby.BlueCombing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16F42DDC28CDA3CC00995F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BlueCombing/BlueCombing.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BlueCombing/Preview Content\"";
+				DEVELOPMENT_TEAM = 79Q32HWWTW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlueCombing/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeleToby.BlueCombing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16F42DC728CDA3CA00995F1E /* Build configuration list for PBXProject "BlueCombing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16F42DD828CDA3CC00995F1E /* Debug */,
+				16F42DD928CDA3CC00995F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16F42DDA28CDA3CC00995F1E /* Build configuration list for PBXNativeTarget "BlueCombing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16F42DDB28CDA3CC00995F1E /* Debug */,
+				16F42DDC28CDA3CC00995F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		168C242B28CDDB2700036B70 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		16F42DEB28CDBB3500995F1E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		16F42DED28CDBB3500995F1E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		16F42DEF28CDBB3500995F1E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		16F42DF128CDBB3500995F1E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		16F42DF328CDBB3500995F1E /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 16F42DC428CDA3CA00995F1E /* Project object */;
+}
