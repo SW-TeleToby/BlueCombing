@@ -20,8 +20,12 @@ struct LoginHome: View {
             } label: {
                 Text("애플 로그인")
             }
+            FaceBookLoginView {
+                presentationMode.wrappedValue.dismiss()
+                isSignIn = true
+            }
+            .frame(width: 180, height: 50,alignment: .center).padding(10)
         }
-        
     }
     
     func appleLogin() {
