@@ -8,6 +8,10 @@ import SwiftUI
 import Foundation
 
 class CardViewModel: ObservableObject {
-    @Published var card = Card(id: 0, distance: 0, time: 0, location: "", backgroundImage: UIImage(named: "xmark")!, badges: [])
+    @Published var newCard = Card(id: 0, distance: 0, time: 0, location: "", backgroundImage: UIImage(systemName: "xmark")!, badges: [])
+    
+    init() {
+
+    }
     
 }
