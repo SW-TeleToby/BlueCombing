@@ -15,7 +15,7 @@ struct MakeCardPageControlView: View {
             MakeCardView(page: $page)
         } else {
             // 뱃지 추가하는 뷰
-
+            AppendingBadgeView(page: $page)
         }
 
     }
