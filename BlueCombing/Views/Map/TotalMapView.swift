@@ -7,24 +7,29 @@
 
 import SwiftUI
 import UIKit
+import MapKit
 
 struct TotalMapView: View {
     @State var mapManager = MapDelegate()
-    @State var isStarted = false
     @State var isRecordEnd = false
     @State var isRecordStart = false
     @State var currentModal = 0
-
+    @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667)]
+    @State var playOnce = true
+    
     var body: some View {
         ZStack {
             
-            MapView(map: $mapManager.map)
+            MapView(map: mapManager.map, delegate: mapManager, pathCoordinates: $pathCoordinates)
                 .ignoresSafeArea(.container, edges: .top)
 
             Image("userPin")
             
             if isRecordStart {
                 recordingView
+                    .onAppear{
+                        simulatingFunction()
+                    }
             }
             
             if isRecordEnd {
@@ -36,6 +41,15 @@ struct TotalMapView: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
+    }
+    
+    func simulatingFunction() {
+        Task {
+            tempCoordinates.publisher.sink(receiveValue: { value in
+                sleep(3) // MARK: 타이머 조절
+                pathCoordinates.append(value)
+            })
+        }
     }
 }
 
@@ -106,3 +120,13 @@ struct VisualEffectView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
     func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
+
+
+fileprivate let tempCoordinates: [CLLocationCoordinate2D] = [
+    CLLocationCoordinate2D(latitude: 36.663, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.664, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.665, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.666, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.667, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.668, longitude: 127.501667),
+]
