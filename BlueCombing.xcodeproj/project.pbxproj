@@ -30,6 +30,9 @@
 		16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DF628CDBFD500995F1E /* LoginHome.swift */; };
 		16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */; };
 		708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A5D28D46E9100B863E8 /* Colors.swift */; };
+		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
+		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
+		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
 		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +163,20 @@
 		708B5A5C28D46E8400B863E8 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				708B5A6128D4810D00B863E8 /* Fonts */,
 				708B5A5D28D46E9100B863E8 /* Colors.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		708B5A6128D4810D00B863E8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */,
+				708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */,
+				708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +250,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F42DD728CDA3CC00995F1E /* Preview Assets.xcassets in Resources */,
+				708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */,
 				16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */,
+				708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */,
 				16F42DE928CDB91A00995F1E /* GoogleService-Info.plist in Resources */,
+				708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
