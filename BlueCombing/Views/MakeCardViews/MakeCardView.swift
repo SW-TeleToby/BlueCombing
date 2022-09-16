@@ -10,31 +10,30 @@ import Photos
 
 struct MakeCardView: View {
     @StateObject var cardViewModel = CardViewModel()
-    @Binding var page: Int
     @State var showingOption = false
     @State var isPresentedCamera = false
     @State var isPresentedAllImage = false
     @State var isPresentedLimitedImage = false
     @State var isPresentedPermissionCheck = false
+    @State var isPresentShareView = false
     @State var cameraDenyAlert = false
     
     var body: some View {
         VStack(spacing:0) {
-            MakeCardViewNavbar(page: $page).padding(.vertical,20)
+            MakeCardViewNavbar().padding(.vertical,20)
             CardView(card: $cardViewModel.newCard)
                 .frame(width: containerWidth, height: imageHeight)
             Button(action: {
                 // 여기서 먼저 action sheet 띄우기
                 showingOption = true
-                
             }){
                 ZStack {
                     Rectangle()
-                        .fill(Color(red: 0.219, green: 0.219, blue: 0.219))
+                        .fill(Color.combingGray5)
                     Text("이미지 변경하기")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
-                }.frame(width: containerWidth,height:45)
+                }.frame(width: containerWidth, height:45)
             }.confirmationDialog("카드 이미지 변경", isPresented: $showingOption, titleVisibility: .visible) {
                 Button("카메라 촬영"){
                     // 카메라 촬영 로직. 굳.
@@ -56,18 +55,17 @@ struct MakeCardView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 16, weight: .medium))
                 .lineSpacing(3)
-                .foregroundColor(Color(red: 0.436, green: 0.436, blue: 0.44))
+                .foregroundColor(Color.combingGray4)
             Spacer()
             Button(action: {
-                // 뱃지 찍는 뷰로 넘어가기.
-                page = 1
+                isPresentShareView.toggle()
             }){
                 ZStack {
                     Rectangle()
-                        .fill(Color(red: 0.046, green: 0.128, blue: 0.446))
+                        .fill(Color.combingGradient1)
                         .frame(width: containerWidth, height: 56)
                         .cornerRadius(16)
-                    Text("다음")
+                    Text("완료")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
                 }
@@ -92,6 +90,8 @@ struct MakeCardView: View {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }
+        }.sheet(isPresented: $isPresentShareView){
+            ShareView(card: $cardViewModel.newCard)
         }
         
     }
@@ -143,6 +143,6 @@ struct MakeCardView: View {
 
 struct MakeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MakeCardView(page: .constant(0))
+        MakeCardView()
     }
 }

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1228D4607E00C54505 /* MakeCardView.swift */; };
 		0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */; };
-		0EE72C1828D4630F00C54505 /* MakeCardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1728D4630F00C54505 /* MakeCardPageControlView.swift */; };
 		0EE72C1A28D4662200C54505 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1928D4662200C54505 /* CardView.swift */; };
 		0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */; };
 		0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */; };
 		0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2328D46D1E00C54505 /* Picture.swift */; };
 		0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2528D46EDC00C54505 /* CameraView.swift */; };
+		0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2928D4949000C54505 /* ShareView.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
 		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
@@ -47,12 +47,12 @@
 /* Begin PBXFileReference section */
 		0EE72C1228D4607E00C54505 /* MakeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardView.swift; sourceTree = "<group>"; };
 		0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardViewNavbar.swift; sourceTree = "<group>"; };
-		0EE72C1728D4630F00C54505 /* MakeCardPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardPageControlView.swift; sourceTree = "<group>"; };
 		0EE72C1928D4662200C54505 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedImagePicker.swift; sourceTree = "<group>"; };
 		0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagePicker.swift; sourceTree = "<group>"; };
 		0EE72C2328D46D1E00C54505 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		0EE72C2528D46EDC00C54505 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0EE72C2928D4949000C54505 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */,
 				0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */,
 				0EE72C1928D4662200C54505 /* CardView.swift */,
-				0EE72C1728D4630F00C54505 /* MakeCardPageControlView.swift */,
+				0EE72C2928D4949000C54505 /* ShareView.swift */,
 				0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */,
 			);
 			path = MakeCardViews;
@@ -300,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */,
 				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
@@ -311,7 +312,6 @@
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
-				0EE72C1828D4630F00C54505 /* MakeCardPageControlView.swift in Sources */,
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
