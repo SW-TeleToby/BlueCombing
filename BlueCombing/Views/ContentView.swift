@@ -11,6 +11,7 @@ import FirebaseAuth
 struct ContentView: View {
     let firebaseAuth = Auth.auth()
     @State var isSignIn = false
+    @ObservedObject var userVM = UserViewModel()
     
     var body: some View {
         NavigationView {
@@ -39,6 +40,7 @@ struct ContentView: View {
         .onAppear {
             if firebaseAuth.currentUser != nil {
                 isSignIn = true
+                userVM.getUserData(uid: firebaseAuth.currentUser!.uid)
             } else {
                 isSignIn = false
             }
