@@ -42,6 +42,7 @@
 		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
 		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
 		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
+		708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A6F28D4AB4100B863E8 /* AtractionView.swift */; };
 		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
 		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
@@ -85,6 +86,7 @@
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		708B5A6F28D4AB4100B863E8 /* AtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtractionView.swift; sourceTree = "<group>"; };
 		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
@@ -144,13 +146,14 @@
 		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
 			isa = PBXGroup;
 			children = (
-				708B5A5C28D46E8400B863E8 /* Style */,
+				708B5A6E28D4AB0700B863E8 /* Navigation */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
 				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
 				16F42DDD28CDB6DF00995F1E /* Model */,
 				16F42DDE28CDB6E600995F1E /* Views */,
 				16F42DDF28CDB6EC00995F1E /* ViewModels */,
+				708B5A5C28D46E8400B863E8 /* Style */,
 				16F42DD328CDA3CC00995F1E /* Assets.xcassets */,
 				168C242D28CDDC2D00036B70 /* Info.plist */,
 				16F42DE828CDB91A00995F1E /* GoogleService-Info.plist */,
@@ -187,6 +190,7 @@
 		16F42DDE28CDB6E600995F1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				708B5A7128D4DA4A00B863E8 /* AtractionView */,
 				0EE72C1428D4609900C54505 /* MakeCardViews */,
 				B23C44B628D461B10096DE8F /* Map */,
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
@@ -261,6 +265,21 @@
 				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		708B5A6E28D4AB0700B863E8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
+			);
+			path = AtractionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +394,7 @@
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
+				708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */,
