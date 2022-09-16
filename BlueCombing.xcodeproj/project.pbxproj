@@ -12,7 +12,8 @@
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
 		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
-		168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FacebookLoginView.swift */; };
+		168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
+		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
 		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
 		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
 		16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD328CDA3CC00995F1E /* Assets.xcassets */; };
@@ -37,7 +38,8 @@
 		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		168C242828CDD21200036B70 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		168C243028CDF9E100036B70 /* FacebookLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginView.swift; sourceTree = "<group>"; };
+		168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginButton.swift; sourceTree = "<group>"; };
+		168C245C28D46D7900036B70 /* AppleLoginButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButtom.swift; sourceTree = "<group>"; };
 		16F42DCC28CDA3CA00995F1E /* BlueCombing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCombing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCombingApp.swift; sourceTree = "<group>"; };
 		16F42DD128CDA3CA00995F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,7 +148,8 @@
 			children = (
 				16F42DF628CDBFD500995F1E /* LoginHome.swift */,
 				16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */,
-				168C243028CDF9E100036B70 /* FacebookLoginView.swift */,
+				168C245C28D46D7900036B70 /* AppleLoginButtom.swift */,
+				168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */,
 			);
 			path = Authenications;
 			sourceTree = "<group>";
@@ -236,7 +239,7 @@
 			files = (
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
-				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
+				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
@@ -245,6 +248,7 @@
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
+				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 			);
@@ -373,8 +377,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BlueCombing/BlueCombing.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BlueCombing/Preview Content\"";
 				DEVELOPMENT_TEAM = 79Q32HWWTW;
@@ -393,7 +397,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeleToby.BlueCombing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = BlueCombingProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,8 +410,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BlueCombing/BlueCombing.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BlueCombing/Preview Content\"";
 				DEVELOPMENT_TEAM = 79Q32HWWTW;
@@ -426,7 +430,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeleToby.BlueCombing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = BlueCombingProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
