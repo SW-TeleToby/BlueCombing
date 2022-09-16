@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State var currentTab: Tab = Tab.beachCombing
+    
     var body: some View {
         NavigationView {
-            TabView {
+            TabView(selection: $currentTab) {
                 ForEach(Tab.allCases, id: \.self) { tab in
                     tab.view.tabItem {
-                        Image(systemName: tab.systemImageName)
+                        if currentTab == tab {
+                            Image(tab.ImageName + "_on")
+                        } else {
+                            Image(tab.ImageName + "_off")
+                        }
                         Text(tab.title)
                     }
                 }

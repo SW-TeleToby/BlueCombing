@@ -9,28 +9,28 @@ import Foundation
 import SwiftUI
 
 enum Tab: String, CaseIterable {
-    case label1 = "Label1"
-    case label2 = "Label2"
-    case label3 = "Label3"
+    case beachCombing = "비치코밍"
+    case tour = "관광"
+    case myInfo = "나의 활동"
 
     var title: String {
         rawValue
     }
 
-    var systemImageName: String {
+    var ImageName: String {
         switch self {
-        case .label1: return "banknote"
-        case .label2: return "banknote"
-        case .label3: return "banknote"
+        case .beachCombing: return "icn_beach"
+        case .tour: return "icn_myact"
+        case .myInfo: return "icn_tour"
         }
     }
 
     @ViewBuilder
     var view: some View {
         switch self {
-        case .label1: TotalMapView()
-        case .label2: Text("Hello World")
-        case .label3: Text("Hello World")
+        case .beachCombing: TotalMapView()
+        case .tour: Text("Hello World")
+        case .myInfo: Text("Hello World")
         }
     }
 }

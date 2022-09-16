@@ -30,16 +30,32 @@ struct MultiModal: View {
                     .frame(height: modalHeight)
             }
         } // VStack
-        .onChange(of: recordEndTrigger, perform: { value in
-            if value {
+//        .onChange(of: recordEndTrigger, perform: { value in
+//            if value {
+//                withAnimation(.spring()) {
+//                    modalHeight = 366
+//                    currentModal = 1
+//                }
+//            } else {
+//                withAnimation(.spring()) {
+//                    modalHeight = 0
+//                    currentModal = -1
+//                }
+//            }
+//        })
+        .onChange(of: currentModal, perform: { value in
+            switch value {
+            case 0:
+                withAnimation(.spring()) {
+                    modalHeight = 168
+                }
+            case 1:
                 withAnimation(.spring()) {
                     modalHeight = 366
-                    currentModal = 1
                 }
-            } else {
+            default:
                 withAnimation(.spring()) {
                     modalHeight = 0
-                    currentModal = -1
                 }
             }
         })
@@ -54,13 +70,20 @@ extension MultiModal {
 
             ZStack {
                 Rectangle()
-                    .foregroundColor(.white) // MARK: 컬러 수정해야함
+                    .foregroundColor(.combingBlue5_2)
                     .cornerRadius(24, corners: [.topLeft, .topRight])
 
                 VStack(alignment: .leading) {
 
-                    Text("비치코밍을 하기 전에 주변에서\n집게와 쓰레기 봉투를 받아가세요!") // MARK: 폰트 설정
-                    .padding(.top, 24)
+                    Text("비치코밍을 하기 전에 주변에서")
+                        .foregroundColor(.combingGray1)
+                        .font(.Body2)
+                        .padding(.top, 24)
+                        .padding(.leading, 16)
+
+                    Text("집게와 쓰레기 봉투를 받아가세요!")
+                        .foregroundColor(.combingGray1)
+                        .font(.Body2)
                         .padding(.leading, 16)
 
                     Button(action: {
@@ -71,11 +94,17 @@ extension MultiModal {
                         }
                     }) {
                         ZStack {
-                            Rectangle() // MARK: 색상 설정
-                            .cornerRadius(16)
+                            Rectangle()
+                                .foregroundColor(.clear)
+                                .background {
+                                Color.combingGradient1
+                            }
+                                .cornerRadius(16)
+
 
                             Text("비치코밍 시작하기")
-                                .foregroundColor(.white)// MARK: 폰트 설정
+                                .font(.Button1)
+                                .foregroundColor(.white)
                         }
                     }
                         .padding(16)
@@ -86,14 +115,62 @@ extension MultiModal {
     } // startModal
 
     var RecordModal: some View {
-        Button(action: {
-            recordStartTrigger = false
-            recordEndTrigger = false
-        }) {
+        ZStack {
             Rectangle()
                 .foregroundColor(.white) // MARK: 컬러 수정해야함
-                .cornerRadius(24, corners: [.topLeft, .topRight])
+            .cornerRadius(24, corners: [.topLeft, .topRight])
+
+            VStack {
+                HStack {
+                    Button(action: {
+                        // TODO: 계속하기 Action
+                        withAnimation(.spring()) {
+                            currentModal = -1
+                            recordEndTrigger = false
+                        }
+                    }) {
+                        Text("계속하기")
+                            .font(.Body4)
+                            .foregroundColor(Color(hex: 002172))
+                    }
+
+                    Spacer().frame(width: 80)
+
+                    Text("비치코밍 기록")
+                        .font(.Button1)
+
+                    Spacer()
+                } // 모달 상단
+                .padding(.horizontal, 16)
+
+                Spacer().frame(height: 18)
+
+                Rectangle()
+                    .cornerRadius(16)
+                    .foregroundColor(.combingBlue2)
+                    .frame(height: 201)
+                    .padding(.horizontal, 16)
+
+                Button(action: {
+                    withAnimation(.spring()) {
+                        recordStartTrigger = false
+                        recordEndTrigger = false
+                        currentModal = 0
+                    }
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(16)
+                            .foregroundColor(.combingBlue4)
+
+                        Text("비치코밍 끝내기")
+                            .foregroundColor(.combingGray1)
+                            .font(.Button1)
+                    }
+                        .frame(height: 56)
+                        .padding([.top, .horizontal], 16)
+                }
+            }
         }
     }
-
 }
