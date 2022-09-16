@@ -13,7 +13,21 @@ struct MultiModal: View {
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
+    
     let firebaseAuth = Auth.auth()
+    @State var isSignIn: Bool
+    
+    init(recordEndTrigger: Binding<Bool>, recordStartTrigger: Binding<Bool>, currentModal: Binding<Int>) {
+        self._recordEndTrigger = recordEndTrigger
+        self._recordStartTrigger = recordStartTrigger
+        self._currentModal = currentModal
+
+        if firebaseAuth.currentUser != nil {
+            isSignIn = true
+        } else {
+            isSignIn = false
+        }
+    }
 
     var body: some View {
         VStack {
@@ -153,7 +167,7 @@ extension MultiModal {
                     withAnimation(.spring()) {
                         recordStartTrigger = false
                         recordEndTrigger = false
-                        if firebaseAuth.currentUser != nil {
+                        if isSignIn {
                             currentModal = 2
                         } else {
                             currentModal = 3
@@ -253,7 +267,13 @@ extension MultiModal {
                 
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: .constant(false)) ) {
+                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, dismissAction: {
+                    if isSignIn {
+                        currentModal = 2
+                    } else {
+                        currentModal = 3
+                    }
+                }) ) {
                     ZStack {
                         Rectangle()
                             .cornerRadius(16)
