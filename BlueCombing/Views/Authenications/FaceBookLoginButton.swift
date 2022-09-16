@@ -51,10 +51,10 @@ struct FaceBookLoginButton: UIViewRepresentable {
     func makeUIView(context: Context) -> UIButton {
         // Add a custom login button to your app
         let loginButton = UIButton(type: .system)
-        loginButton.backgroundColor = .blue
+        loginButton.backgroundColor = UIColor(hex: 0x0037C0)
         loginButton.tintColor = .white
         loginButton.setTitle("Facebook 로그인", for: .normal)
-        loginButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .heavy)
+        loginButton.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         loginButton.layer.cornerRadius = 16
         
         loginButton.addTarget(context.coordinator, action: #selector(Coordinator.loginButtonClicked(_ :)), for: .touchUpInside)

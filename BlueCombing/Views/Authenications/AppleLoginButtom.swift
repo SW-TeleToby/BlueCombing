@@ -16,11 +16,11 @@ struct AppleLoginButtom: View {
         } label: {
             Text("Apple 로그인")
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .font(.system(size: 16, weight: .bold))
+                .font(.custom("Pretendard-Bold", size: 16))
                 .padding(.vertical, 19)
                 .foregroundColor(.white)
         }
-        .background(.black) // If you have this
+        .background(Color(hex: 0x131313)) // If you have this
         .cornerRadius(16)
         
     }
