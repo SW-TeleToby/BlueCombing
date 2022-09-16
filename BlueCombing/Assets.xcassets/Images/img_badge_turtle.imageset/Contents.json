@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "img_badge_turtle.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
