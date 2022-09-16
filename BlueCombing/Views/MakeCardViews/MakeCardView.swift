@@ -11,8 +11,8 @@ struct MakeCardView: View {
     @StateObject var cardViewModel = CardViewModel()
     @Binding var page: Int
     var body: some View {
-        VStack {
-            Text("hi")
+        VStack(spacing:0) {
+            MakeCardViewNavbar(page: $page)
         }
     }
 }
