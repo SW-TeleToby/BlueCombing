@@ -34,6 +34,7 @@
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
 		B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */; };
 		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
+		B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C928D4B9850096DE8F /* MultiModal.swift */; };
 		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
 		B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0DA728D45D7A00867084 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
 		B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
 		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		B23C44C928D4B9850096DE8F /* MultiModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModal.swift; sourceTree = "<group>"; };
 		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		B2DC0DA728D45D7A00867084 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			children = (
 				B23C44B728D461F30096DE8F /* MapView.swift */,
 				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
+				B23C44C928D4B9850096DE8F /* MultiModal.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
+				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */,
 				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
