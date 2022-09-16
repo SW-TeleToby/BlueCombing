@@ -28,7 +28,7 @@ enum Tab: String, CaseIterable {
     @ViewBuilder
     var view: some View {
         switch self {
-        case .label1: Text("Hello World")
+        case .label1: TotalMapView()
         case .label2: Text("Hello World")
         case .label3: Text("Hello World")
         }

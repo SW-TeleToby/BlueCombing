@@ -9,14 +9,17 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        TabView {
-            ForEach(Tab.allCases, id: \.self) { tab in
-                tab.view.tabItem {
-                    Image(systemName: tab.systemImageName)
-                    Text(tab.title)
+        NavigationView {
+            TabView {
+                ForEach(Tab.allCases, id: \.self) { tab in
+                    tab.view.tabItem {
+                        Image(systemName: tab.systemImageName)
+                        Text(tab.title)
+                    }
                 }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

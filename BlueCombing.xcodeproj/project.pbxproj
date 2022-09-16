@@ -29,6 +29,11 @@
 		16F42DF428CDBB3500995F1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DF328CDBB3500995F1E /* FirebaseStorage */; };
 		16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DF628CDBFD500995F1E /* LoginHome.swift */; };
 		16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */; };
+		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
+		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
+		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
+		B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */; };
+		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
 		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
 		B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0DA728D45D7A00867084 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
+		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
+		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
+		B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
+		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		B2DC0DA728D45D7A00867084 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
+				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
 				16F42DDD28CDB6DF00995F1E /* Model */,
 				16F42DDE28CDB6E600995F1E /* Views */,
@@ -117,6 +128,7 @@
 		16F42DDD28CDB6DF00995F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B23C44B928D463F60096DE8F /* Map */,
 				16F42DE028CDB77200995F1E /* User.swift */,
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
@@ -129,9 +141,11 @@
 		16F42DDE28CDB6E600995F1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B23C44B628D461B10096DE8F /* Map */,
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
 				16F42DF528CDBF0F00995F1E /* Authenications */,
 				B2DC0DA728D45D7A00867084 /* MainTabView.swift */,
+				B23C44C728D499000096DE8F /* CustomModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +169,31 @@
 				168C243028CDF9E100036B70 /* FacebookLoginView.swift */,
 			);
 			path = Authenications;
+			sourceTree = "<group>";
+		};
+		B23C44B628D461B10096DE8F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44B728D461F30096DE8F /* MapView.swift */,
+				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B23C44B928D463F60096DE8F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44BA28D464040096DE8F /* MapDelegate.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B23C44BE28D46E4F0096DE8F /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,17 +282,22 @@
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
+				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
+				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
+				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
+				B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */,
+				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
 				B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
