@@ -20,7 +20,7 @@ struct MakeCardView: View {
     
     var body: some View {
         VStack(spacing:0) {
-            MakeCardViewNavbar(page: $page)
+            MakeCardViewNavbar(page: $page).padding(.vertical,20)
             CardView(card: $cardViewModel.newCard)
                 .frame(width: containerWidth, height: imageHeight)
             Button(action: {
@@ -50,6 +50,29 @@ struct MakeCardView: View {
                 }
                 
             }
+            
+            Spacer()
+            Text("직접 찍은 관광지 사진을 넣어서\n나만의 비치코밍 카드를 만들어보세요!")
+                .multilineTextAlignment(.center)
+                .font(.system(size: 16, weight: .medium))
+                .lineSpacing(3)
+                .foregroundColor(Color(red: 0.436, green: 0.436, blue: 0.44))
+            Spacer()
+            Button(action: {
+                // 뱃지 찍는 뷰로 넘어가기.
+                page = 1
+            }){
+                ZStack {
+                    Rectangle()
+                        .fill(Color(red: 0.046, green: 0.128, blue: 0.446))
+                        .frame(width: containerWidth, height: 56)
+                        .cornerRadius(16)
+                    Text("다음")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                }
+            }
+            .navigationBarHidden(true)
         }
         .sheet(isPresented: $isPresentedAllImage){
             AllImagePicker(card: $cardViewModel.newCard)
