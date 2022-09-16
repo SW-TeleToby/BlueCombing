@@ -16,7 +16,8 @@ struct BlueCombingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            MakeCardPageControlView()
         }
     }
     
