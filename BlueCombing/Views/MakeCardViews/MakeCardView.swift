@@ -6,13 +6,114 @@
 //
 
 import SwiftUI
+import Photos
 
 struct MakeCardView: View {
     @StateObject var cardViewModel = CardViewModel()
     @Binding var page: Int
+    @State var showingOption = false
+    @State var isPresentedCamera = false
+    @State var isPresentedAllImage = false
+    @State var isPresentedLimitedImage = false
+    @State var isPresentedPermissionCheck = false
+    @State var cameraDenyAlert = false
+    
     var body: some View {
         VStack(spacing:0) {
             MakeCardViewNavbar(page: $page)
+            CardView(card: $cardViewModel.newCard)
+                .frame(width: containerWidth, height: imageHeight)
+            Button(action: {
+                // 여기서 먼저 action sheet 띄우기
+                showingOption = true
+                
+            }){
+                ZStack {
+                    Rectangle()
+                        .fill(Color(red: 0.219, green: 0.219, blue: 0.219))
+                    Text("이미지 변경하기")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                }.frame(width: containerWidth,height:45)
+            }.confirmationDialog("카드 이미지 변경", isPresented: $showingOption, titleVisibility: .visible) {
+                Button("카메라 촬영"){
+                    // 카메라 촬영 로직. 굳.
+                    takePicture()
+                }
+                
+                Button("앨범에서 사진 선택"){
+                    // 이미지 피커 로직. 굳.
+                    selectImage()
+                }
+                
+                Button("취소", role: .cancel){
+                }
+                
+            }
+        }
+        .sheet(isPresented: $isPresentedAllImage){
+            AllImagePicker(card: $cardViewModel.newCard)
+        }
+        .sheet(isPresented: $isPresentedLimitedImage){
+            LimitedImagePicker(card: $cardViewModel.newCard)
+        }
+        .sheet(isPresented: $isPresentedCamera) {
+            Camera(card: $cardViewModel.newCard)
+        }
+        .alert("이 기능을 사용하려면 카메라 엑세스 권한이 필요합니다", isPresented: $cameraDenyAlert) {
+            Button("나중에 하기") {
+                
+            }
+            Button("설정 열기") {
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                }
+            }
+        }
+        
+    }
+    
+    
+    func selectImage() {
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
+            switch status {
+            case .authorized:
+                isPresentedAllImage.toggle()
+                return
+            case .limited:
+                isPresentedLimitedImage.toggle()
+                return
+            default:
+                isPresentedPermissionCheck.toggle()
+                return
+            }
+            
+        }
+    }
+    
+    func takePicture() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            isPresentedCamera.toggle()
+            return
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { status in
+                if status {
+                    isPresentedCamera.toggle()
+                }
+                else {
+                    cameraDenyAlert = true
+                }
+            }
+            return
+        case .denied:
+            cameraDenyAlert = true
+            return
+        case .restricted:
+            return
+        default:
+            return
+            
         }
     }
 }
