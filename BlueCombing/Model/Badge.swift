@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+struct Badge {
+    var id: Int
+    var badgeImage: UIImage
+    var longExplanation: String
+}

@@ -13,7 +13,6 @@ var imageHeight: CGFloat = UIScreen.main.bounds.height - 366.67
 
 struct CardView: View {
     @Binding var card: Card
-    
     var body: some View {
         ZStack{
             Image(uiImage:card.backgroundImage)
@@ -31,14 +30,12 @@ struct CardView: View {
             // 뱃지 공간
             VStack {
                 HStack{
-                    ForEach(0..<card.badges.count, id:\.self) {i in
-                        Image("badge\(card.badges[i])")
-                            .resizable()
-                            .frame(width: 56, height: 56)
-                    }
                     Spacer()
+                    Image(uiImage: card.badge.badgeImage)
+                        .resizable()
+                        .frame(width: 76, height: 76)
                 }
-                .padding(.leading,12)
+                .padding(.trailing,12)
                 .padding(.top, 12)
                 Spacer()
             }
@@ -63,8 +60,6 @@ struct CardView: View {
                 }
             }.padding(.leading, 30)
                 .padding(.bottom, 30)
-        }.onAppear {
-            print(card.badges)
         }
     }
 }
@@ -95,6 +90,6 @@ extension Int {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badges: [])))
+        CardView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다."))))
     }
 }

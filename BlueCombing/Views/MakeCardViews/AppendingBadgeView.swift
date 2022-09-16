@@ -10,6 +10,7 @@ import SwiftUI
 struct AppendingBadgeView: View {
     @Binding var page: Int
     @StateObject var cardViewModel = CardViewModel()
+    @StateObject var badgeViewModel = BadgeViewModel()
     @State var isPresentShareView = false
     var body: some View {
         
@@ -18,23 +19,22 @@ struct AppendingBadgeView: View {
             ZStack{
                 CardView(card: $cardViewModel.newCard)
                     .frame(width: containerWidth, height: imageHeight)
-                VStack {
-                    HStack {
-                        ForEach(0..<cardViewModel.checkBadges.count, id: \.self) { i in
-                            Image("testBadge\(cardViewModel.checkBadges[i])")
-                                .resizable()
-                                .frame(width: 56, height: 56)
-                        }
-                        ForEach(0..<5-cardViewModel.checkBadges.count, id:\.self) {i in
-                            Image("testBadgeframe")
-                                .frame(width: 56, height: 56)
-                        }
-                        Spacer()
-                    }.padding(.leading,12)
-                        .padding(.top, 12)
-                    Spacer()
-                    
-                }
+//                VStack {
+//                    HStack {
+//                        ForEach(0..<badgeViewModel.checkBadges.count, id: \.self) { i in
+//                            Image(uiImage: badgeViewModel.checkBadges[i].badgeImage)
+//                                .resizable()
+//                                .frame(width: 56, height: 56)
+//                        }
+//                        ForEach(0..<5-badgeViewModel.checkBadges.count, id:\.self) {i in
+//                            Image("testBadgeframe")
+//                                .frame(width: 56, height: 56)
+//                        }
+//                        Spacer()
+//                    }.padding(.leading,12)
+//                        .padding(.top, 12)
+//                    Spacer()
+//                }
             }.frame(width: containerWidth, height: imageHeight)
             
             Spacer()
@@ -43,48 +43,48 @@ struct AppendingBadgeView: View {
                 HStack (spacing:0){
                     
                     // 체크박스 올리는 로직인데, 비효율적인듯. 잘 돌아가긴 함.
-                    ForEach(0..<cardViewModel.myBadges.count, id: \.self) { i in
-                        if cardViewModel.checkBadges.contains(cardViewModel.myBadges[i]){
-                            ZStack {
-                                Image("testBadge\(cardViewModel.myBadges[i])")
-                                RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color(red: 0.046, green: 0.128, blue: 0.446,opacity: 0.5))
-                                    .frame(width: 96, height: 96)
-                                Image("testCheckmark")
-                            }
-                            .onTapGesture {
-                                if cardViewModel.checkBadges.count < 5 {
-                                    if cardViewModel.checkBadges.contains(cardViewModel.myBadges[i]) {
-                                        if let index = cardViewModel.checkBadges.firstIndex(of: cardViewModel.myBadges[i]) {
-                                            cardViewModel.checkBadges.remove(at: index)
-                                        }
-                                    }
-                                    else {
-                                        cardViewModel.checkBadges.append( cardViewModel.myBadges[i])
-                                        print(cardViewModel.checkBadges)
-                                    }
-                                }
-                            }
-                        }
-                        else {
-                            Image("testBadge\(cardViewModel.myBadges[i])")
-                                .onTapGesture {
-                                    if cardViewModel.checkBadges.count < 5 {
-                                        if cardViewModel.checkBadges.contains(cardViewModel.myBadges[i]) {
-                                            if let index = cardViewModel.checkBadges.firstIndex(of: cardViewModel.myBadges[i]) {
-                                                cardViewModel.checkBadges.remove(at: index)
-                                            }
-                                            print(cardViewModel.checkBadges)
-                                        }
-                                        else {
-                                            cardViewModel.checkBadges.append( cardViewModel.myBadges[i])
-                                            print(cardViewModel.checkBadges)
-                                        }
-                                    }
-                                }
-                        }
-                        
-                    }
+//                    ForEach(0..<badgeViewModel.myBadges.count, id: \.self) { i in
+//                        if badgeViewModel.checkBadges.contains(badgeViewModel.myBadges[i]){
+//                            ZStack {
+//                                Image("testBadge\(badgeViewModel.myBadges[i])")
+//                                RoundedRectangle(cornerRadius: 50)
+//                                    .fill(Color(red: 0.046, green: 0.128, blue: 0.446,opacity: 0.5))
+//                                    .frame(width: 96, height: 96)
+//                                Image("testCheckmark")
+//                            }
+//                            .onTapGesture {
+//                                if badgeViewModel.checkBadges.count < 5 {
+//                                    if badgeViewModel.checkBadges.contains(badgeViewModel.myBadges[i]) {
+//                                        if let index = badgeViewModel.checkBadges.firstIndex(of: badgeViewModel.myBadges[i]) {
+//                                            badgeViewModel.checkBadges.remove(at: index)
+//                                        }
+//                                    }
+//                                    else {
+//                                        badgeViewModel.checkBadges.append( badgeViewModel.myBadges[i])
+//                                        print(badgeViewModel.checkBadges)
+//                                    }
+//                                }
+//                            }
+//                        }
+//                        else {
+//                            Image("testBadge\(badgeViewModel.myBadges[i])")
+//                                .onTapGesture {
+//                                    if badgeViewModel.checkBadges.count < 5 {
+//                                        if badgeViewModel.checkBadges.contains(badgeViewModel.myBadges[i]) {
+//                                            if let index = badgeViewModel.checkBadges.firstIndex(of: badgeViewModel.myBadges[i]) {
+//                                                badgeViewModel.checkBadges.remove(at: index)
+//                                            }
+//                                            print(badgeViewModel.checkBadges)
+//                                        }
+//                                        else {
+//                                            badgeViewModel.checkBadges.append( badgeViewModel.myBadges[i])
+//                                            print(badgeViewModel.checkBadges)
+//                                        }
+//                                    }
+//                                }
+//                        }
+//
+//                    }
                 }.padding()
             }
             Spacer()
@@ -92,10 +92,10 @@ struct AppendingBadgeView: View {
                 // 비치코밍 인증하기 뷰로 넘어가기.
                 
                 isPresentShareView.toggle()
-                for i in 0..<cardViewModel.checkBadges.count {
-                    cardViewModel.newCard.badges.append(cardViewModel.checkBadges[i])
+                for i in 0..<badgeViewModel.checkBadges.count {
+                    cardViewModel.newCard.badges.append(badgeViewModel.checkBadges[i])
                 }
-                cardViewModel.checkBadges = []
+                badgeViewModel.checkBadges = []
             }){
                 ZStack {
                     Rectangle()
