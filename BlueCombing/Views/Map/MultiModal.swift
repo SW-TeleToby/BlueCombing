@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct MultiModal: View {
     @State var modalHeight = CGFloat(168)
+    @State var loginCancleAlertTrigger = false
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
@@ -58,6 +59,14 @@ struct MultiModal: View {
                 }
             }
         })
+        .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $loginCancleAlertTrigger) {
+            Button("취소", role: .cancel) {}
+            Button("확인", role: .destructive) {
+                recordEndTrigger = false
+                recordStartTrigger = false
+                currentModal = 0
+            }
+        }
     }
 }
 
@@ -267,7 +276,7 @@ extension MultiModal {
                 
                 Spacer().frame(height: 16)
                 
-                Button(action: {}){
+                Button(action: { loginCancleAlertTrigger.toggle() }){
                     Text("카드를 안 만들래요")
                         .font(.Body3)
                         .foregroundColor(.combingGray2)
