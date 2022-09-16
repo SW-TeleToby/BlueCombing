@@ -14,16 +14,9 @@ class MapDelegate: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
-            let current = mapView.region.center
-            let forward = overlay.coordinate
-
-            // MARK: 오차범위 변수로 표시하기
-            if fetchDistance(current: current, forward: forward) < 15 {
-                return MKOverlayRenderer()
-            }
             let render = MKPolylineRenderer(overlay: overlay)
-            render.strokeColor = .blue
-            render.lineWidth = 3
+            render.strokeColor = UIColor(.combingBlue4)
+            render.lineWidth = 7
             return render
         }
         return MKOverlayRenderer()

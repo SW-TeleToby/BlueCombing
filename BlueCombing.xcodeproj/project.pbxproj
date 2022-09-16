@@ -149,7 +149,6 @@
 		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
 			isa = PBXGroup;
 			children = (
-				708B5A6E28D4AB0700B863E8 /* Navigation */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
 				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
@@ -243,6 +242,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
+			);
+			path = AtractionView;
+			sourceTree = "<group>";
+		};
 		B23C44B628D461B10096DE8F /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,21 +274,6 @@
 				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
 			);
 			path = Extention;
-			sourceTree = "<group>";
-		};
-		708B5A6E28D4AB0700B863E8 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
-			isa = PBXGroup;
-			children = (
-				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
-			);
-			path = AtractionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

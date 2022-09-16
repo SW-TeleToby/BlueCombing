@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct MultiModal: View {
     @State var modalHeight = CGFloat(168)
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
+    let firebaseAuth = Auth.auth()
 
     var body: some View {
         VStack {
@@ -22,7 +24,13 @@ struct MultiModal: View {
                 startModal
                     .frame(height: modalHeight)
             case 1:
-                RecordModal
+                recordConfirmModal
+                    .frame(height: modalHeight)
+            case 2:
+                cardMakingModal
+                    .frame(height: modalHeight)
+            case 3:
+                loginModal
                     .frame(height: modalHeight)
             default:
                 Rectangle()
@@ -30,19 +38,6 @@ struct MultiModal: View {
                     .frame(height: modalHeight)
             }
         } // VStack
-//        .onChange(of: recordEndTrigger, perform: { value in
-//            if value {
-//                withAnimation(.spring()) {
-//                    modalHeight = 366
-//                    currentModal = 1
-//                }
-//            } else {
-//                withAnimation(.spring()) {
-//                    modalHeight = 0
-//                    currentModal = -1
-//                }
-//            }
-//        })
         .onChange(of: currentModal, perform: { value in
             switch value {
             case 0:
@@ -52,6 +47,10 @@ struct MultiModal: View {
             case 1:
                 withAnimation(.spring()) {
                     modalHeight = 366
+                }
+            case 2, 3:
+                withAnimation(.spring()) {
+                    modalHeight = 212
                 }
             default:
                 withAnimation(.spring()) {
@@ -100,25 +99,24 @@ extension MultiModal {
                                 Color.combingGradient1
                             }
                                 .cornerRadius(16)
-
-
                             Text("비치코밍 시작하기")
                                 .font(.Button1)
                                 .foregroundColor(.white)
                         }
                     }
+                        .frame(height: 56)
                         .padding(16)
                 } // VStack
             } // Zstack
-            .frame(height: 168)
         } // VStack
     } // startModal
 
-    var RecordModal: some View {
+    @ViewBuilder
+    var recordConfirmModal: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.white) // MARK: 컬러 수정해야함
-            .cornerRadius(24, corners: [.topLeft, .topRight])
+                .foregroundColor(.white)
+                .cornerRadius(24, corners: [.topLeft, .topRight])
 
             VStack {
                 HStack {
@@ -155,7 +153,11 @@ extension MultiModal {
                     withAnimation(.spring()) {
                         recordStartTrigger = false
                         recordEndTrigger = false
-                        currentModal = 0
+                        if firebaseAuth.currentUser != nil {
+                            currentModal = 2
+                        } else {
+                            currentModal = 3
+                        }
                     }
                 }) {
                     ZStack {
@@ -173,4 +175,105 @@ extension MultiModal {
             }
         }
     }
+
+    @ViewBuilder
+    var cardMakingModal: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.combingBlue5_2)
+                .cornerRadius(24, corners: [.topLeft, .topRight])
+
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("쓰래기봉투를 버리고")
+                        .font(.Body2)
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                HStack {
+                    Text("비치코밍 인증 카드를 직접 만들어보세요.")
+                        .font(.Body2)
+                        .foregroundColor(.white)
+                }
+
+                Spacer().frame(height: 16)
+
+                Button(action: {
+                    // MARK: 액션 추가하기
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.combingBlue4)
+                            .cornerRadius(16)
+                        Text("직접 만들러가기")
+                            .font(.Button1)
+                            .foregroundColor(.white)
+                    }
+                }
+                    .frame(height: 56)
+
+                Spacer().frame(height: 16)
+
+                Button(action: {
+                    // MARK: 액션 추가하기
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("기본 카드 사용하기")
+                            .font(.Body3)
+                            .foregroundColor(.combingGray2)
+                        Spacer()
+                    }
+                }
+            }
+                .padding(.horizontal, 16)
+        }
+    }
+
+    @ViewBuilder
+    var loginModal: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.combingBlue5_2)
+                .cornerRadius(24, corners: [.topLeft, .topRight])
+
+            VStack {
+                HStack {
+                    Text("쓰레기 봉투를 버리고 로그인을 하여")
+                        .foregroundColor(.white)
+                        .font(.Body2)
+                    Spacer()
+                }
+                HStack {
+                    Text("비치코밍 인증 카드를 만들어보세요.")
+                        .foregroundColor(.white)
+                        .font(.Body2)
+                    Spacer()
+                }
+                
+                Spacer().frame(height: 18)
+
+                NavigationLink(destination: LoginHome(isSignIn: .constant(false)) ) {
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(16)
+                            .foregroundColor(.combingBlue4)
+                        Text("로그인하러 가기")
+                            .foregroundColor(.white)
+                            .font(.Button1)
+                    }
+                }
+                    .frame(height: 56)
+                
+                Spacer().frame(height: 16)
+                
+                Button(action: {}){
+                    Text("카드를 안 만들래요")
+                        .font(.Body3)
+                        .foregroundColor(.combingGray2)
+                }
+            }
+            .padding(.leading, 16)
+        }
+    } // loginModal
 }
