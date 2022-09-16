@@ -42,6 +42,13 @@
 		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
 		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
 		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
+		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
+		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
+		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
+		B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */; };
+		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
+		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
+		B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0DA728D45D7A00867084 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +80,18 @@
 		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
+
 		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
+		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
+		B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
+		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		B2DC0DA728D45D7A00867084 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +146,7 @@
 			children = (
 				708B5A5C28D46E8400B863E8 /* Style */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
+				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
 				16F42DDD28CDB6DF00995F1E /* Model */,
 				16F42DDE28CDB6E600995F1E /* Views */,
@@ -154,11 +170,16 @@
 		16F42DDD28CDB6DF00995F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B23C44B928D463F60096DE8F /* Map */,
 				16F42DE028CDB77200995F1E /* User.swift */,
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
+
 				0EE72C2328D46D1E00C54505 /* Picture.swift */,
+
+				B2DC0D9F28D4504000867084 /* AppData.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,8 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				0EE72C1428D4609900C54505 /* MakeCardViews */,
+				B23C44B628D461B10096DE8F /* Map */,
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
 				16F42DF528CDBF0F00995F1E /* Authenications */,
+				B2DC0DA728D45D7A00867084 /* MainTabView.swift */,
+				B23C44C728D499000096DE8F /* CustomModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +236,31 @@
 				708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */,
 			);
 			path = Fonts;
+      sourceTree = "<group>";
+		};
+		B23C44B628D461B10096DE8F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44B728D461F30096DE8F /* MapView.swift */,
+				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B23C44B928D463F60096DE8F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44BA28D464040096DE8F /* MapDelegate.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B23C44BE28D46E4F0096DE8F /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +355,8 @@
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
+				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
+				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
@@ -313,6 +364,8 @@
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
+				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
+				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
@@ -323,6 +376,10 @@
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
+				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
+				B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */,
+				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
+				B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
