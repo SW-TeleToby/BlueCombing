@@ -100,6 +100,7 @@ extension AppleAuthCoordinator: ASAuthorizationControllerDelegate {
                     print ("Error Apple sign in: %@", error)
                     return
                 }
+                
                 // User is signed in to Firebase with Apple.
                 // ...
                 ///로그인 성공

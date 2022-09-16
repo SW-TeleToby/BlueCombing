@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct User: Identifiable {
+    var id: String
+    var totalDistance: Int
+    var totalTime: Int
+    var myBadges: [String]
+    var myCards: [String]
+    var representBadge: String
+}

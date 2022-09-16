@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1228D4607E00C54505 /* MakeCardView.swift */; };
+		0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */; };
+		0EE72C1A28D4662200C54505 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1928D4662200C54505 /* CardView.swift */; };
+		0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */; };
+		0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */; };
+		0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2328D46D1E00C54505 /* Picture.swift */; };
+		0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2528D46EDC00C54505 /* CameraView.swift */; };
+		0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2928D4949000C54505 /* ShareView.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
 		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
 		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
-		168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FacebookLoginView.swift */; };
+		168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
+		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
 		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
 		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
 		16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD328CDA3CC00995F1E /* Assets.xcassets */; };
@@ -29,6 +38,10 @@
 		16F42DF428CDBB3500995F1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F42DF328CDBB3500995F1E /* FirebaseStorage */; };
 		16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DF628CDBFD500995F1E /* LoginHome.swift */; };
 		16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */; };
+		708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A5D28D46E9100B863E8 /* Colors.swift */; };
+		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
+		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
+		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
 		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
 		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
@@ -40,12 +53,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EE72C1228D4607E00C54505 /* MakeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardView.swift; sourceTree = "<group>"; };
+		0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardViewNavbar.swift; sourceTree = "<group>"; };
+		0EE72C1928D4662200C54505 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedImagePicker.swift; sourceTree = "<group>"; };
+		0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagePicker.swift; sourceTree = "<group>"; };
+		0EE72C2328D46D1E00C54505 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		0EE72C2528D46EDC00C54505 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0EE72C2928D4949000C54505 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		168C242828CDD21200036B70 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		168C243028CDF9E100036B70 /* FacebookLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginView.swift; sourceTree = "<group>"; };
+		168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginButton.swift; sourceTree = "<group>"; };
+		168C245C28D46D7900036B70 /* AppleLoginButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButtom.swift; sourceTree = "<group>"; };
 		16F42DCC28CDA3CA00995F1E /* BlueCombing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCombing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCombingApp.swift; sourceTree = "<group>"; };
 		16F42DD128CDA3CA00995F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +81,11 @@
 		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
+
+		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
@@ -86,6 +113,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE72C1428D4609900C54505 /* MakeCardViews */ = {
+			isa = PBXGroup;
+			children = (
+				0EE72C1228D4607E00C54505 /* MakeCardView.swift */,
+				0EE72C2528D46EDC00C54505 /* CameraView.swift */,
+				0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */,
+				0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */,
+				0EE72C1928D4662200C54505 /* CardView.swift */,
+				0EE72C2928D4949000C54505 /* ShareView.swift */,
+				0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */,
+			);
+			path = MakeCardViews;
+			sourceTree = "<group>";
+		};
 		16F42DC328CDA3CA00995F1E = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +146,7 @@
 		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
 			isa = PBXGroup;
 			children = (
+				708B5A5C28D46E8400B863E8 /* Style */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
 				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
@@ -135,7 +177,11 @@
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
+
+				0EE72C2328D46D1E00C54505 /* Picture.swift */,
+
 				B2DC0D9F28D4504000867084 /* AppData.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +189,7 @@
 		16F42DDE28CDB6E600995F1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0EE72C1428D4609900C54505 /* MakeCardViews */,
 				B23C44B628D461B10096DE8F /* Map */,
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
 				16F42DF528CDBF0F00995F1E /* Authenications */,
@@ -168,10 +215,30 @@
 			children = (
 				16F42DF628CDBFD500995F1E /* LoginHome.swift */,
 				16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */,
-				168C243028CDF9E100036B70 /* FacebookLoginView.swift */,
+				168C245C28D46D7900036B70 /* AppleLoginButtom.swift */,
+				168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */,
 			);
 			path = Authenications;
 			sourceTree = "<group>";
+		};
+		708B5A5C28D46E8400B863E8 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A6128D4810D00B863E8 /* Fonts */,
+				708B5A5D28D46E9100B863E8 /* Colors.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		708B5A6128D4810D00B863E8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */,
+				708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */,
+				708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+      sourceTree = "<group>";
 		};
 		B23C44B628D461B10096DE8F /* Map */ = {
 			isa = PBXGroup;
@@ -270,8 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F42DD728CDA3CC00995F1E /* Preview Assets.xcassets in Resources */,
+				708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */,
 				16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */,
+				708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */,
 				16F42DE928CDB91A00995F1E /* GoogleService-Info.plist in Resources */,
+				708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +352,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */,
+				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
+				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
+				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
 				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
+				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
@@ -295,8 +370,14 @@
 				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
 				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
+				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
+				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
+				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
+				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
+				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
+				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
@@ -437,6 +518,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BlueCombing/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱이 카메라 권한을 필요로합니다";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱이 앨범 접근 권한을 필요로합니다";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱이 앨범 접근 권한을 필요로 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -470,6 +554,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BlueCombing/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱이 카메라 권한을 필요로합니다";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱이 앨범 접근 권한을 필요로합니다";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱이 앨범 접근 권한을 필요로 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

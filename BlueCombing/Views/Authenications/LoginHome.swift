@@ -14,17 +14,40 @@ struct LoginHome: View {
     @Binding var isSignIn: Bool
     
     var body: some View {
-        VStack {
-            Button {
-                appleLogin()
-            } label: {
-                Text("애플 로그인")
+        ZStack {
+            Color.combingBlue1
+                .ignoresSafeArea()
+            VStack(spacing: 12) {
+                Spacer()
+                Image("img_login")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal, 30)
+                Text("카드를 만들기 위해선\n로그인이 필요해요!")
+                    .font(.custom("Pretendard-SemiBold", size: 24))
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                Spacer()
+                AppleLoginButtom {
+                    appleLogin()
+                }
+                .padding(.horizontal)
+                FaceBookLoginButton {
+                    presentationMode.wrappedValue.dismiss()
+                    isSignIn = true
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 56)
+                .padding(.horizontal)
+                .padding(.bottom, 4)
+                Button {
+                    
+                } label: {
+                    Text("로그인하지 않을래요")
+                        .font(.custom("Pretendard-SemiBold", size: 16))
+                        .foregroundColor(.combingGray4)
+                }
+                .padding(.bottom, 21)
             }
-            FaceBookLoginView {
-                presentationMode.wrappedValue.dismiss()
-                isSignIn = true
-            }
-            .frame(width: 180, height: 50,alignment: .center).padding(10)
         }
     }
     
