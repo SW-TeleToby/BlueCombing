@@ -34,7 +34,8 @@ struct TotalMapView: View {
 
             MultiModal(recordEndTrigger: $isRecordEnd, recordStartTrigger: $isRecordStart, currentModal: $currentModal)
         }
-            .navigationBarHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

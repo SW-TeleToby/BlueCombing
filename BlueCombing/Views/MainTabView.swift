@@ -25,7 +25,6 @@ struct MainTabView: View {
                 }
             }
         }
-        .navigationBarHidden(true)
     }
 }
 
