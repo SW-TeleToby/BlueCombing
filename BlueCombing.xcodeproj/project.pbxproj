@@ -48,8 +48,10 @@
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
 		B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */; };
 		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
+		B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C928D4B9850096DE8F /* MultiModal.swift */; };
 		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
 		B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0DA728D45D7A00867084 /* MainTabView.swift */; };
+		B2E576BD28D4D2EE000D77A5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E576BC28D4D2EE000D77A5 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +83,6 @@
 		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
-
 		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -92,8 +93,10 @@
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
 		B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
 		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		B23C44C928D4B9850096DE8F /* MultiModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModal.swift; sourceTree = "<group>"; };
 		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		B2DC0DA728D45D7A00867084 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B2E576BC28D4D2EE000D77A5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,11 +181,8 @@
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
-
 				0EE72C2328D46D1E00C54505 /* Picture.swift */,
-
 				B2DC0D9F28D4504000867084 /* AppData.swift */,
-
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,15 +238,17 @@
 				708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */,
 				708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */,
 				708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */,
+				B2E576BC28D4D2EE000D77A5 /* Font.swift */,
 			);
 			path = Fonts;
-      sourceTree = "<group>";
+			sourceTree = "<group>";
 		};
 		B23C44B628D461B10096DE8F /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				B23C44B728D461F30096DE8F /* MapView.swift */,
 				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
+				B23C44C928D4B9850096DE8F /* MultiModal.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -374,7 +376,7 @@
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
-				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
+				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
@@ -391,11 +393,13 @@
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
+				B2E576BD28D4D2EE000D77A5 /* Font.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
 				708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
+				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44C028D46E5F0096DE8F /* ViewExtention.swift in Sources */,
 				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
