@@ -19,7 +19,7 @@ struct LoginHome: View {
                 .ignoresSafeArea()
             VStack(spacing: 12) {
                 Spacer()
-                Image("LoginLogo")
+                Image("img_login")
                     .resizable()
                     .scaledToFit()
                     .padding(.horizontal, 30)
