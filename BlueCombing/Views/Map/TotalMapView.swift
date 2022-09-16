@@ -15,7 +15,7 @@ struct TotalMapView: View {
     @State var isRecordStart = false
     @State var currentModal = 0
     @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667)]
-    @State var playOnce = true
+    @State var movingTime: Int = 0
     
     var body: some View {
         ZStack {
@@ -38,6 +38,11 @@ struct TotalMapView: View {
             }
 
             MultiModal(recordEndTrigger: $isRecordEnd, recordStartTrigger: $isRecordStart, currentModal: $currentModal)
+                .onChange(of: isRecordStart, perform: { value in
+                    if value {
+                        startTimer()
+                    }
+                })
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
@@ -49,6 +54,13 @@ struct TotalMapView: View {
                 sleep(3) // MARK: 타이머 조절
                 pathCoordinates.append(value)
             })
+        }
+    }
+    
+    func startTimer() {
+        movingTime = 0
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            movingTime += 1
         }
     }
 }
@@ -96,8 +108,8 @@ extension TotalMapView {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text("1시간 20분")
-                                .font(.Heading2)
+                            Text("\(movingTime / 360)시간 \(movingTime / 60)분 \(movingTime % 60)초")
+                                .font(.Body3) // MARK: 폰트 자시 조정할 것 Original Heading2
                                 .foregroundColor(.combingGray1)
                         }
                         .padding(.leading, 19)
