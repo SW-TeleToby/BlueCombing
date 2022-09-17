@@ -11,16 +11,17 @@ struct BadgeGradeView: View {
     @Environment(\.dismiss) var dismiss
     var user: User?
     @State var lockBadges = 8
+    @State var myBadges : [String] = []
     var body: some View {
 
         VStack {
             BadgeGradeViewNavbar()
             ScrollView {
                 if let user = user {
-                    ForEach (0..<user.myBadges.count, id:\.self) { i in
-                        if user.myBadges[i] == user.representBadge {
+                    ForEach (0..<myBadges.count, id:\.self) { i in
+                        if myBadges[i] == user.representBadge {
                             VStack() {
-                                BadgeInfoView(tempBadge: user.myBadges[i])
+                                BadgeInfoView(tempBadge: myBadges[i])
                                     .frame(width: deviceWidth)
                             }.frame(width: deviceWidth,height: 120)
                                 .background(Color.combingBlue2)
@@ -28,7 +29,7 @@ struct BadgeGradeView: View {
                         }
                         else {
                             VStack() {
-                                BadgeInfoView(tempBadge: user.myBadges[i])
+                                BadgeInfoView(tempBadge: myBadges[i])
                                     .frame(width: deviceWidth)
                             }.frame(width: deviceWidth,height: 120)
                                 
@@ -57,13 +58,40 @@ struct BadgeGradeView: View {
             }.navigationBarHidden(true)
                 .onAppear{
                     if let user = user {
-                        lockBadges = 8 - user.myBadges.count
+                        myBadges = readMyBadges(presentBadge: user.representBadge)
+                        lockBadges = 8 - myBadges.count
                     }
                     
                 }
                
         }
         
+    }
+    func readMyBadges(presentBadge: String) -> Array<String> {
+        let badgeList = ["산호초", "조개", "해마", "해파리", "돌고래", "거북이", "물고기 떼", "고래"]
+        let badgeCount: ArraySlice<String>
+        switch presentBadge {
+        case "산호초":
+            badgeCount = badgeList[0...0]
+        case "조개":
+            badgeCount = badgeList[0...1]
+        case "해마":
+            badgeCount = badgeList[0...2]
+        case "해파리":
+            badgeCount = badgeList[0...3]
+        case "돌고래":
+            badgeCount = badgeList[0...4]
+        case "거북이":
+            badgeCount = badgeList[0...5]
+        case "물고기 떼":
+            badgeCount = badgeList[0...6]
+        case "고래":
+            badgeCount = badgeList[0...7]
+        default:
+            badgeCount = []
+        }
+        let badgesArray = Array(badgeCount)
+        return badgesArray
     }
     
     
