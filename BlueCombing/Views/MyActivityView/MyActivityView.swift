@@ -13,11 +13,12 @@ var deviceWidth = UIScreen.main.bounds.size.width
 struct MyActivityView: View {
     @StateObject var userViewModel = UserViewModel()
     @State var isSignin = false
+    @State var isPresentedDetail = false
     let firebaseAuth = Auth.auth()
-    
     var image: UIImage?
     var description: String?
-    
+    @State var selectedImage: UIImage?
+
     let column = [
         /// define number of caullum here
         GridItem(.flexible()),
@@ -74,6 +75,20 @@ struct MyActivityView: View {
                                 }.padding(.vertical,10)
                                     .padding(.trailing,20)
                                 
+                                LazyVGrid(columns:column, spacing: 20) {
+                                    ForEach(userViewModel.combingImages, id:\.self) { image in
+                                        Image(uiImage: image)
+                                            .resizable()
+                                            .frame(width: 172, height: 230)
+                                            .cornerRadius(12)
+                                            .onTapGesture {
+                                                selectedImage = image
+                                                isPresentedDetail.toggle()
+                                            }
+                                    
+                                    }
+                                }.padding()
+                            
                             }
                             
                             
@@ -86,11 +101,13 @@ struct MyActivityView: View {
                 .background(Color(red: 0.779, green: 0.998, blue: 0.999))
                 .edgesIgnoringSafeArea(.bottom)
             }
+        }.sheet(isPresented: $isPresentedDetail){
+            DetailSheetView(image: $selectedImage)
         }
         .onAppear{
             if firebaseAuth.currentUser != nil {
                 isSignin = true
-                userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
+                userViewModel.getUserImages(uid: firebaseAuth.currentUser!.uid)
             } else {
                 isSignin = false
             }
@@ -98,6 +115,8 @@ struct MyActivityView: View {
         .navigationTitle("")
         .navigationBarHidden(true)
     }
+    
+    
 }
 
 
