@@ -20,14 +20,13 @@ struct MapView: UIViewRepresentable {
     @StateObject var locationVM = LocationViewModel()
     
     func makeUIView(context: Context) -> some UIView {
-//        map.isPitchEnabled = false
-//        map.isZoomEnabled = false
-//        map.isScrollEnabled = false
-//        map.isRotateEnabled = false
-//        map.showsTraffic = false
+        map.isPitchEnabled = false
+        map.isZoomEnabled = false
+        map.isScrollEnabled = false
+        map.isRotateEnabled = false
+        map.showsTraffic = false
         
         map.delegate = delegate
-        
         map.region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830),
             span: span
