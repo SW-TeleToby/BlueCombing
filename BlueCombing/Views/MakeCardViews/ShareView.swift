@@ -24,6 +24,7 @@ struct ShareView: View {
                 CardView(card: $card)
                     .frame(width: containerWidth, height: imageHeight)
                 routeImage
+                    .resizable()
                     .frame(width: containerWidth/2, height: containerWidth/2)
             }
             
