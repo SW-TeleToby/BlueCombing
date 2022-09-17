@@ -39,7 +39,7 @@ struct BadgeGradeView: View {
                     ForEach (0..<lockBadges, id:\.self) { i in
                         VStack() {
                             HStack{
-                                Image("img_badge_turtle")
+                                Image("img_badge_lock")
                                     .resizable()
                                     .frame(width: 100, height: 100)
                                 Spacer()
@@ -147,7 +147,7 @@ struct BadgeInfoView : View {
                 BadgeTitle = "img_badge_fishs"
             case "고래":
                 description = "항상 변함없이 바다를 지키는\n당신은 바다의 주인인 고래 같아요"
-                BadgeTitle = "img_badge_clam"
+                BadgeTitle = "img_badge_whale"
             default:
                 description = ""
                 BadgeTitle = "img_badge_clam"

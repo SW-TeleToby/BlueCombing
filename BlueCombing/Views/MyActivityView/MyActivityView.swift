@@ -165,7 +165,7 @@ struct representBadgeView : View{
                 BadgeTitle = "img_badge_fishs"
             case "고래":
                 description = "항상 변함없이 바다를 지키는\n당신은 바다의 주인인 고래 같아요"
-                BadgeTitle = "img_badge_clam"
+                BadgeTitle = "img_badge_whale"
             default:
                 description = ""
                 BadgeTitle = "img_badge_clam"
