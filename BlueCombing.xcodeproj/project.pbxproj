@@ -23,6 +23,7 @@
 		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
 		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
 		167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72428D5740A001929F8 /* ViewExtension.swift */; };
+		167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72728D594EB001929F8 /* OnboardingView.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
 		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
@@ -77,6 +78,7 @@
 		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
 		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
 		167BA72428D5740A001929F8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		167BA72728D594EB001929F8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		167BA72628D592FF001929F8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				167BA72728D594EB001929F8 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		16F42DC328CDA3CA00995F1E = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +244,7 @@
 			children = (
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
 				B2DC0DA728D45D7A00867084 /* MainTabView.swift */,
+				167BA72628D592FF001929F8 /* Onboarding */,
 				B23C44B628D461B10096DE8F /* Map */,
 				0EE72C1428D4609900C54505 /* MakeCardViews */,
 				708B5A7128D4DA4A00B863E8 /* AtractionView */,
@@ -413,6 +424,7 @@
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */,
+				167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
