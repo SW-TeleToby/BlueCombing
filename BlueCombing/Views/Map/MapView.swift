@@ -29,7 +29,7 @@ struct MapView: UIViewRepresentable {
         map.delegate = delegate
         
         map.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667),
+            center: CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830),
             span: span
         )
         

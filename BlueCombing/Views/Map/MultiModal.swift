@@ -194,9 +194,15 @@ extension MultiModal {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray4)
-                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분 \(movingTime % 60)초")
-                                .font(.Heading2)
-                                .foregroundColor(.combingBlue5)
+                            if movingTime >= 60 {
+                                Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
+                                    .font(.Heading2)
+                                    .foregroundColor(.combingBlue5)
+                            } else {
+                                Text("1분 이내")
+                                    .font(.Heading2)
+                                    .foregroundColor(.combingBlue5)
+                            }
                         }
                         Spacer()
                     }
@@ -204,7 +210,7 @@ extension MultiModal {
                         .padding(.vertical, 40)
                         .onAppear {
                         CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
-                            routeImage = Image(uiImage: image).resizable()
+                            routeImage = Image(uiImage: image)
                         }
                     }
                 }

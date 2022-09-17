@@ -11,14 +11,6 @@ import UIKit
 import MapKit
 
 struct CanvasView: View {
-//    @State var tempCoordinates: [CLLocationCoordinate2D] = [
-//        CLLocationCoordinate2D(latitude: 36.663, longitude: 127.501),
-//        CLLocationCoordinate2D(latitude: 36.664, longitude: 127.503),
-//        CLLocationCoordinate2D(latitude: 36.665, longitude: 127.501),
-//        CLLocationCoordinate2D(latitude: 36.666, longitude: 127.504),
-//        CLLocationCoordinate2D(latitude: 36.667, longitude: 127.501),
-//        CLLocationCoordinate2D(latitude: 36.668, longitude: 127.480),
-//    ]
     @Binding var pathCoordinates: [CLLocationCoordinate2D]
 
     var body: some View {
@@ -85,6 +77,7 @@ struct CanvasView: View {
 
         }
         .stroke(Color.blue, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+        
     }
 
     func calcuateRatio(highest: Float, current: Double, canvas: Float, hOrW: HeightorWidth) -> CGFloat {
