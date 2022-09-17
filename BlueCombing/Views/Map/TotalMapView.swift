@@ -125,7 +125,7 @@ extension TotalMapView {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text("\(movingTime / 360)시간 \(movingTime / 60)분 \(movingTime % 60)초")
+                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분 \(movingTime % 60)초")
                                 .font(.Body3) // MARK: 폰트 자시 조정할 것 Original Heading2
                                 .foregroundColor(.combingGray1)
                         }

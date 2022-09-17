@@ -186,7 +186,7 @@ extension MultiModal {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray4)
-                            Text("\(movingTime / 360)시간 \(movingTime / 60)분 \(movingTime % 60)초")
+                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분 \(movingTime % 60)초")
                                 .font(.Heading2)
                                 .foregroundColor(.combingBlue5)
                         }
