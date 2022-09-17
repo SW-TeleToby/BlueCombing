@@ -28,4 +28,34 @@ class MapDelegate: UIViewController, MKMapViewDelegate {
 
         return currentLocation.distance(from: forwardLocation)
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        
+        if annotationView == nil {
+            //Create View
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+        } else {
+            //Assign annotation
+            annotationView?.annotation = annotation
+        }
+        
+        //Set image
+        switch annotation.title {
+        case "trash":
+            annotationView?.image = UIImage(named: "img_trash")
+        case "picker":
+            annotationView?.image = UIImage(named: "img_picker")
+        case "trash-bag":
+            annotationView?.image = UIImage(named: "img_trash_bag")
+        default:
+            break
+        }
+        
+        return annotationView
+    }
 }

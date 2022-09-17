@@ -17,18 +17,28 @@ struct MapView: UIViewRepresentable {
     @Binding var movingDistance : Double
     let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
     
+    @StateObject var locationVM = LocationViewModel()
+    
     func makeUIView(context: Context) -> some UIView {
 //        map.isPitchEnabled = false
 //        map.isZoomEnabled = false
 //        map.isScrollEnabled = false
 //        map.isRotateEnabled = false
 //        map.showsTraffic = false
+        
         map.delegate = delegate
         
         map.region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667),
             span: span
         )
+        
+        for location in locationVM.locations {
+            let pin = MKPointAnnotation()
+            pin.title = location.thing
+            pin.coordinate = location.coordinate
+            map.addAnnotation(pin)
+        }
         
         return map
     }

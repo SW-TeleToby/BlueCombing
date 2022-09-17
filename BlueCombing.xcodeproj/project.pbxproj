@@ -22,6 +22,7 @@
 		0EE72C3C28D51F0100C54505 /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE72C3B28D51F0100C54505 /* wave.json */; };
 		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
 		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
+		163DB13B28D618A800DC6B67 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 163DB13A28D618A700DC6B67 /* location.json */; };
 		167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72428D5740A001929F8 /* ViewExtension.swift */; };
 		167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72728D594EB001929F8 /* OnboardingView.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
@@ -31,6 +32,8 @@
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
 		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
 		16EA766228D52CAD00979F78 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
+		16F157D528D6193D0001B422 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F157D428D6193D0001B422 /* Location.swift */; };
+		16F157D728D6196F0001B422 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F157D628D6196F0001B422 /* LocationViewModel.swift */; };
 		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
 		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
 		16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD328CDA3CC00995F1E /* Assets.xcassets */; };
@@ -78,6 +81,7 @@
 		0EE72C3B28D51F0100C54505 /* wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
 		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
+		163DB13A28D618A700DC6B67 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		167BA72428D5740A001929F8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		167BA72728D594EB001929F8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginButton.swift; sourceTree = "<group>"; };
 		168C245C28D46D7900036B70 /* AppleLoginButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButtom.swift; sourceTree = "<group>"; };
+		16F157D428D6193D0001B422 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		16F157D628D6196F0001B422 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		16F42DCC28CDA3CA00995F1E /* BlueCombing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCombing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCombingApp.swift; sourceTree = "<group>"; };
 		16F42DD128CDA3CA00995F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +174,14 @@
 			path = Utills;
 			sourceTree = "<group>";
 		};
+		163DB13C28D618AA00DC6B67 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				163DB13A28D618A700DC6B67 /* location.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		167BA72328D573DD001929F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +225,7 @@
 				0EE72C3528D51D0600C54505 /* Utills */,
 				708B5A5C28D46E8400B863E8 /* Style */,
 				167BA72328D573DD001929F8 /* Extensions */,
+				163DB13C28D618AA00DC6B67 /* Resource */,
 				16F42DD328CDA3CC00995F1E /* Assets.xcassets */,
 				168C242D28CDDC2D00036B70 /* Info.plist */,
 				16F42DE828CDB91A00995F1E /* GoogleService-Info.plist */,
@@ -237,6 +252,7 @@
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
 				0EE72C2328D46D1E00C54505 /* Picture.swift */,
 				B2DC0D9F28D4504000867084 /* AppData.swift */,
+				16F157D428D6193D0001B422 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +280,7 @@
 				168C242428CDD20000036B70 /* CardViewModel.swift */,
 				168C242628CDD20900036B70 /* AttractionViewModel.swift */,
 				168C242828CDD21200036B70 /* BadgeViewModel.swift */,
+				16F157D628D6196F0001B422 /* LocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -404,6 +421,7 @@
 				16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */,
 				708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */,
 				16F42DE928CDB91A00995F1E /* GoogleService-Info.plist in Resources */,
+				163DB13B28D618A800DC6B67 /* location.json in Resources */,
 				708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +458,7 @@
 				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
+				16F157D728D6196F0001B422 /* LocationViewModel.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
@@ -452,6 +471,7 @@
 				708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
+				16F157D528D6193D0001B422 /* Location.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
 				B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */,
