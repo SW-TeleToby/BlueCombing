@@ -50,16 +50,19 @@ struct CanvasView: View {
 
 
             guard let first = pathCoordinates.first else { return }
-            let a = UIScreen.main.bounds.height * calcuateRatio(highest: highestLat, current: first.latitude, canvas: canvasLat, hOrW: .height)
+            var a = UIScreen.main.bounds.height * calcuateRatio(highest: highestLat, current: first.latitude, canvas: canvasLat, hOrW: .height)
             var b = UIScreen.main.bounds.width * calcuateRatio(highest: highestLot, current: first.longitude, canvas: canvasLot, hOrW: .width)
-
-
+            
+            
+            if a.isNaN {
+                a = UIScreen.main.bounds.height / 2
+            }
             if b.isNaN {
                 b = UIScreen.main.bounds.width / 2
             }
 
             path.move(to: CGPoint(x: b, y: a))
-
+            
             for ele in pathCoordinates {
                 if ele.latitude == first.latitude && ele.longitude == first.longitude {
                     continue
@@ -76,13 +79,12 @@ struct CanvasView: View {
                     b = UIScreen.main.bounds.width / 2
                 }
 
-                print(a, b)
 
                 path.addLine(to: CGPoint(x: b, y: a))
             }
 
         }
-            .stroke(Color("combingBlue4"), lineWidth: 7)
+        .stroke(Color.blue, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
     }
 
     func calcuateRatio(highest: Float, current: Double, canvas: Float, hOrW: HeightorWidth) -> CGFloat {

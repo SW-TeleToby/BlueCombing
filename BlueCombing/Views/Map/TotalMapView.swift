@@ -40,7 +40,14 @@ struct TotalMapView: View {
                     .ignoresSafeArea(.container, edges: .top)
             }
 
-            MultiModal(recordEndTrigger: $isRecordEnd, recordStartTrigger: $isRecordStart, currentModal: $currentModal, pathCoordinates: $pathCoordinates)
+            MultiModal(
+                recordEndTrigger: $isRecordEnd,
+                recordStartTrigger: $isRecordStart,
+                currentModal: $currentModal,
+                pathCoordinates: $pathCoordinates,
+                movingTime: $movingTime,
+                movingDistance: $movingDistance
+            )
                 .onChange(of: isRecordStart, perform: { value in
                     if value {
                         startMoving()

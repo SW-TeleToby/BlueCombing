@@ -18,9 +18,9 @@ struct MapView: UIViewRepresentable {
     let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
     
     func makeUIView(context: Context) -> some UIView {
-        map.isPitchEnabled = false
-        map.isZoomEnabled = false
-        map.isScrollEnabled = false
+//        map.isPitchEnabled = false
+//        map.isZoomEnabled = false
+//        map.isScrollEnabled = false
 //        map.isRotateEnabled = false
 //        map.showsTraffic = false
         map.delegate = delegate

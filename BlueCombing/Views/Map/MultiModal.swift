@@ -18,6 +18,8 @@ struct MultiModal: View {
     @Binding var currentModal: Int
     @Binding var pathCoordinates: [CLLocationCoordinate2D]
     @State var routeImage = Image("Is not Load")
+    @Binding var movingTime: Int
+    @Binding var movingDistance: Double
 
     let firebaseAuth = Auth.auth()
 
@@ -156,30 +158,49 @@ extension MultiModal {
                 .padding(.horizontal, 16)
 
                 Spacer().frame(height: 18)
-                GeometryReader { g in
-                    ZStack {
-                        Rectangle()
-                            .cornerRadius(16)
-                            .foregroundColor(.combingBlue2)
-                            .frame(height: 201)
-                            .padding(.horizontal, 16)
+                ZStack {
+                    Rectangle()
+                        .cornerRadius(16)
+                        .foregroundColor(.combingBlue2)
+                        .padding(.horizontal, 16)
 
-                        // MARK: Canvas View
-                        HStack {
-                            routeImage
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.vertical, 40)
-                                .padding(.leading, 54)
+                    // MARK: Canvas View
+                    HStack {
+                        routeImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 115, height: 121)
+
+                        Spacer().frame(width: 19)
+
+                        VStack(alignment: .leading) {
+                            Text("이동 거리")
+                                .font(.Body5)
+                                .foregroundColor(.combingGray4)
+                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                                .font(.Heading2)
+                                .foregroundColor(.combingBlue5)
+
+                            Spacer().frame(height: 22)
+
+                            Text("이동 시간")
+                                .font(.Body5)
+                                .foregroundColor(.combingGray4)
+                            Text("\(movingTime / 360)시간 \(movingTime / 60)분 \(movingTime % 60)초")
+                                .font(.Heading2)
+                                .foregroundColor(.combingBlue5)
                         }
-
+                        Spacer()
                     }
+                        .padding(.leading, 54)
+                        .padding(.vertical, 40)
                         .onAppear {
-                            CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
+                        CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
                             routeImage = Image(uiImage: image).resizable()
                         }
                     }
                 }
+                    .frame(height: 201)
 
                 Button(action: {
                     withAnimation(.spring()) {
