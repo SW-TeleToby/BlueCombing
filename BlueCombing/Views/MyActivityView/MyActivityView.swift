@@ -25,6 +25,9 @@ struct MyActivityView: View {
     ]
     
     var body: some View {
+        if isSignin == false {
+            LoginHome(isSignIn: $isSignin) {}
+        } else {
             ScrollView {
                 ZStack {
                     VStack {
@@ -36,15 +39,9 @@ struct MyActivityView: View {
                     }.frame(width: deviceWidth)
                     VStack(alignment:.center) {
                         LottieView(jsonName: "wave")
-                        
                     }.frame(width: deviceWidth, height: deviceHeight)
                     VStack {
-                        if isSignin == false {
-                            LoginHome(isSignIn: $isSignin) {
-                                
-                            }
-                        }
-                        else {
+
                             if let user = userViewModel.user {
                                 HStack (spacing:0){
                                     Text("바다의 ")
@@ -77,7 +74,7 @@ struct MyActivityView: View {
                                     .padding(.trailing,20)
                                 
                             }
-                        }
+                        
                         
                     }
                     
@@ -94,6 +91,9 @@ struct MyActivityView: View {
                 print(deviceHeight)
             }.background(Color(red: 0.779, green: 0.998, blue: 0.999))
                 .edgesIgnoringSafeArea(.bottom)
+        }
+        
+            
         
         
     }
