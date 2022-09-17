@@ -34,11 +34,11 @@ struct AtractionView : View {
                 }
                 .offset(x: self.offset)
             }
-            
         }
         .padding(.top, 56.0)
         .padding(.leading, 21.0)
-        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

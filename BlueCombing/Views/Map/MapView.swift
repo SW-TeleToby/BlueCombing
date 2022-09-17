@@ -11,20 +11,44 @@ import UIKit
 import SwiftUI
 
 struct MapView: UIViewRepresentable {
-    @Binding var map: MKMapView
-    let delegate = MapDelegate()
+    @State var map: MKMapView
+    let delegate: MapDelegate
+    @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
     
     func makeUIView(context: Context) -> some UIView {
         map.isPitchEnabled = false
         map.isZoomEnabled = false
         map.isScrollEnabled = false
-        map.isRotateEnabled = false
-        map.region.span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+//        map.isRotateEnabled = false
+//        map.showsTraffic = false
         map.delegate = delegate
+        
+        map.region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667),
+            span: span
+        )
         
         return map
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        guard let last = pathCoordinates.last else { return }
+        let region = MKCoordinateRegion(center: last, span: span)
+        map.setRegion(region, animated: true)
+        
+        if pathCoordinates.count < 1 {
+            return
+        }
+
+        let line = MKPolyline(coordinates: pathCoordinates, count: pathCoordinates.count)
+        
+        if map.overlays.isEmpty {
+            map.addOverlay(line)
+        }
+        else {
+            map.removeOverlays(map.overlays)
+            map.addOverlay(line)
+        }
     }
 }

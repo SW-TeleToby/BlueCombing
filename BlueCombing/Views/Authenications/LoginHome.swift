@@ -13,6 +13,8 @@ struct LoginHome: View {
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @Binding var isSignIn: Bool
     
+    let dismissAction: () -> Void
+    
     var body: some View {
         ZStack {
             Color.combingBlue1
@@ -40,21 +42,26 @@ struct LoginHome: View {
                 .padding(.horizontal)
                 .padding(.bottom, 4)
                 Button {
-                    
+                    presentationMode.wrappedValue.dismiss()
+                    isSignIn = false
                 } label: {
                     Text("로그인하지 않을래요")
                         .font(.custom("Pretendard-SemiBold", size: 16))
                         .foregroundColor(.combingGray4)
                 }
                 .padding(.bottom, 21)
+                .navigationBarBackButtonHidden(true)
             }
+        }
+        .onDisappear {
+            self.dismissAction()
         }
     }
     
     func appleLogin() {
         appleLoginCoordinator = AppleAuthCoordinator(window: window) {
-            presentationMode.wrappedValue.dismiss()
             isSignIn = true
+            presentationMode.wrappedValue.dismiss()
         }
         appleLoginCoordinator?.startSignInWithAppleFlow()
     }
@@ -62,6 +69,8 @@ struct LoginHome: View {
 
 struct LoginHome_Previews: PreviewProvider {
     static var previews: some View {
-        LoginHome(isSignIn: .constant(false))
+        LoginHome(isSignIn: .constant(false)) {
+            
+        }
     }
 }

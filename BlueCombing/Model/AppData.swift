@@ -29,8 +29,10 @@ enum Tab: String, CaseIterable {
     var view: some View {
         switch self {
         case .beachCombing: TotalMapView()
-        case .tour: Text("Hello World")
+        case .tour: AtractionView()
         case .myInfo: Text("Hello World")
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
         }
     }
 }
