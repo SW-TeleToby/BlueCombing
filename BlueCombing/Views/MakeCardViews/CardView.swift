@@ -53,7 +53,7 @@ struct CardView: View {
                     Spacer()
                 }.padding(.bottom,0.1)
                 HStack {
-                    Text(CardViewModel.location)
+                    Text(card.location)
                         .font(.system(size: 16))
                         .foregroundColor(.white)
                     Spacer()
