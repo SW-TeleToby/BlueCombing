@@ -121,6 +121,8 @@ struct MakeCardView: View {
             } else {
                 isSignin = false
             }
+            cardViewModel.checkLocation()
+            cardViewModel.newCard.location = CardViewModel.location
         }
         
     }
