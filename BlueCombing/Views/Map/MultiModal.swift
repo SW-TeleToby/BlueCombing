@@ -165,56 +165,63 @@ extension MultiModal {
                 } // 모달 상단
                 .padding(.horizontal, 16)
 
-                Spacer().frame(height: 18)
-                ZStack {
-                    Rectangle()
-                        .cornerRadius(16)
-                        .foregroundColor(.combingBlue2)
-                        .padding(.horizontal, 16)
+                Spacer().frame(height: 26)
+//                    Rectangle()
+//                        .cornerRadius(16)
+//                        .foregroundColor(.combingBlue2)
+//                        .padding(.horizontal, 16)
 
-                    // MARK: Canvas View
-                    HStack {
+                // MARK: Canvas View
+                HStack {
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(16)
+                            .foregroundColor(.combingBlue3)
+
                         routeImage
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 115, height: 121)
+                            .padding()
+                    }
+                        .frame(width: 149, height: 175)
 
-                        Spacer().frame(width: 19)
+                    Spacer().frame(width: 23)
 
-                        VStack(alignment: .leading) {
-                            Text("이동 거리")
-                                .font(.Body5)
-                                .foregroundColor(.combingGray4)
-                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                    VStack(alignment: .leading) {
+                        Text("이동 거리")
+                            .font(.Body5)
+                            .foregroundColor(.combingGray4)
+                            .padding(.bottom, 4)
+                        Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                            .font(.Heading2)
+                            .foregroundColor(.combingBlue5)
+
+                        Spacer().frame(height: 22)
+
+                        Text("이동 시간")
+                            .font(.Body5)
+                            .foregroundColor(.combingGray4)
+                            .padding(.bottom, 4)
+                        if movingTime >= 60 {
+                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
                                 .font(.Heading2)
                                 .foregroundColor(.combingBlue5)
-
-                            Spacer().frame(height: 22)
-
-                            Text("이동 시간")
-                                .font(.Body5)
-                                .foregroundColor(.combingGray4)
-                            if movingTime >= 60 {
-                                Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
-                                    .font(.Heading2)
-                                    .foregroundColor(.combingBlue5)
-                            } else {
-                                Text("1분 이내")
-                                    .font(.Heading2)
-                                    .foregroundColor(.combingBlue5)
-                            }
+                        } else {
+                            Text("1분 이내")
+                                .font(.Heading2)
+                                .foregroundColor(.combingBlue5)
                         }
-                        Spacer()
                     }
-                        .padding(.leading, 54)
-                        .padding(.vertical, 40)
-                        .onAppear {
-                        CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
-                            routeImage = Image(uiImage: image)
-                        }
+                    Spacer()
+                } // HStack
+                    .padding(.leading, 43)
+                    .onAppear {
+                    CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
+                        routeImage = Image(uiImage: image)
                     }
                 }
-                    .frame(height: 201)
+                
+                Spacer().frame(height: 34)
 
                 Button(action: {
                     withAnimation(.spring()) {

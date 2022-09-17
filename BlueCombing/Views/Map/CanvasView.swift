@@ -76,7 +76,7 @@ struct CanvasView: View {
             }
 
         }
-        .stroke(Color.blue, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+        .stroke(Color.white, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
         
     }
 
