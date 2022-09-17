@@ -16,11 +16,14 @@ struct TotalMapView: View {
     @State var currentModal = 0
     @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667)]
     @State var movingTime: Int = 0
+    @State var movingDistance: Double = 0.0
+    @State var timer: Timer? = nil
+    private let digit: Double = pow(10, 2)
     
     var body: some View {
         ZStack {
             
-            MapView(map: mapManager.map, delegate: mapManager, pathCoordinates: $pathCoordinates)
+            MapView(map: mapManager.map, delegate: mapManager, pathCoordinates: $pathCoordinates, movingDistance: $movingDistance)
                 .ignoresSafeArea(.container, edges: .top)
 
             Image("userPin")
@@ -37,12 +40,13 @@ struct TotalMapView: View {
                     .ignoresSafeArea(.container, edges: .top)
             }
 
-            MultiModal(recordEndTrigger: $isRecordEnd, recordStartTrigger: $isRecordStart, currentModal: $currentModal)
+            MultiModal(recordEndTrigger: $isRecordEnd, recordStartTrigger: $isRecordStart, currentModal: $currentModal, pathCoordinates: $pathCoordinates)
                 .onChange(of: isRecordStart, perform: { value in
                     if value {
-                        startTimer()
+                        startMoving()
                     }
                 })
+            
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
@@ -57,9 +61,13 @@ struct TotalMapView: View {
         }
     }
     
-    func startTimer() {
+    func startMoving() {
         movingTime = 0
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        movingDistance = 0
+        
+        timer?.invalidate()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             movingTime += 1
         }
     }
@@ -98,7 +106,7 @@ extension TotalMapView {
                             Text("이동 거리")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text("2km")
+                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
                                 .font(.Heading2)
                                 .foregroundColor(.combingGray1)
                             
@@ -135,10 +143,10 @@ struct VisualEffectView: UIViewRepresentable {
 
 
 fileprivate let tempCoordinates: [CLLocationCoordinate2D] = [
-    CLLocationCoordinate2D(latitude: 36.663, longitude: 127.501667),
-    CLLocationCoordinate2D(latitude: 36.664, longitude: 127.501667),
-    CLLocationCoordinate2D(latitude: 36.665, longitude: 127.501667),
-    CLLocationCoordinate2D(latitude: 36.666, longitude: 127.501667),
-    CLLocationCoordinate2D(latitude: 36.667, longitude: 127.501667),
-    CLLocationCoordinate2D(latitude: 36.668, longitude: 127.501667),
+    CLLocationCoordinate2D(latitude: 36.663, longitude: 127.501),
+    CLLocationCoordinate2D(latitude: 36.662, longitude: 127.504),
+    CLLocationCoordinate2D(latitude: 36.660, longitude: 127.509),
+    CLLocationCoordinate2D(latitude: 36.657, longitude: 127.505),
+    CLLocationCoordinate2D(latitude: 36.659, longitude: 127.510),
+    CLLocationCoordinate2D(latitude: 36.660, longitude: 127.513),
 ]

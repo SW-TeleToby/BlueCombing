@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 import FirebaseAuth
 
 struct MultiModal: View {
@@ -14,6 +15,9 @@ struct MultiModal: View {
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
+    @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    @State var routeImage = UIImage()
+    
     let firebaseAuth = Auth.auth()
 
     var body: some View {
@@ -151,12 +155,20 @@ extension MultiModal {
                 .padding(.horizontal, 16)
 
                 Spacer().frame(height: 18)
-
-                Rectangle()
-                    .cornerRadius(16)
-                    .foregroundColor(.combingBlue2)
-                    .frame(height: 201)
-                    .padding(.horizontal, 16)
+                
+                ZStack {
+                    Rectangle()
+                        .cornerRadius(16)
+                        .foregroundColor(.combingBlue2)
+                        .frame(height: 201)
+                        .padding(.horizontal, 16)
+                    
+                    Image(uiImage: CanvasView(pathCoordinates: $pathCoordinates).screenshot())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }.onAppear{
+                    routeImage = CanvasView(pathCoordinates: $pathCoordinates).screenshot()
+                }
 
                 Button(action: {
                     withAnimation(.spring()) {
