@@ -40,7 +40,9 @@ struct MyActivityView: View {
                     }.frame(width: deviceWidth, height: deviceHeight)
                     VStack {
                         if isSignin == false {
-                            LoginHome(isSignIn: $isSignin)
+                            LoginHome(isSignIn: $isSignin) {
+                                
+                            }
                         }
                         else {
                             if let user = userViewModel.user {
