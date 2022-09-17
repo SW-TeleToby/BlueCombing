@@ -49,7 +49,7 @@ struct TourCourseItem: View {
         .padding(20)
     }
 }
-//
+
 //struct TourCourseItem_Previews: PreviewProvider {
 //    @Namespace static var namespace
 //    

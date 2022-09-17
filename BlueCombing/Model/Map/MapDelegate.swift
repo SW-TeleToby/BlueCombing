@@ -21,6 +21,7 @@ class MapDelegate: UIViewController, MKMapViewDelegate {
         }
         return MKOverlayRenderer()
     }
+    
 
     private func fetchDistance(current: CLLocationCoordinate2D, forward: CLLocationCoordinate2D) -> CLLocationDistance {
         let currentLocation = CLLocation(latitude: current.latitude, longitude: current.longitude)
