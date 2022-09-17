@@ -14,7 +14,7 @@ struct TotalMapView: View {
     @State var isRecordEnd = false
     @State var isRecordStart = false
     @State var currentModal = 0
-    @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.662222, longitude: 127.501667)]
+    @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830)]
     @State var movingTime: Int = 0
     @State var movingDistance: Double = 0.0
     @State var timer: Timer? = nil
@@ -30,9 +30,6 @@ struct TotalMapView: View {
             
             if isRecordStart {
                 recordingView
-                    .onAppear{
-                        simulatingFunction()
-                    }
             }
             
             if isRecordEnd {
@@ -51,6 +48,9 @@ struct TotalMapView: View {
                 .onChange(of: isRecordStart, perform: { value in
                     if value {
                         startMoving()
+                    } else {
+                        mapManager.map.removeOverlays(mapManager.map.overlays)
+                        pathCoordinates.removeAll()
                     }
                 })
             
@@ -62,13 +62,15 @@ struct TotalMapView: View {
     func simulatingFunction() {
         Task {
             tempCoordinates.publisher.sink(receiveValue: { value in
-                sleep(3) // MARK: 타이머 조절
+                sleep(1) // MARK: 타이머 조절
                 pathCoordinates.append(value)
             })
         }
     }
     
     func startMoving() {
+        simulatingFunction()
+        
         movingTime = 0
         movingDistance = 0
         
@@ -127,9 +129,15 @@ extension TotalMapView {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분 \(movingTime % 60)초")
-                                .font(.Body3) // MARK: 폰트 자시 조정할 것 Original Heading2
-                                .foregroundColor(.combingGray1)
+                            if movingTime >= 60 {
+                                Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
+                                    .font(.Heading2)
+                                    .foregroundColor(.combingGray1)
+                            } else {
+                                Text("1분 이내")
+                                    .font(.Heading2)
+                                    .foregroundColor(.combingGray1)
+                            }
                         }
                         .padding(.leading, 19)
                     }
@@ -154,10 +162,16 @@ struct VisualEffectView: UIViewRepresentable {
 
 
 fileprivate let tempCoordinates: [CLLocationCoordinate2D] = [
-    CLLocationCoordinate2D(latitude: 36.663, longitude: 127.501),
-    CLLocationCoordinate2D(latitude: 36.662, longitude: 127.504),
-    CLLocationCoordinate2D(latitude: 36.660, longitude: 127.509),
-    CLLocationCoordinate2D(latitude: 36.657, longitude: 127.505),
-    CLLocationCoordinate2D(latitude: 36.659, longitude: 127.510),
-    CLLocationCoordinate2D(latitude: 36.660, longitude: 127.513),
+    CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830),
+    CLLocationCoordinate2D(latitude: 36.052458, longitude: 129.378543),
+    CLLocationCoordinate2D(latitude: 36.053063, longitude: 129.378130),
+    CLLocationCoordinate2D(latitude: 36.053583, longitude: 129.377371),
+    CLLocationCoordinate2D(latitude: 36.0548065, longitude: 129.3773040),
+    CLLocationCoordinate2D(latitude: 36.055565, longitude: 129.3784654),
+    CLLocationCoordinate2D(latitude: 36.056294, longitude: 129.3786478),
+    CLLocationCoordinate2D(latitude: 36.0571809, longitude: 129.3788382),
+    CLLocationCoordinate2D(latitude: 36.0577251, longitude: 129.3787497),
+    CLLocationCoordinate2D(latitude: 36.0579983, longitude: 129.37862366),
+    CLLocationCoordinate2D(latitude: 36.0589502, longitude: 129.37918692),
+    CLLocationCoordinate2D(latitude: 36.0590587, longitude: 129.3796268),
 ]
