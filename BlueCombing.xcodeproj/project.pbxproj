@@ -20,8 +20,8 @@
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
 		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
-		168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
 		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
+		16EA766228D52CAD00979F78 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
 		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
 		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
 		16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F42DD328CDA3CC00995F1E /* Assets.xcassets */; };
@@ -362,13 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EA766228D52CAD00979F78 /* FaceBookLoginButton.swift in Sources */,
 				0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */,
 				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
-				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
-				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,

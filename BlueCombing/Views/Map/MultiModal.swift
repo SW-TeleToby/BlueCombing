@@ -13,7 +13,22 @@ struct MultiModal: View {
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
+    @State private var showingAlert = false
+    
     let firebaseAuth = Auth.auth()
+    @State var isSignIn: Bool
+    
+    init(recordEndTrigger: Binding<Bool>, recordStartTrigger: Binding<Bool>, currentModal: Binding<Int>) {
+        self._recordEndTrigger = recordEndTrigger
+        self._recordStartTrigger = recordStartTrigger
+        self._currentModal = currentModal
+
+        if firebaseAuth.currentUser != nil {
+            isSignIn = true
+        } else {
+            isSignIn = false
+        }
+    }
 
     var body: some View {
         VStack {
@@ -153,7 +168,7 @@ extension MultiModal {
                     withAnimation(.spring()) {
                         recordStartTrigger = false
                         recordEndTrigger = false
-                        if firebaseAuth.currentUser != nil {
+                        if isSignIn {
                             currentModal = 2
                         } else {
                             currentModal = 3
@@ -253,7 +268,14 @@ extension MultiModal {
                 
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: .constant(false)) ) {
+                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, dismissAction: {
+                    if isSignIn {
+                        currentModal = 2
+                    } else {
+                        currentModal = 3
+                        showingAlert = true
+                    }
+                }) ) {
                     ZStack {
                         Rectangle()
                             .cornerRadius(16)
@@ -264,6 +286,13 @@ extension MultiModal {
                     }
                 }
                     .frame(height: 56)
+                    .alert(isPresented: $showingAlert) {
+                        let firstButton = Alert.Button.default(Text("확인")) {
+                            currentModal = 0
+                        }
+                        let secondButton = Alert.Button.cancel(Text("취소"))
+                        return Alert(title: Text("로그인하지 않으면 비치코밍 기록을 남길 수 없습니다"), primaryButton: firstButton, secondaryButton: secondButton)
+                    }
                 
                 Spacer().frame(height: 16)
                 
