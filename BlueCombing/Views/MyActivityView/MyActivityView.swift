@@ -93,10 +93,7 @@ struct MyActivityView: View {
                             
                             
                         }
-                        
                     }
-                    
-                    
                 }
                 .background(Color(red: 0.779, green: 0.998, blue: 0.999))
                 .edgesIgnoringSafeArea(.bottom)
@@ -128,6 +125,8 @@ struct representBadgeView : View{
     var body: some View {
         VStack{
             Image(BadgeTitle)
+                .resizable()
+                .frame(width: 142, height: 142)
             Text(description)
                 .font(.Body4)
                 .multilineTextAlignment(.center)
