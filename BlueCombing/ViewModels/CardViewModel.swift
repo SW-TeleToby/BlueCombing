@@ -18,7 +18,9 @@ class CardViewModel: ObservableObject {
     public static var distance: Double = 0.0
     public static var time: Int = 0
     
-    
+    private let imagePredictor = ImagePredictor()
+    private let predictionsToShow = 2
+
     init() {
         
     }
@@ -43,10 +45,62 @@ class CardViewModel: ObservableObject {
                 }
                 
                 
+                self.newCard.location = collab
                 CardViewModel.location = collab
             }
             
         }
+    }
+    
+    func classifyImage(_ image: UIImage) {
+        do {
+            try self.imagePredictor.makePredictions(for: image,
+                                                    completionHandler: imagePredictionHandler)
+        } catch {
+            print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
+        }
+    }
+
+    private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?) {
+        guard let predictions = predictions else { return }
+
+        let formattedPredictions = formatPredictions(predictions)
+        let predictionString = formattedPredictions.joined(separator: "\n")
+        print(predictionString)
+        
+        let target = predictions[0]
+        
+        let confidence = target.confidencePercentage.components(separatedBy: CharacterSet.init(charactersIn: "0123456789.").inverted).joined(separator: "")
+        
+        if Float(confidence) ?? 0 > 85 {
+            var name = target.classification
+
+            if let firstComma = name.firstIndex(of: ",") {
+                name = String(name.prefix(upTo: firstComma))
+            }
+
+            self.newCard.location = name
+        } else {
+            self.newCard.location = CardViewModel.location
+        }
+        
+        
+    }
+
+    private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
+        // Vision sorts the classifications in descending confidence order.
+        let topPredictions: [String] = predictions.prefix(predictionsToShow).map { prediction in
+            var name = prediction.classification
+
+            // For classifications with more than one name, keep the one before the first comma.
+            if let firstComma = name.firstIndex(of: ",") {
+                name = String(name.prefix(upTo: firstComma))
+            }
+
+            return "\(name) - \(prediction.confidencePercentage)%"
+        }
+
+        return topPredictions
     }
     
     func makeNewCard(card: Card) {

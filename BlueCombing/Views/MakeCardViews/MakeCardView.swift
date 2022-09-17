@@ -110,13 +110,13 @@ struct MakeCardView: View {
             .navigationBarHidden(true)
         }
         .sheet(isPresented: $isPresentedAllImage){
-            AllImagePicker(card: $cardViewModel.newCard)
+            AllImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
         }
         .sheet(isPresented: $isPresentedLimitedImage){
-            LimitedImagePicker(card: $cardViewModel.newCard)
+            LimitedImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
         }
         .sheet(isPresented: $isPresentedCamera) {
-            Camera(card: $cardViewModel.newCard)
+            Camera(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
         }
         .alert("이 기능을 사용하려면 카메라 엑세스 권한이 필요합니다", isPresented: $cameraDenyAlert) {
             Button("나중에 하기") {
@@ -138,8 +138,8 @@ struct MakeCardView: View {
             } else {
                 isSignin = false
             }
+            print("체크!")
             cardViewModel.checkLocation()
-            cardViewModel.newCard.location = CardViewModel.location
             cardViewModel.newCard.distance = movingDistance
             cardViewModel.newCard.time = movingTime
         }

@@ -23,14 +23,17 @@
 		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
 		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
 		163DB13B28D618A800DC6B67 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 163DB13A28D618A700DC6B67 /* location.json */; };
+		165AC54628D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		165AC54728D64190009954E2 /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */; };
 		167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72428D5740A001929F8 /* ViewExtension.swift */; };
 		167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72728D594EB001929F8 /* OnboardingView.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
 		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
-		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
 		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
 		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
+		1699082B28D63BCE00583006 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699082A28D63BCE00583006 /* ImagePredictor.swift */; };
+		1699082D28D63E7500583006 /* PohangLandmarkNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1699082C28D63E7500583006 /* PohangLandmarkNet.mlmodel */; };
 		169919EF28D5CF0E007109D4 /* AttractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919EC28D5CF0D007109D4 /* AttractionView.swift */; };
 		169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919EE28D5CF0D007109D4 /* TourCourseView.swift */; };
 		169919F128D5CF0E007109D4 /* TourCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919ED28D5CF0D007109D4 /* TourCourseItem.swift */; };
@@ -86,15 +89,18 @@
 		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
 		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
 		163DB13A28D618A700DC6B67 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
 		167BA72428D5740A001929F8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		167BA72728D594EB001929F8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
-		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		168C242828CDD21200036B70 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginButton.swift; sourceTree = "<group>"; };
 		168C245C28D46D7900036B70 /* AppleLoginButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButtom.swift; sourceTree = "<group>"; };
+		1699082A28D63BCE00583006 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
+		1699082C28D63E7500583006 /* PohangLandmarkNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PohangLandmarkNet.mlmodel; sourceTree = "<group>"; };
 		169919EC28D5CF0D007109D4 /* AttractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionView.swift; sourceTree = "<group>"; };
 		169919ED28D5CF0D007109D4 /* TourCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseItem.swift; sourceTree = "<group>"; };
 		169919EE28D5CF0D007109D4 /* TourCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseView.swift; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 			children = (
 				0EE72C3B28D51F0100C54505 /* wave.json */,
 				0EE72C3628D51D2F00C54505 /* Lottie.swift */,
+				1699082A28D63BCE00583006 /* ImagePredictor.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -194,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				167BA72428D5740A001929F8 /* ViewExtension.swift */,
+				165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 		16F42DDD28CDB6DF00995F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1699082C28D63E7500583006 /* PohangLandmarkNet.mlmodel */,
 				B23C44B928D463F60096DE8F /* Map */,
 				16F42DE028CDB77200995F1E /* User.swift */,
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
@@ -287,7 +297,6 @@
 			children = (
 				168C242228CDD1F500036B70 /* UserViewModel.swift */,
 				168C242428CDD20000036B70 /* CardViewModel.swift */,
-				168C242628CDD20900036B70 /* AttractionViewModel.swift */,
 				168C242828CDD21200036B70 /* BadgeViewModel.swift */,
 				16F157D628D6196F0001B422 /* LocationViewModel.swift */,
 			);
@@ -460,9 +469,9 @@
 				169919F428D5CFD3007109D4 /* Course.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */,
+				1699082D28D63E7500583006 /* PohangLandmarkNet.mlmodel in Sources */,
 				167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
-				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
@@ -477,16 +486,19 @@
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
 				169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
+				165AC54728D64190009954E2 /* VNClassificationObservation+confidenceString.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				B28CB29228D533BE00202F33 /* CanvasView.swift in Sources */,
 				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
 				B2E576BD28D4D2EE000D77A5 /* Font.swift in Sources */,
+				165AC54628D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
 				16F157D528D6193D0001B422 /* Location.swift in Sources */,
+				1699082B28D63BCE00583006 /* ImagePredictor.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
 				169919F628D5D4B8007109D4 /* Animation.swift in Sources */,

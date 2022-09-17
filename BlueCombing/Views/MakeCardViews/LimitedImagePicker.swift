@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 // 선택한 사진 접근 권한시 나오는 시트
 struct LimitedImagePicker: View {
+    let cardViewModel: CardViewModel
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var card: Card
@@ -49,6 +50,7 @@ struct LimitedImagePicker: View {
                                 .contentShape(Rectangle())
                                 .onTapGesture {
                                     card.backgroundImage = grid[i].image
+                                    cardViewModel.classifyImage(grid[i].image)
                                     presentationMode.wrappedValue.dismiss()
                                 }
                         }

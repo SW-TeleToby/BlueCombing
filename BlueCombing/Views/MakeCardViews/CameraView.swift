@@ -9,6 +9,8 @@ import SwiftUI
 import UIKit
 
 struct Camera: UIViewControllerRepresentable {
+    let cardViewModel: CardViewModel
+    
     @Binding var card: Card
     @Environment(\.presentationMode) var presentationMode
     var sourceType: UIImagePickerController.SourceType = .camera
@@ -34,6 +36,7 @@ struct Camera: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.card.backgroundImage = image
+                parent.cardViewModel.classifyImage(image)
             }
             parent.presentationMode.wrappedValue.dismiss()
         }

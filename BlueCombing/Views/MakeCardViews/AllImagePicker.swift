@@ -11,6 +11,8 @@ import PhotosUI
 
 // 전체 접근 권한 허용시 나오는 시트
 struct AllImagePicker: UIViewControllerRepresentable {
+    let cardViewModel: CardViewModel
+    
     @Binding var card: Card
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration()
@@ -44,6 +46,7 @@ struct AllImagePicker: UIViewControllerRepresentable {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in
                     DispatchQueue.main.async {
                         self.parent.card.backgroundImage = (image as? UIImage)!
+                        self.parent.cardViewModel.classifyImage(image as! UIImage)
                     }
                 }
             }
