@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 class CardViewModel: ObservableObject {
-    @Published var newCard = Card(id: 0, distance: 0, time: 0, location: "포항시 영일대 해수욕장", backgroundImage: UIImage(named: "img_card_default")!, badge: Badge(id: 1, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번 배지 설명입니다\n1번 배지는 이러이러합니다."))
+    @Published var newCard = Card(id: 0, distance: 0, time: 0, location: "포항시 영일대 해수욕장", backgroundImage: UIImage(named: "img_card_default")!, badge: Badge(id: 1, badgeImage: UIImage(named: "img_badge_clam")!, longExplanation: "1번 배지 설명입니다\n1번 배지는 이러이러합니다."))
     
 
     public static var longitude: Double = 0.0
