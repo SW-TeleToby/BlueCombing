@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TourCourseItem: View {
     var namespace: Namespace.ID
-    var course: Course = tourCourses[0]
+    var course: Course
     @Binding var show: Bool
     
     var body: some View {
@@ -49,11 +49,11 @@ struct TourCourseItem: View {
         .padding(20)
     }
 }
-
-struct TourCourseItem_Previews: PreviewProvider {
-    @Namespace static var namespace
-    
-    static var previews: some View {
-        TourCourseItem(namespace: namespace, show: .constant(true))
-    }
-}
+//
+//struct TourCourseItem_Previews: PreviewProvider {
+//    @Namespace static var namespace
+//    
+//    static var previews: some View {
+//        TourCourseItem(namespace: namespace, show: .constant(true))
+//    }
+//}
