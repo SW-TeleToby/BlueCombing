@@ -31,11 +31,14 @@ class CardViewModel: ObservableObject {
                 var collab = ""
                 if let doo = address.administrativeArea {
                     collab += doo + " "
+                    if let si = address.locality {
+                        if doo != si {
+                            collab += si
+                        }
+                    }
                 }
                 
-                if let si = address.locality {
-                    collab += si
-                }
+                
                 CardViewModel.location = collab
             }
             
