@@ -51,19 +51,24 @@ struct CustomTabView: View {
                     if !show {
                         TabView(selection: $selectedTab) {
 
-                            Folder()
+                            ScrollView {
+                                events
+                            }
                                 .tag("이벤트")
+
                             ScrollView {
                                 cards
                             }
                                 .tag("관광지")
 
-                            Settings()
+                            ScrollView {
+                                leisures
+                            }
                                 .tag("레저")
 
                         }
 //                            .navigationBarHidden(true)
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                             .tabViewStyle(.page(indexDisplayMode: .never))
 
 
@@ -110,6 +115,7 @@ struct CustomTabView: View {
                     }
                 }
             }
+            Spacer(minLength: UIScreen.main.bounds.height * 0.25)
         }
     }
 
@@ -124,6 +130,62 @@ struct CustomTabView: View {
             }
         }
     }
+
+    var events: some View {
+        VStack(spacing: 25) {
+            Image("chilgokJazz")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("oliveyoungEvent")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("firework")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Spacer(minLength: UIScreen.main.bounds.height * 0.25)
+        }
+            .padding(.trailing, 16)
+            .padding(.horizontal, 16)
+    }
+
+    var leisures: some View {
+        VStack(spacing: 25) {
+            Image("leisure1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("leisure2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("leisure3")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("leisure4")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Image("leisure5")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(16)
+
+            Spacer(minLength: UIScreen.main.bounds.height * 0.25)
+        }
+            .padding(.leading, 16)
+            .padding(.trailing, 16)
+    }
 }
 
 struct TabButton: View {
@@ -132,7 +194,6 @@ struct TabButton: View {
     var category: String
 
     var body: some View {
-
         Button {
             selectedTab = category
         } label: {
@@ -147,28 +208,6 @@ struct TabButton: View {
                 ,
                 alignment: .bottom
             )
-        }
-    }
-}
-
-struct Folder: View {
-
-    var body: some View {
-
-        VStack {
-
-            Text("Folder")
-        }
-    }
-}
-
-struct Settings: View {
-
-    var body: some View {
-
-        VStack {
-
-            Text("Settings")
         }
     }
 }
