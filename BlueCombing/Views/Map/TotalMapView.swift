@@ -66,7 +66,9 @@ struct TotalMapView: View {
         movingDistance = 0
         
         timer?.invalidate()
-
+        
+        mapManager.map.removeOverlays(mapManager.map.overlays)
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             movingTime += 1
         }

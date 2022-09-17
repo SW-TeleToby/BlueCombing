@@ -5,9 +5,10 @@
 //  Created by Inho Choi on 2022/09/16.
 //
 
-import SwiftUI
 import MapKit
+import UIKit
 import FirebaseAuth
+import SwiftUI
 
 struct MultiModal: View {
     @State var modalHeight = CGFloat(168)
@@ -16,8 +17,8 @@ struct MultiModal: View {
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
     @Binding var pathCoordinates: [CLLocationCoordinate2D]
-    @State var routeImage = UIImage()
-    
+    @State var routeImage = Image("Is not Load")
+
     let firebaseAuth = Auth.auth()
 
     var body: some View {
@@ -63,8 +64,8 @@ struct MultiModal: View {
                 }
             }
         })
-        .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $loginCancleAlertTrigger) {
-            Button("취소", role: .cancel) {}
+            .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $loginCancleAlertTrigger) {
+            Button("취소", role: .cancel) { }
             Button("확인", role: .destructive) {
                 recordEndTrigger = false
                 recordStartTrigger = false
@@ -155,19 +156,29 @@ extension MultiModal {
                 .padding(.horizontal, 16)
 
                 Spacer().frame(height: 18)
-                
-                ZStack {
-                    Rectangle()
-                        .cornerRadius(16)
-                        .foregroundColor(.combingBlue2)
-                        .frame(height: 201)
-                        .padding(.horizontal, 16)
-                    
-                    Image(uiImage: CanvasView(pathCoordinates: $pathCoordinates).screenshot())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }.onAppear{
-                    routeImage = CanvasView(pathCoordinates: $pathCoordinates).screenshot()
+                GeometryReader { g in
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(16)
+                            .foregroundColor(.combingBlue2)
+                            .frame(height: 201)
+                            .padding(.horizontal, 16)
+
+                        // MARK: Canvas View
+                        HStack {
+                            routeImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.vertical, 40)
+                                .padding(.leading, 54)
+                        }
+
+                    }
+                        .onAppear {
+                            CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
+                            routeImage = Image(uiImage: image).resizable()
+                        }
+                    }
                 }
 
                 Button(action: {
@@ -271,10 +282,10 @@ extension MultiModal {
                         .font(.Body2)
                     Spacer()
                 }
-                
+
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: .constant(false)) ) {
+                NavigationLink(destination: LoginHome(isSignIn: .constant(false))) {
                     ZStack {
                         Rectangle()
                             .cornerRadius(16)
@@ -285,16 +296,17 @@ extension MultiModal {
                     }
                 }
                     .frame(height: 56)
-                
+
                 Spacer().frame(height: 16)
-                
-                Button(action: { loginCancleAlertTrigger.toggle() }){
+
+                Button(action: { loginCancleAlertTrigger.toggle() }) {
                     Text("카드를 안 만들래요")
                         .font(.Body3)
                         .foregroundColor(.combingGray2)
                 }
             }
-            .padding(.leading, 16)
+                .padding(.leading, 16)
         }
     } // loginModal
 }
+
