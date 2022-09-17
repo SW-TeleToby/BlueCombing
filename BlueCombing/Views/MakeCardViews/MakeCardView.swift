@@ -21,6 +21,7 @@ struct MakeCardView: View {
     @State var isPresentShareView = false
     @State var cameraDenyAlert = false
     @State var isSignin = false
+    @State var presentBadge = ""
     let firebaseAuth = Auth.auth()
     
     var SaveImageView: some View {
@@ -74,6 +75,7 @@ struct MakeCardView: View {
             Spacer()
             Button(action: {
                 let saveImage = SaveImageView.snapshot()
+                presentBadge = userViewModel.user!.representBadge
                 isPresentShareView.toggle()
                 userViewModel.uploadPicture(image: saveImage)
             }){
@@ -109,7 +111,7 @@ struct MakeCardView: View {
                 }
             }
         }.sheet(isPresented: $isPresentShareView){
-            ShareView(card: $cardViewModel.newCard) {
+            ShareView(card: $cardViewModel.newCard, presentBadge: $presentBadge) {
                 dismiss()
             }
         }.onAppear {
