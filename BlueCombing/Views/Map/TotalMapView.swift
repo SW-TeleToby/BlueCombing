@@ -91,6 +91,8 @@ extension TotalMapView {
                     Button(action: {
                         isRecordEnd = true
                         currentModal = 1
+                        CardViewModel.longitude = mapManager.map.region.center.longitude
+                        CardViewModel.latitude = mapManager.map.region.center.latitude
                     }) {
                         ZStack {
                             Rectangle()

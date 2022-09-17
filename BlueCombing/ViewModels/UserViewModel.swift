@@ -13,6 +13,7 @@ import SwiftUI
 class UserViewModel: ObservableObject {
     @Published var user: User?
     @Published var combingImages: [UIImage] = []
+    public static var cardList: Set<String> = []
     private var db = Firestore.firestore()
     
     // MARK: - 유저 정보 Create
@@ -76,9 +77,9 @@ class UserViewModel: ObservableObject {
     
     //MARK: - 이미지 파이어 스토어 저장 로직
     func uploadPicture(image: UIImage) {
-//        guard selectedImage != nil else {
-//            return
-//        }
+        //        guard selectedImage != nil else {
+        //            return
+        //        }
         
         
         // 스토리지 레퍼런스 생성
@@ -139,6 +140,10 @@ class UserViewModel: ObservableObject {
         // 스토리지에서 이미지 데이터 얻기
         let storageRef = Storage.storage().reference()
         for path in user.myCards {
+            if UserViewModel.cardList.contains(path) {
+                continue
+            }
+            UserViewModel.cardList.insert(path)
             let fileRef = storageRef.child(path)
             fileRef.getData(maxSize: 5 * 1024 * 1024) {data, error in
                 if error == nil && data != nil {
