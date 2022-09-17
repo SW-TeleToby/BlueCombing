@@ -13,6 +13,8 @@ struct ShareView: View {
     @State var shareImage:UIImage?
     @State var isPresentShareSheet = false
     
+    var dismissAction: () -> Void
+    
     var ShareImageView: some View {
         VStack(spacing:0){
             CardView(card: $card)
@@ -78,6 +80,7 @@ struct ShareView: View {
             Button(action: {
                 // 메인 지도 화면으로 돌아가는 로직 작성. 일단 디스미스만
                 dismiss()
+                self.dismissAction()
             }){
                 Text("홈으로 가기")
                     .font(.system(size: 16, weight: .semibold))
@@ -133,6 +136,8 @@ struct ShareSheet: UIViewControllerRepresentable {
 
 struct ShareView_Previews: PreviewProvider {
     static var previews: some View {
-        ShareView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다."))))
+        ShareView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다.")))) {
+            
+        }
     }
 }

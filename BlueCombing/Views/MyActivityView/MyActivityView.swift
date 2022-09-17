@@ -25,23 +25,24 @@ struct MyActivityView: View {
     ]
     
     var body: some View {
-        if isSignin == false {
-            LoginHome(isSignIn: $isSignin) {}
-        } else {
-            ScrollView {
-                ZStack {
-                    VStack {
-                        Rectangle()
-                            .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 0.779, green: 0.998, blue: 0.999), Color(red: 0.187, green: 0.704, blue: 0.868)]), startPoint: .top, endPoint: .bottom))
-                            .frame(width: deviceWidth, height: deviceHeight/2)
-                        Rectangle()
-                            .fill(.white)
-                    }.frame(width: deviceWidth)
-                    VStack(alignment:.center) {
-                        LottieView(jsonName: "wave")
-                    }.frame(width: deviceWidth, height: deviceHeight)
-                    VStack {
-
+        VStack {
+            if isSignin == false {
+                LoginHome(isSignIn: $isSignin, loginMode: .myActivity) {}
+            } else {
+                ScrollView {
+                    ZStack {
+                        VStack {
+                            Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 0.779, green: 0.998, blue: 0.999), Color(red: 0.187, green: 0.704, blue: 0.868)]), startPoint: .top, endPoint: .bottom))
+                                .frame(width: deviceWidth, height: deviceHeight/2)
+                            Rectangle()
+                                .fill(.white)
+                        }.frame(width: deviceWidth)
+                        VStack(alignment:.center) {
+                            LottieView(jsonName: "wave")
+                        }.frame(width: deviceWidth, height: deviceHeight)
+                        VStack {
+                            
                             if let user = userViewModel.user {
                                 HStack (spacing:0){
                                     Text("바다의 ")
@@ -74,28 +75,26 @@ struct MyActivityView: View {
                                     .padding(.trailing,20)
                                 
                             }
-                        
+                            
+                            
+                        }
                         
                     }
                     
+                    
                 }
-        
-                
-            }.onAppear{
-                if firebaseAuth.currentUser != nil {
-                    isSignin = true
-                    userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
-                } else {
-                    isSignin = false
-                }
-                print(deviceHeight)
-            }.background(Color(red: 0.779, green: 0.998, blue: 0.999))
+                .background(Color(red: 0.779, green: 0.998, blue: 0.999))
                 .edgesIgnoringSafeArea(.bottom)
+            }
         }
-        
-            
-        
-        
+        .onAppear{
+            if firebaseAuth.currentUser != nil {
+                isSignin = true
+                userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
+            } else {
+                isSignin = false
+            }
+        }
     }
 }
 

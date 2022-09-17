@@ -16,19 +16,7 @@ struct MultiModal: View {
     @State private var showingAlert = false
     
     let firebaseAuth = Auth.auth()
-    @State var isSignIn: Bool
-    
-    init(recordEndTrigger: Binding<Bool>, recordStartTrigger: Binding<Bool>, currentModal: Binding<Int>) {
-        self._recordEndTrigger = recordEndTrigger
-        self._recordStartTrigger = recordStartTrigger
-        self._currentModal = currentModal
-
-        if firebaseAuth.currentUser != nil {
-            isSignIn = true
-        } else {
-            isSignIn = false
-        }
-    }
+    @State var isSignIn: Bool = false
 
     var body: some View {
         VStack {
@@ -73,6 +61,13 @@ struct MultiModal: View {
                 }
             }
         })
+        .onAppear {
+            if firebaseAuth.currentUser != nil {
+                isSignIn = true
+            } else {
+                isSignIn = false
+            }
+        }
     }
 }
 
@@ -212,10 +207,13 @@ extension MultiModal {
                 }
 
                 Spacer().frame(height: 16)
-
-                Button(action: {
-                    // MARK: 액션 추가하기
-                }) {
+                
+                NavigationLink {
+                    MakeCardView()
+                        .onAppear {
+                            currentModal = 0
+                        }
+                } label: {
                     ZStack {
                         Rectangle()
                             .foregroundColor(.combingBlue4)
@@ -268,14 +266,14 @@ extension MultiModal {
                 
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, dismissAction: {
+                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .beachCombing) {
                     if isSignIn {
                         currentModal = 2
                     } else {
                         currentModal = 3
                         showingAlert = true
                     }
-                }) ) {
+                } ) {
                     ZStack {
                         Rectangle()
                             .cornerRadius(16)

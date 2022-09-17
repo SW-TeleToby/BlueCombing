@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
             } else {
                 NavigationLink {
-                    LoginHome(isSignIn: $isSignIn) {
+                    LoginHome(isSignIn: $isSignIn, loginMode: .myActivity) {
                         
                     }
                 } label: {

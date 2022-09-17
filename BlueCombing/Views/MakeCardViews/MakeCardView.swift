@@ -10,6 +10,7 @@ import Photos
 
 struct MakeCardView: View {
     @StateObject var cardViewModel = CardViewModel()
+    @Environment(\.dismiss) var dismiss
     @State var showingOption = false
     @State var isPresentedCamera = false
     @State var isPresentedAllImage = false
@@ -70,6 +71,7 @@ struct MakeCardView: View {
                         .foregroundColor(.white)
                 }
             }
+            .navigationTitle("")
             .navigationBarHidden(true)
         }
         .sheet(isPresented: $isPresentedAllImage){
@@ -91,7 +93,9 @@ struct MakeCardView: View {
                 }
             }
         }.sheet(isPresented: $isPresentShareView){
-            ShareView(card: $cardViewModel.newCard)
+            ShareView(card: $cardViewModel.newCard) {
+                dismiss()
+            }
         }
         
     }
