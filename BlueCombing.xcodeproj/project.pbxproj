@@ -43,6 +43,12 @@
 		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
 		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
 		708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A6F28D4AB4100B863E8 /* AtractionView.swift */; };
+		708B5A7528D4F9EB00B863E8 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A7428D4F9EB00B863E8 /* Course.swift */; };
+		708B5A7928D4FA5600B863E8 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A7828D4FA5600B863E8 /* MatchedView.swift */; };
+		708B5A7B28D4FA6D00B863E8 /* TourCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A7A28D4FA6D00B863E8 /* TourCourseView.swift */; };
+		708B5A7D28D4FA9F00B863E8 /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A7C28D4FA9F00B863E8 /* TourView.swift */; };
+		708B5A7F28D4FAEE00B863E8 /* TourCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A7E28D4FAEE00B863E8 /* TourCourseItem.swift */; };
+		708B5A8128D4FB0700B863E8 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A8028D4FB0700B863E8 /* Animation.swift */; };
 		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
 		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
@@ -81,12 +87,17 @@
 		16F42DF628CDBFD500995F1E /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueCombing.entitlements; sourceTree = "<group>"; };
 		16F42DFD28CDC79000995F1E /* AppleAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthCoordinator.swift; sourceTree = "<group>"; };
-
 		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		708B5A6F28D4AB4100B863E8 /* AtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtractionView.swift; sourceTree = "<group>"; };
+		708B5A7428D4F9EB00B863E8 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		708B5A7828D4FA5600B863E8 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
+		708B5A7A28D4FA6D00B863E8 /* TourCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseView.swift; sourceTree = "<group>"; };
+		708B5A7C28D4FA9F00B863E8 /* TourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourView.swift; sourceTree = "<group>"; };
+		708B5A7E28D4FAEE00B863E8 /* TourCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseItem.swift; sourceTree = "<group>"; };
+		708B5A8028D4FB0700B863E8 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
@@ -146,7 +157,6 @@
 		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
 			isa = PBXGroup;
 			children = (
-				708B5A6E28D4AB0700B863E8 /* Navigation */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
 				B23C44BE28D46E4F0096DE8F /* Extention */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
@@ -178,11 +188,9 @@
 				16F42DE228CDB7AF00995F1E /* Card.swift */,
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
-
 				0EE72C2328D46D1E00C54505 /* Picture.swift */,
-
 				B2DC0D9F28D4504000867084 /* AppData.swift */,
-
+				708B5A7428D4F9EB00B863E8 /* Course.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			children = (
 				708B5A6128D4810D00B863E8 /* Fonts */,
 				708B5A5D28D46E9100B863E8 /* Colors.swift */,
+				708B5A8028D4FB0700B863E8 /* Animation.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -240,7 +249,43 @@
 				708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */,
 			);
 			path = Fonts;
-      sourceTree = "<group>";
+			sourceTree = "<group>";
+		};
+		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A8428D56DCB00B863E8 /* EventView */,
+				708B5A8328D56DA000B863E8 /* LeisuerVIew */,
+				708B5A8228D56CA300B863E8 /* TourView */,
+				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
+				708B5A7828D4FA5600B863E8 /* MatchedView.swift */,
+			);
+			path = AtractionView;
+			sourceTree = "<group>";
+		};
+		708B5A8228D56CA300B863E8 /* TourView */ = {
+			isa = PBXGroup;
+			children = (
+				708B5A7C28D4FA9F00B863E8 /* TourView.swift */,
+				708B5A7A28D4FA6D00B863E8 /* TourCourseView.swift */,
+				708B5A7E28D4FAEE00B863E8 /* TourCourseItem.swift */,
+			);
+			path = TourView;
+			sourceTree = "<group>";
+		};
+		708B5A8328D56DA000B863E8 /* LeisuerVIew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeisuerVIew;
+			sourceTree = "<group>";
+		};
+		708B5A8428D56DCB00B863E8 /* EventView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EventView;
+			sourceTree = "<group>";
 		};
 		B23C44B628D461B10096DE8F /* Map */ = {
 			isa = PBXGroup;
@@ -265,21 +310,6 @@
 				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
 			);
 			path = Extention;
-			sourceTree = "<group>";
-		};
-		708B5A6E28D4AB0700B863E8 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
-			isa = PBXGroup;
-			children = (
-				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
-			);
-			path = AtractionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,31 +399,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */,
+				708B5A7F28D4FAEE00B863E8 /* TourCourseItem.swift in Sources */,
 				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
-				168C243128CDF9E100036B70 /* FacebookLoginView.swift in Sources */,
+				168C243128CDF9E100036B70 /* FaceBookLoginButton.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */,
 				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
+				708B5A7B28D4FA6D00B863E8 /* TourCourseView.swift in Sources */,
 				16F42DF728CDBFD500995F1E /* LoginHome.swift in Sources */,
+				708B5A7528D4F9EB00B863E8 /* Course.swift in Sources */,
 				16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */,
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
 				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
 				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
+				708B5A7928D4FA5600B863E8 /* MatchedView.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
+				708B5A8128D4FB0700B863E8 /* Animation.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
+				708B5A7D28D4FA9F00B863E8 /* TourView.swift in Sources */,
 				708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
