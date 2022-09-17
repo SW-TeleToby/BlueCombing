@@ -31,7 +31,7 @@ struct MyActivityView: View {
                 LoginHome(isSignIn: $isSignin, loginMode: .myActivity) {}
             } else {
                 ScrollView {
-                    ZStack {
+                    ZStack(alignment:.top) {
                         VStack {
                             Rectangle()
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 0.779, green: 0.998, blue: 0.999), Color(red: 0.187, green: 0.704, blue: 0.868)]), startPoint: .top, endPoint: .bottom))
@@ -50,7 +50,7 @@ struct MyActivityView: View {
                                         .font(.Heading2)
                                     Text(user.representBadge)
                                         .font(.Heading2)
-                                }
+                                }.padding(.top,15.0)
                                 HStack (alignment: .bottom){
                                     Text("총 활동시간")
                                         .font(.Body5)
@@ -59,6 +59,8 @@ struct MyActivityView: View {
                                 }.padding(.top,3)
                                 representBadgeView(representBadge: user.representBadge)
                                 
+                                VStack {
+                                    
                                 
                                 HStack {
                                     Spacer()
@@ -70,11 +72,15 @@ struct MyActivityView: View {
                                                 .foregroundColor(.white)
                                             Image(systemName: "chevron.right")
                                                 .font(.Button1)
+                                                .foregroundColor(.white)
                                         }
                                     }
-                                }.padding(.vertical,10)
+                                }.padding(.top,15)
+                                        .padding(.bottom,60)
                                     .padding(.trailing,20)
-                                
+//                                    .background(.yellow)
+//                                Spacer()
+//                                    .background(.green)
                                 LazyVGrid(columns:column, spacing: 20) {
                                     ForEach(userViewModel.combingImages, id:\.self) { image in
                                         Image(uiImage: image)
@@ -88,15 +94,16 @@ struct MyActivityView: View {
                                     
                                     }
                                 }.padding()
-                            
+                                        .padding(.bottom)
+//                                    .background(.red)
+//                                Spacer()
+                                }
                             }
-                            
-                            
                         }
                     }
                 }
                 .background(Color(red: 0.779, green: 0.998, blue: 0.999))
-                .edgesIgnoringSafeArea(.bottom)
+//                .edgesIgnoringSafeArea(.bottom)
             }
         }.sheet(isPresented: $isPresentedDetail){
             DetailSheetView(image: $selectedImage)
