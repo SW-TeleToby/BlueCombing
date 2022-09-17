@@ -29,7 +29,7 @@ enum Tab: String, CaseIterable {
     var view: some View {
         switch self {
         case .beachCombing: TotalMapView()
-        case .tour: AtractionView()
+        case .tour: AttractionView()
         case .myInfo: MyActivityView()
 //                .navigationBarTitle("")
 //                .navigationBarHidden(true)

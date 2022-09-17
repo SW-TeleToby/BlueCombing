@@ -30,6 +30,11 @@
 		168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242828CDD21200036B70 /* BadgeViewModel.swift */; };
 		168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 168C242B28CDDB2700036B70 /* FacebookLogin */; };
 		168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C245C28D46D7900036B70 /* AppleLoginButtom.swift */; };
+		169919EF28D5CF0E007109D4 /* AttractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919EC28D5CF0D007109D4 /* AttractionView.swift */; };
+		169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919EE28D5CF0D007109D4 /* TourCourseView.swift */; };
+		169919F128D5CF0E007109D4 /* TourCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919ED28D5CF0D007109D4 /* TourCourseItem.swift */; };
+		169919F428D5CFD3007109D4 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919F328D5CFD3007109D4 /* Course.swift */; };
+		169919F628D5D4B8007109D4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169919F528D5D4B8007109D4 /* Animation.swift */; };
 		16EA766228D52CAD00979F78 /* FaceBookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */; };
 		16F42DD028CDA3CA00995F1E /* BlueCombingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */; };
 		16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F42DD128CDA3CA00995F1E /* ContentView.swift */; };
@@ -51,7 +56,6 @@
 		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
 		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
 		708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */; };
-		708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A6F28D4AB4100B863E8 /* AtractionView.swift */; };
 		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
 		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
@@ -87,6 +91,11 @@
 		168C242D28CDDC2D00036B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		168C243028CDF9E100036B70 /* FaceBookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginButton.swift; sourceTree = "<group>"; };
 		168C245C28D46D7900036B70 /* AppleLoginButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButtom.swift; sourceTree = "<group>"; };
+		169919EC28D5CF0D007109D4 /* AttractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionView.swift; sourceTree = "<group>"; };
+		169919ED28D5CF0D007109D4 /* TourCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseItem.swift; sourceTree = "<group>"; };
+		169919EE28D5CF0D007109D4 /* TourCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCourseView.swift; sourceTree = "<group>"; };
+		169919F328D5CFD3007109D4 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		169919F528D5D4B8007109D4 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		16F42DCC28CDA3CA00995F1E /* BlueCombing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCombing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCombingApp.swift; sourceTree = "<group>"; };
 		16F42DD128CDA3CA00995F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,7 +113,6 @@
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		708B5A6428D4828300B863E8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
-		708B5A6F28D4AB4100B863E8 /* AtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtractionView.swift; sourceTree = "<group>"; };
 		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 				16F42DE428CDB7BB00995F1E /* Attraction.swift */,
 				16F42DE628CDB7C400995F1E /* Badge.swift */,
 				0EE72C2328D46D1E00C54505 /* Picture.swift */,
+				169919F328D5CFD3007109D4 /* Course.swift */,
 				B2DC0D9F28D4504000867084 /* AppData.swift */,
 			);
 			path = Model;
@@ -249,7 +258,7 @@
 				167BA72628D592FF001929F8 /* Onboarding */,
 				B23C44B628D461B10096DE8F /* Map */,
 				0EE72C1428D4609900C54505 /* MakeCardViews */,
-				708B5A7128D4DA4A00B863E8 /* AtractionView */,
+				708B5A7128D4DA4A00B863E8 /* AttractionView */,
 				0EE72C3228D5195900C54505 /* MyActivityView */,
 				16F42DF528CDBF0F00995F1E /* Authenications */,
 				B23C44C728D499000096DE8F /* CustomModalView.swift */,
@@ -284,6 +293,7 @@
 			children = (
 				708B5A6128D4810D00B863E8 /* Fonts */,
 				708B5A5D28D46E9100B863E8 /* Colors.swift */,
+				169919F528D5D4B8007109D4 /* Animation.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -299,12 +309,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		708B5A7128D4DA4A00B863E8 /* AtractionView */ = {
+		708B5A7128D4DA4A00B863E8 /* AttractionView */ = {
 			isa = PBXGroup;
 			children = (
-				708B5A6F28D4AB4100B863E8 /* AtractionView.swift */,
+				169919EC28D5CF0D007109D4 /* AttractionView.swift */,
+				169919EE28D5CF0D007109D4 /* TourCourseView.swift */,
+				169919ED28D5CF0D007109D4 /* TourCourseItem.swift */,
 			);
-			path = AtractionView;
+			path = AttractionView;
 			sourceTree = "<group>";
 		};
 		B23C44B628D461B10096DE8F /* Map */ = {
@@ -417,14 +429,17 @@
 			files = (
 				16EA766228D52CAD00979F78 /* FaceBookLoginButton.swift in Sources */,
 				0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */,
+				169919F128D5CF0E007109D4 /* TourCourseItem.swift in Sources */,
 				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				0EE72C3428D5196E00C54505 /* MyActivityView.swift in Sources */,
+				169919EF28D5CF0E007109D4 /* AttractionView.swift in Sources */,
 				0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */,
 				0EE72C3728D51D2F00C54505 /* Lottie.swift in Sources */,
 				167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
+				169919F428D5CFD3007109D4 /* Course.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */,
 				167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */,
@@ -441,6 +456,7 @@
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
+				169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
 				B28CB29228D533BE00202F33 /* CanvasView.swift in Sources */,
@@ -449,11 +465,11 @@
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,
 				0EE72C1A28D4662200C54505 /* CardView.swift in Sources */,
 				0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */,
-				708B5A7028D4AB4100B863E8 /* AtractionView.swift in Sources */,
 				16F42DE328CDB7AF00995F1E /* Card.swift in Sources */,
 				B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */,
 				B2DC0DA028D4504000867084 /* AppData.swift in Sources */,
 				B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */,
+				169919F628D5D4B8007109D4 /* Animation.swift in Sources */,
 				B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

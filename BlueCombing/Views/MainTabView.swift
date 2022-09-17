@@ -11,7 +11,7 @@ struct MainTabView: View {
     @State var currentTab: Tab = Tab.beachCombing
     @AppStorage("isFirstStart") var isFirstStart: Bool = true
     @State var showingOnboarding: Bool = true
-    
+
     var body: some View {
         if isFirstStart {
             OnboardingView(isFirstStart: $isFirstStart)
@@ -29,6 +29,10 @@ struct MainTabView: View {
                         }
                     }
                 }
+                .onAppear {
+                    UITabBar.appearance().backgroundColor = UIColor.white
+                }
+
             }
         }
     }
