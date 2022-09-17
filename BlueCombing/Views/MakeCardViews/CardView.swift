@@ -53,7 +53,7 @@ struct CardView: View {
                     Spacer()
                 }.padding(.bottom,0.1)
                 HStack {
-                    Text(card.location)
+                    Text(CardViewModel.location)
                         .font(.system(size: 16))
                         .foregroundColor(.white)
                     Spacer()
@@ -66,7 +66,7 @@ struct CardView: View {
 
 extension Double {
     func distanceToString() -> String {
-        let distance = String(format: "%.1f", self)
+        let distance = String(format: "%.1f", self/1000)
         return distance + "km,"
     }
 }
