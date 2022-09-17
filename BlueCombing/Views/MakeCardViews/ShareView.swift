@@ -13,7 +13,7 @@ struct ShareView: View {
     @Binding var presentBadge: String
     @State var shareImage:UIImage?
     @State var isPresentShareSheet = false
-    
+    @State var saveAlert = false
     @State var badgeDescription = ""
     var dismissAction: () -> Void
     
@@ -49,6 +49,7 @@ struct ShareView: View {
                     print(ShareImageView)
                     let shareImage = ShareImageView.snapshot()
                     UIImageWriteToSavedPhotosAlbum(shareImage,nil,nil,nil)
+                    saveAlert.toggle()
                 }){
                     Text("저장")
                         .font(.system(size: 17, weight: .bold))
@@ -95,6 +96,10 @@ struct ShareView: View {
             shareImage = ShareImageView.snapshot()
         }.sheet(isPresented: $isPresentShareSheet){
             ShareSheet(activityItems: [shareImage!])
+        }.alert("저장되었습니다.", isPresented: $saveAlert) {
+            Button("확인") {
+                
+            }
         }
     }
     

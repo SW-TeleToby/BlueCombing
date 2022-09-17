@@ -14,6 +14,7 @@ struct DetailSheetView: View {
     @Environment(\.dismiss) var dismiss
     @State var isPresentShareSheet = false
     @State var randomScript : String?
+    @State var saveAlert = false
     var ShareImageView: some View {
         VStack(spacing:0){
             if image != nil {
@@ -53,6 +54,7 @@ struct DetailSheetView: View {
                     print(ShareImageView)
                     let shareImage = ShareImageView.snapshot()
                     UIImageWriteToSavedPhotosAlbum(shareImage,nil,nil,nil)
+                    saveAlert.toggle()
                 }){
                     Text("저장")
                         .font(.system(size: 17, weight: .bold))
@@ -98,6 +100,10 @@ struct DetailSheetView: View {
             randomScript = randomDescription.randomElement()
         }.sheet(isPresented: $isPresentShareSheet){
             ShareSheet(activityItems: [shareImage!])
+        }.alert("저장되었습니다.", isPresented: $saveAlert) {
+            Button("확인") {
+                
+            }
         }
             
             
