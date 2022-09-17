@@ -18,9 +18,9 @@ class UserViewModel: ObservableObject {
         db.collection("users").document(uid).setData([
             "total_distance": 0,
             "total_time": 0,
-            "my_badge": [],
+            "my_badge": ["산호초","조개","해마","해파리"],
             "my_cards": [],
-            "represent_badge": ""
+            "represent_badge": "해파리"
         ]) { error in
             if error == nil {
                 self.getUserData(uid: uid)
@@ -39,7 +39,7 @@ class UserViewModel: ObservableObject {
                             id: uid,
                             totalDistance: data!["total_distance"] as? Int ?? 0,
                             totalTime: data!["total_time"] as? Int ?? 0,
-                            myBadges: data!["my_badges"] as? [String] ?? [],
+                            myBadges: data!["my_badge"] as? [String] ?? [],
                             myCards: data!["my_cards"] as? [String] ?? [],
                             representBadge: data!["represent_badge"] as? String ?? ""
                         )

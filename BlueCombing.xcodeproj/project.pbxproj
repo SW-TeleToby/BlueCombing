@@ -15,6 +15,12 @@
 		0EE72C2428D46D1E00C54505 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2328D46D1E00C54505 /* Picture.swift */; };
 		0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2528D46EDC00C54505 /* CameraView.swift */; };
 		0EE72C2A28D4949000C54505 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2928D4949000C54505 /* ShareView.swift */; };
+		0EE72C3428D5196E00C54505 /* MyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3328D5196E00C54505 /* MyActivityView.swift */; };
+		0EE72C3728D51D2F00C54505 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3628D51D2F00C54505 /* Lottie.swift */; };
+		0EE72C3A28D51E8C00C54505 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE72C3928D51E8C00C54505 /* Lottie */; };
+		0EE72C3C28D51F0100C54505 /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE72C3B28D51F0100C54505 /* wave.json */; };
+		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
+		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
 		168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242228CDD1F500036B70 /* UserViewModel.swift */; };
 		168C242528CDD20000036B70 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242428CDD20000036B70 /* CardViewModel.swift */; };
 		168C242728CDD20900036B70 /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C242628CDD20900036B70 /* AttractionViewModel.swift */; };
@@ -63,6 +69,11 @@
 		0EE72C2328D46D1E00C54505 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		0EE72C2528D46EDC00C54505 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		0EE72C2928D4949000C54505 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		0EE72C3328D5196E00C54505 /* MyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityView.swift; sourceTree = "<group>"; };
+		0EE72C3628D51D2F00C54505 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		0EE72C3B28D51F0100C54505 /* wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
+		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
+		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
 		168C242228CDD1F500036B70 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		168C242428CDD20000036B70 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		168C242628CDD20900036B70 /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
@@ -105,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F42DF028CDBB3500995F1E /* FirebaseDatabase in Frameworks */,
+				0EE72C3A28D51E8C00C54505 /* Lottie in Frameworks */,
 				16F42DF228CDBB3500995F1E /* FirebaseFirestore in Frameworks */,
 				168C242C28CDDB2700036B70 /* FacebookLogin in Frameworks */,
 				16F42DEC28CDBB3500995F1E /* FirebaseAnalytics in Frameworks */,
@@ -130,6 +142,25 @@
 			path = MakeCardViews;
 			sourceTree = "<group>";
 		};
+		0EE72C3228D5195900C54505 /* MyActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				0EE72C3328D5196E00C54505 /* MyActivityView.swift */,
+				0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */,
+				0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */,
+			);
+			path = MyActivityView;
+			sourceTree = "<group>";
+		};
+		0EE72C3528D51D0600C54505 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				0EE72C3B28D51F0100C54505 /* wave.json */,
+				0EE72C3628D51D2F00C54505 /* Lottie.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
 		16F42DC328CDA3CA00995F1E = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +180,7 @@
 		16F42DCE28CDA3CA00995F1E /* BlueCombing */ = {
 			isa = PBXGroup;
 			children = (
+				0EE72C3528D51D0600C54505 /* Utills */,
 				16F42DF828CDC1C900995F1E /* BlueCombing.entitlements */,
 				16F42DCF28CDA3CA00995F1E /* BlueCombingApp.swift */,
 				16F42DDD28CDB6DF00995F1E /* Model */,
@@ -189,6 +221,7 @@
 		16F42DDE28CDB6E600995F1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0EE72C3228D5195900C54505 /* MyActivityView */,
 				16F42DD128CDA3CA00995F1E /* ContentView.swift */,
 				B2DC0DA728D45D7A00867084 /* MainTabView.swift */,
 				B23C44B628D461B10096DE8F /* Map */,
@@ -273,7 +306,7 @@
 			children = (
 				B23C44BF28D46E5F0096DE8F /* ViewExtention.swift */,
 			);
-			path = Extension;
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +332,7 @@
 				16F42DF128CDBB3500995F1E /* FirebaseFirestore */,
 				16F42DF328CDBB3500995F1E /* FirebaseStorage */,
 				168C242B28CDDB2700036B70 /* FacebookLogin */,
+				0EE72C3928D51E8C00C54505 /* Lottie */,
 			);
 			productName = BlueCombing;
 			productReference = 16F42DCC28CDA3CA00995F1E /* BlueCombing.app */;
@@ -331,6 +365,7 @@
 			packageReferences = (
 				16F42DEA28CDBB3500995F1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				0EE72C3828D51E8C00C54505 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 16F42DCD28CDA3CA00995F1E /* Products */;
 			projectDirPath = "";
@@ -347,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F42DD728CDA3CC00995F1E /* Preview Assets.xcassets in Resources */,
+				0EE72C3C28D51F0100C54505 /* wave.json in Resources */,
 				708B5A6728D4828300B863E8 /* Pretendard-Bold.otf in Resources */,
 				16F42DD428CDA3CC00995F1E /* Assets.xcassets in Resources */,
 				708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */,
@@ -367,6 +403,9 @@
 				0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */,
 				16F42DD228CDA3CA00995F1E /* ContentView.swift in Sources */,
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
+				0EE72C3428D5196E00C54505 /* MyActivityView.swift in Sources */,
+				0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */,
+				0EE72C3728D51D2F00C54505 /* Lottie.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
@@ -377,6 +416,7 @@
 				168C242528CDD20000036B70 /* CardViewModel.swift in Sources */,
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
 				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
+				0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */,
 				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
@@ -611,6 +651,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0EE72C3828D51E8C00C54505 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -630,6 +678,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0EE72C3928D51E8C00C54505 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EE72C3828D51E8C00C54505 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		168C242B28CDDB2700036B70 /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
