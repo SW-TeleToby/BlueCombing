@@ -57,6 +57,7 @@
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
 		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
 		B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C928D4B9850096DE8F /* MultiModal.swift */; };
+		B28CB29228D533BE00202F33 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28CB29128D533BE00202F33 /* CanvasView.swift */; };
 		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
 		B2DC0DA828D45D7A00867084 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0DA728D45D7A00867084 /* MainTabView.swift */; };
 		B2E576BD28D4D2EE000D77A5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E576BC28D4D2EE000D77A5 /* Font.swift */; };
@@ -109,6 +110,7 @@
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
 		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		B23C44C928D4B9850096DE8F /* MultiModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModal.swift; sourceTree = "<group>"; };
+		B28CB29128D533BE00202F33 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		B2DC0DA728D45D7A00867084 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		B2E576BC28D4D2EE000D77A5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				B23C44B728D461F30096DE8F /* MapView.swift */,
 				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
 				B23C44C928D4B9850096DE8F /* MultiModal.swift */,
+				B28CB29128D533BE00202F33 /* CanvasView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
+				B28CB29228D533BE00202F33 /* CanvasView.swift in Sources */,
 				168C245D28D46D7900036B70 /* AppleLoginButtom.swift in Sources */,
 				B2E576BD28D4D2EE000D77A5 /* Font.swift in Sources */,
 				168C242328CDD1F500036B70 /* UserViewModel.swift in Sources */,

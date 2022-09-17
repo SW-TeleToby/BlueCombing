@@ -14,12 +14,13 @@ struct MapView: UIViewRepresentable {
     @State var map: MKMapView
     let delegate: MapDelegate
     @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    @Binding var movingDistance : Double
     let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
     
     func makeUIView(context: Context) -> some UIView {
-        map.isPitchEnabled = false
-        map.isZoomEnabled = false
-        map.isScrollEnabled = false
+//        map.isPitchEnabled = false
+//        map.isZoomEnabled = false
+//        map.isScrollEnabled = false
 //        map.isRotateEnabled = false
 //        map.showsTraffic = false
         map.delegate = delegate
@@ -33,9 +34,11 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        guard let last = pathCoordinates.last else { return }
+        guard let first = pathCoordinates.first, let last = pathCoordinates.last else { return }
         let region = MKCoordinateRegion(center: last, span: span)
         map.setRegion(region, animated: true)
+        
+        movingDistance = CLLocation(latitude: first.latitude, longitude: first.longitude).distance(from: CLLocation(latitude: last.latitude, longitude: last.longitude))
         
         if pathCoordinates.count < 1 {
             return

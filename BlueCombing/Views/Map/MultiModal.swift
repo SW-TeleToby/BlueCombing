@@ -5,16 +5,22 @@
 //  Created by Inho Choi on 2022/09/16.
 //
 
-import SwiftUI
+import MapKit
+import UIKit
 import FirebaseAuth
+import SwiftUI
 
 struct MultiModal: View {
     @State var modalHeight = CGFloat(168)
+    @State var loginCancleAlertTrigger = false
     @Binding var recordEndTrigger: Bool
     @Binding var recordStartTrigger: Bool
     @Binding var currentModal: Int
+    @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    @State var routeImage = Image("Is not Load")
+    @Binding var movingTime: Int
+    @Binding var movingDistance: Double
     @State private var showingAlert = false
-    
     let firebaseAuth = Auth.auth()
     @State var isSignIn: Bool = false
 
@@ -61,6 +67,12 @@ struct MultiModal: View {
                 }
             }
         })
+            .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $loginCancleAlertTrigger) {
+            Button("취소", role: .cancel) { }
+            Button("확인", role: .destructive) {
+                recordEndTrigger = false
+                recordStartTrigger = false
+                currentModal = 0
         .onAppear {
             if firebaseAuth.currentUser != nil {
                 isSignIn = true
@@ -152,12 +164,49 @@ extension MultiModal {
                 .padding(.horizontal, 16)
 
                 Spacer().frame(height: 18)
+                ZStack {
+                    Rectangle()
+                        .cornerRadius(16)
+                        .foregroundColor(.combingBlue2)
+                        .padding(.horizontal, 16)
 
-                Rectangle()
-                    .cornerRadius(16)
-                    .foregroundColor(.combingBlue2)
+                    // MARK: Canvas View
+                    HStack {
+                        routeImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 115, height: 121)
+
+                        Spacer().frame(width: 19)
+
+                        VStack(alignment: .leading) {
+                            Text("이동 거리")
+                                .font(.Body5)
+                                .foregroundColor(.combingGray4)
+                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                                .font(.Heading2)
+                                .foregroundColor(.combingBlue5)
+
+                            Spacer().frame(height: 22)
+
+                            Text("이동 시간")
+                                .font(.Body5)
+                                .foregroundColor(.combingGray4)
+                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분 \(movingTime % 60)초")
+                                .font(.Heading2)
+                                .foregroundColor(.combingBlue5)
+                        }
+                        Spacer()
+                    }
+                        .padding(.leading, 54)
+                        .padding(.vertical, 40)
+                        .onAppear {
+                        CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
+                            routeImage = Image(uiImage: image).resizable()
+                        }
+                    }
+                }
                     .frame(height: 201)
-                    .padding(.horizontal, 16)
 
                 Button(action: {
                     withAnimation(.spring()) {
@@ -263,7 +312,7 @@ extension MultiModal {
                         .font(.Body2)
                     Spacer()
                 }
-                
+
                 Spacer().frame(height: 18)
 
                 NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .beachCombing) {
@@ -293,14 +342,15 @@ extension MultiModal {
                     }
                 
                 Spacer().frame(height: 16)
-                
-                Button(action: {}){
+
+                Button(action: { loginCancleAlertTrigger.toggle() }) {
                     Text("카드를 안 만들래요")
                         .font(.Body3)
                         .foregroundColor(.combingGray2)
                 }
             }
-            .padding(.leading, 16)
+                .padding(.leading, 16)
         }
     } // loginModal
 }
+
