@@ -260,7 +260,7 @@ extension MultiModal {
                 Spacer().frame(height: 16)
 
                 NavigationLink {
-                    MakeCardView()
+                    MakeCardView(movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
                         .onAppear {
                         currentModal = 0
                     }

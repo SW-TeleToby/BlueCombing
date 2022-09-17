@@ -15,12 +15,18 @@ struct ShareView: View {
     @State var isPresentShareSheet = false
     @State var saveAlert = false
     @State var badgeDescription = ""
+    var routeImage: Image
     var dismissAction: () -> Void
     
     var ShareImageView: some View {
         VStack(spacing:0){
-            CardView(card: $card)
-                .frame(width: containerWidth, height: imageHeight)
+            ZStack {
+                CardView(card: $card)
+                    .frame(width: containerWidth, height: imageHeight)
+                routeImage
+                    .frame(width: containerWidth/2, height: containerWidth/2)
+            }
+            
             ZStack{
                 Rectangle()
                     .fill(.white)

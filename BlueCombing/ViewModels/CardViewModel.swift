@@ -15,6 +15,10 @@ class CardViewModel: ObservableObject {
     public static var longitude: Double = 0.0
     public static var latitude: Double = 0.0
     public static var location: String = ""
+    public static var distance: Double = 0.0
+    public static var time: Int = 0
+    
+    
     init() {
         
     }

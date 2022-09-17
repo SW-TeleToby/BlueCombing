@@ -22,12 +22,22 @@ struct MakeCardView: View {
     @State var cameraDenyAlert = false
     @State var isSignin = false
     @State var presentBadge = ""
+    
+    var movingDistance : Double
+    var movingTime : Int
+    var routeImage: Image
+    
     let firebaseAuth = Auth.auth()
     
     var SaveImageView: some View {
         VStack(spacing:0){
-            CardView(card: $cardViewModel.newCard)
-                .frame(width: containerWidth, height: imageHeight)
+            ZStack{
+                CardView(card: $cardViewModel.newCard)
+                routeImage
+                    .resizable()
+                    .frame(width: containerWidth/2, height: containerWidth/2)
+            }.frame(width: containerWidth, height: imageHeight)
+            
         // .edgesIgnoringSafeArea(.all) 얘를 넣어줘야 위에 여백 안생긴다.
         }
         .edgesIgnoringSafeArea(.all)
@@ -37,8 +47,14 @@ struct MakeCardView: View {
     var body: some View {
         VStack(spacing:0) {
             MakeCardViewNavbar().padding(.vertical,20)
-            CardView(card: $cardViewModel.newCard)
-                .frame(width: containerWidth, height: imageHeight)
+            ZStack{
+                CardView(card: $cardViewModel.newCard)
+                    .frame(width: containerWidth, height: imageHeight)
+                routeImage
+                    .resizable()
+                    .frame(width: containerWidth/2, height: containerWidth/2)
+            }
+            
             Button(action: {
                 // 여기서 먼저 action sheet 띄우기
                 showingOption = true
@@ -111,7 +127,7 @@ struct MakeCardView: View {
                 }
             }
         }.sheet(isPresented: $isPresentShareView){
-            ShareView(card: $cardViewModel.newCard, presentBadge: $presentBadge) {
+            ShareView(card: $cardViewModel.newCard, presentBadge: $presentBadge, routeImage: routeImage) {
                 dismiss()
             }
         }.onAppear {
@@ -123,6 +139,8 @@ struct MakeCardView: View {
             }
             cardViewModel.checkLocation()
             cardViewModel.newCard.location = CardViewModel.location
+            cardViewModel.newCard.distance = movingDistance
+            cardViewModel.newCard.time = movingTime
         }
         
     }
@@ -176,6 +194,6 @@ struct MakeCardView: View {
 
 struct MakeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MakeCardView()
+        MakeCardView(movingDistance: 0.0, movingTime: 1, routeImage: Image("img_tour"))
     }
 }
