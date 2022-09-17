@@ -42,13 +42,15 @@ struct LoginHome: View {
                 .padding(.horizontal)
                 .padding(.bottom, 4)
                 Button {
-                    
+                    presentationMode.wrappedValue.dismiss()
+                    isSignIn = false
                 } label: {
                     Text("로그인하지 않을래요")
                         .font(.custom("Pretendard-SemiBold", size: 16))
                         .foregroundColor(.combingGray4)
                 }
                 .padding(.bottom, 21)
+                .navigationBarBackButtonHidden(true)
             }
         }
         .onDisappear {
