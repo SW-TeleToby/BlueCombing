@@ -20,8 +20,9 @@ struct MultiModal: View {
     @State var routeImage = Image("Is not Load")
     @Binding var movingTime: Int
     @Binding var movingDistance: Double
-
+    @State private var showingAlert = false
     let firebaseAuth = Auth.auth()
+    @State var isSignIn: Bool = false
 
     var body: some View {
         VStack {
@@ -72,6 +73,11 @@ struct MultiModal: View {
                 recordEndTrigger = false
                 recordStartTrigger = false
                 currentModal = 0
+        .onAppear {
+            if firebaseAuth.currentUser != nil {
+                isSignIn = true
+            } else {
+                isSignIn = false
             }
         }
     }
@@ -206,7 +212,7 @@ extension MultiModal {
                     withAnimation(.spring()) {
                         recordStartTrigger = false
                         recordEndTrigger = false
-                        if firebaseAuth.currentUser != nil {
+                        if isSignIn {
                             currentModal = 2
                         } else {
                             currentModal = 3
@@ -250,10 +256,13 @@ extension MultiModal {
                 }
 
                 Spacer().frame(height: 16)
-
-                Button(action: {
-                    // MARK: 액션 추가하기
-                }) {
+                
+                NavigationLink {
+                    MakeCardView()
+                        .onAppear {
+                            currentModal = 0
+                        }
+                } label: {
                     ZStack {
                         Rectangle()
                             .foregroundColor(.combingBlue4)
@@ -306,7 +315,14 @@ extension MultiModal {
 
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: .constant(false))) {
+                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .beachCombing) {
+                    if isSignIn {
+                        currentModal = 2
+                    } else {
+                        currentModal = 3
+                        showingAlert = true
+                    }
+                } ) {
                     ZStack {
                         Rectangle()
                             .cornerRadius(16)
@@ -317,7 +333,14 @@ extension MultiModal {
                     }
                 }
                     .frame(height: 56)
-
+                    .alert(isPresented: $showingAlert) {
+                        let firstButton = Alert.Button.default(Text("확인")) {
+                            currentModal = 0
+                        }
+                        let secondButton = Alert.Button.cancel(Text("취소"))
+                        return Alert(title: Text("로그인하지 않으면 비치코밍 기록을 남길 수 없습니다"), primaryButton: firstButton, secondaryButton: secondButton)
+                    }
+                
                 Spacer().frame(height: 16)
 
                 Button(action: { loginCancleAlertTrigger.toggle() }) {

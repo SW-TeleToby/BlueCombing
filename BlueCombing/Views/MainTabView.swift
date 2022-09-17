@@ -9,18 +9,24 @@ import SwiftUI
 
 struct MainTabView: View {
     @State var currentTab: Tab = Tab.beachCombing
+    @AppStorage("isFirstStart") var isFirstStart: Bool = true
+    @State var showingOnboarding: Bool = true
     
     var body: some View {
-        NavigationView {
-            TabView(selection: $currentTab) {
-                ForEach(Tab.allCases, id: \.self) { tab in
-                    tab.view.tabItem {
-                        if currentTab == tab {
-                            Image(tab.ImageName + "_on")
-                        } else {
-                            Image(tab.ImageName + "_off")
+        if isFirstStart {
+            OnboardingView(isFirstStart: $isFirstStart)
+        } else {
+            NavigationView {
+                TabView(selection: $currentTab) {
+                    ForEach(Tab.allCases, id: \.self) { tab in
+                        tab.view.tabItem {
+                            if currentTab == tab {
+                                Image(tab.ImageName + "_on")
+                            } else {
+                                Image(tab.ImageName + "_off")
+                            }
+                            Text(tab.title)
                         }
-                        Text(tab.title)
                     }
                 }
             }

@@ -31,7 +31,9 @@ struct ContentView: View {
                 }
             } else {
                 NavigationLink {
-                    LoginHome(isSignIn: $isSignIn)
+                    LoginHome(isSignIn: $isSignIn, loginMode: .myActivity) {
+                        
+                    }
                 } label: {
                     Text("로그인하러 가기")
                 }

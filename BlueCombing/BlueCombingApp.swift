@@ -17,6 +17,7 @@ struct BlueCombingApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
+//            ContentView()
         }
     }
     

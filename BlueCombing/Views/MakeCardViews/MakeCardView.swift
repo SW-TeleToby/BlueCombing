@@ -7,9 +7,12 @@
 
 import SwiftUI
 import Photos
+import FirebaseAuth
 
 struct MakeCardView: View {
     @StateObject var cardViewModel = CardViewModel()
+    @ObservedObject var userViewModel = UserViewModel()
+    @Environment(\.dismiss) var dismiss
     @State var showingOption = false
     @State var isPresentedCamera = false
     @State var isPresentedAllImage = false
@@ -17,6 +20,18 @@ struct MakeCardView: View {
     @State var isPresentedPermissionCheck = false
     @State var isPresentShareView = false
     @State var cameraDenyAlert = false
+    @State var isSignin = false
+    let firebaseAuth = Auth.auth()
+    
+    var SaveImageView: some View {
+        VStack(spacing:0){
+            CardView(card: $cardViewModel.newCard)
+                .frame(width: containerWidth, height: imageHeight)
+        // .edgesIgnoringSafeArea(.all) 얘를 넣어줘야 위에 여백 안생긴다.
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+    
     
     var body: some View {
         VStack(spacing:0) {
@@ -58,7 +73,9 @@ struct MakeCardView: View {
                 .foregroundColor(Color.combingGray4)
             Spacer()
             Button(action: {
+                let saveImage = SaveImageView.snapshot()
                 isPresentShareView.toggle()
+                userViewModel.uploadPicture(image: saveImage)
             }){
                 ZStack {
                     Rectangle()
@@ -70,6 +87,7 @@ struct MakeCardView: View {
                         .foregroundColor(.white)
                 }
             }
+            .navigationTitle("")
             .navigationBarHidden(true)
         }
         .sheet(isPresented: $isPresentedAllImage){
@@ -91,7 +109,16 @@ struct MakeCardView: View {
                 }
             }
         }.sheet(isPresented: $isPresentShareView){
-            ShareView(card: $cardViewModel.newCard)
+            ShareView(card: $cardViewModel.newCard) {
+                dismiss()
+            }
+        }.onAppear {
+            if firebaseAuth.currentUser != nil {
+                isSignin = true
+                userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
+            } else {
+                isSignin = false
+            }
         }
         
     }
@@ -139,6 +166,8 @@ struct MakeCardView: View {
             
         }
     }
+    
+    
 }
 
 struct MakeCardView_Previews: PreviewProvider {
