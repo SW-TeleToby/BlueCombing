@@ -94,6 +94,7 @@ struct MakeCardView: View {
                 presentBadge = userViewModel.user!.representBadge
                 isPresentShareView.toggle()
                 userViewModel.uploadPicture(image: saveImage)
+                userViewModel.updateUser(uid: userViewModel.user!.id, info: ["total_time": userViewModel.user!.totalTime + movingTime, "total_distance":userViewModel.user!.totalDistance+Int(movingDistance)])
             }){
                 ZStack {
                     Rectangle()
