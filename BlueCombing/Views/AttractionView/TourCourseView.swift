@@ -19,7 +19,6 @@ struct TourCourseView: View {
                 cover
                 
                 content
-                    .offset(y: 120)
                     .padding(.bottom, 200)
                     .opacity(appear[2] ? 1 : 0)
             }
@@ -124,10 +123,10 @@ struct TourCourseView: View {
 }
 
 
-//struct TourCourseView_Previews: PreviewProvider {
-//    @Namespace static var namespace
-//    
-//    static var previews: some View {
-//        TourCourseView(namespace: namespace, show: .constant(true))
-//    }
-//}
+struct TourCourseView_Previews: PreviewProvider {
+    @Namespace static var namespace
+    
+    static var previews: some View {
+        TourCourseView(namespace: namespace, course: Course(name: "호미곶 상생의 손", location: "경상북도 포항시 남구 호미곶면 해맞이로 136", text: "상생의 손은 포항시 호미곶에 있는 해맞이 광장에 위치한 기념물로 인류가 화합하고 화해하며 더불어 사는 사회를 만들어가자는 의미로 만들어진 조각물이다. 바다에는 오른손이, 육지에는 왼손이 있다. \n1999년에 조각가 영남대학교 김승국 교수를 제작되었으며, 이어령 대한민국 새천년준비위원회 위원장, 대구은행 협찬 당시에 붙인 이름이다.\n하지만 상생의 손 조각의 원본이라 할 수 있는 작품은 서울예술대학(구 서울예술전문대) 사진과 1997년 졸업 작품집에 먼저 등장했다.", background: "img_hand"), show: .constant(true))
+    }
+}
