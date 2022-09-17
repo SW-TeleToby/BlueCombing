@@ -73,6 +73,7 @@ struct LoginHome: View {
         .onDisappear {
             self.dismissAction()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     func appleLogin() {
