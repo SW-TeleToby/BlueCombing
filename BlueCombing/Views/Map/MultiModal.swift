@@ -23,7 +23,8 @@ struct MultiModal: View {
     @State private var showingAlert = false
     let firebaseAuth = Auth.auth()
     @State var isSignIn: Bool = false
-
+    @State var isCustom: Bool = true
+    
     var body: some View {
         VStack {
             Spacer()
@@ -273,7 +274,7 @@ extension MultiModal {
                 Spacer().frame(height: 16)
 
                 NavigationLink {
-                    MakeCardView(movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
+                    MakeCardView(isCustom: true, movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
                         .onAppear {
                         currentModal = 0
                     }
@@ -291,9 +292,12 @@ extension MultiModal {
 
                 Spacer().frame(height: 16)
 
-                Button(action: {
-                    // MARK: 액션 추가하기
-                }) {
+                NavigationLink {
+                    MakeCardView(isCustom: false, movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
+                        .onAppear {
+                        currentModal = 0
+                    }
+                } label: {
                     HStack {
                         Spacer()
                         Text("기본 카드 사용하기")

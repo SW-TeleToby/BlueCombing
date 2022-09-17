@@ -22,7 +22,7 @@ struct MakeCardView: View {
     @State var cameraDenyAlert = false
     @State var isSignin = false
     @State var presentBadge = ""
-    
+    var isCustom: Bool
     var movingDistance : Double
     var movingTime : Int
     var routeImage: Image
@@ -54,40 +54,42 @@ struct MakeCardView: View {
                     .resizable()
                     .frame(width: containerWidth/2, height: containerWidth/2)
             }
-            
-            Button(action: {
-                // 여기서 먼저 action sheet 띄우기
-                showingOption = true
-            }){
-                ZStack {
-                    Rectangle()
-                        .fill(Color.combingGray5)
-                    Text("이미지 변경하기")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
-                }.frame(width: containerWidth, height:45)
-            }.confirmationDialog("카드 이미지 변경", isPresented: $showingOption, titleVisibility: .visible) {
-                Button("카메라 촬영"){
-                    // 카메라 촬영 로직. 굳.
-                    takePicture()
+            if isCustom {
+                Button(action: {
+                    // 여기서 먼저 action sheet 띄우기
+                    showingOption = true
+                }){
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.combingGray5)
+                        Text("이미지 변경하기")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.white)
+                    }.frame(width: containerWidth, height:45)
+                }.confirmationDialog("카드 이미지 변경", isPresented: $showingOption, titleVisibility: .visible) {
+                    Button("카메라 촬영"){
+                        // 카메라 촬영 로직. 굳.
+                        takePicture()
+                    }
+                    
+                    Button("앨범에서 사진 선택"){
+                        // 이미지 피커 로직. 굳.
+                        selectImage()
+                    }
+                    
+                    Button("취소", role: .cancel){
+                    }
+                    
                 }
                 
-                Button("앨범에서 사진 선택"){
-                    // 이미지 피커 로직. 굳.
-                    selectImage()
-                }
-                
-                Button("취소", role: .cancel){
-                }
-                
+                Spacer()
+                Text("직접 찍은 관광지 사진을 넣어서\n나만의 비치코밍 카드를 만들어보세요!")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 16, weight: .medium))
+                    .lineSpacing(3)
+                    .foregroundColor(Color.combingGray4)
             }
             
-            Spacer()
-            Text("직접 찍은 관광지 사진을 넣어서\n나만의 비치코밍 카드를 만들어보세요!")
-                .multilineTextAlignment(.center)
-                .font(.system(size: 16, weight: .medium))
-                .lineSpacing(3)
-                .foregroundColor(Color.combingGray4)
             Spacer()
             Button(action: {
                 let saveImage = SaveImageView.snapshot()
@@ -195,6 +197,6 @@ struct MakeCardView: View {
 
 struct MakeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MakeCardView(movingDistance: 0.0, movingTime: 1, routeImage: Image("img_tour"))
+        MakeCardView(isCustom: false, movingDistance: 0.0, movingTime: 1, routeImage: Image("img_tour"))
     }
 }
