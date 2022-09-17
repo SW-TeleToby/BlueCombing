@@ -95,6 +95,8 @@ struct MyActivityView: View {
                 isSignin = false
             }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 
