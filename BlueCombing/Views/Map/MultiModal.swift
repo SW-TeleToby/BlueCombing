@@ -14,7 +14,7 @@ struct MultiModal: View {
     @State var modalHeight = CGFloat(168)
     @State var loginCancleAlertTrigger = false
     @Binding var recordEndTrigger: Bool
-    @Binding var recordStartTrigger: Bool
+    @Binding var isRecordStart: Bool
     @Binding var currentModal: Int
     @Binding var pathCoordinates: [CLLocationCoordinate2D]
     @State var routeImage = Image("Is not Load")
@@ -72,7 +72,7 @@ struct MultiModal: View {
             Button("취소", role: .cancel) { }
             Button("확인", role: .destructive) {
                 recordEndTrigger = false
-                recordStartTrigger = false
+                isRecordStart = false
                 currentModal = 0
             }
         }
@@ -114,7 +114,7 @@ extension MultiModal {
                         withAnimation(.spring()) {
                             modalHeight = 0
                             currentModal = -1
-                            recordStartTrigger = true
+                            isRecordStart = true
                         }
                     }) {
                         ZStack {
@@ -226,7 +226,7 @@ extension MultiModal {
 
                 Button(action: {
                     withAnimation(.spring()) {
-                        recordStartTrigger = false
+                        isRecordStart = false
                         recordEndTrigger = false
                         if isSignIn {
                             currentModal = 2

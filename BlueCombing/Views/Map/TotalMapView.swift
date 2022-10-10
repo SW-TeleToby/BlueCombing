@@ -10,10 +10,11 @@ import UIKit
 import MapKit
 
 struct TotalMapView: View {
-    @State var mapManager = MapDelegate()
+    @State var map = MKMapView()
     @State var isRecordEnd = false
     @State var isRecordStart = false
     @State var currentModal = 0
+    // TODO: GPS 연결되면 초기값 변경해야 합니다.
     @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830)]
     @State var movingTime: Int = 0
     @State var movingDistance: Double = 0.0
@@ -23,7 +24,7 @@ struct TotalMapView: View {
     var body: some View {
         ZStack {
             
-            MapView(map: mapManager.map, delegate: mapManager, pathCoordinates: $pathCoordinates, movingDistance: $movingDistance)
+            MapView(map: $map, pathCoordinates: $pathCoordinates, movingDistance: $movingDistance)
                 .ignoresSafeArea(.container, edges: .top)
 
             Image("userPin")
@@ -39,7 +40,7 @@ struct TotalMapView: View {
 
             MultiModal(
                 recordEndTrigger: $isRecordEnd,
-                recordStartTrigger: $isRecordStart,
+                isRecordStart: $isRecordStart,
                 currentModal: $currentModal,
                 pathCoordinates: $pathCoordinates,
                 movingTime: $movingTime,
@@ -49,7 +50,7 @@ struct TotalMapView: View {
                     if value {
                         startMoving()
                     } else {
-                        mapManager.map.removeOverlays(mapManager.map.overlays)
+                        map.removeOverlays(map.overlays)
                         pathCoordinates.removeAll()
                     }
                 })
@@ -76,7 +77,7 @@ struct TotalMapView: View {
         
         timer?.invalidate()
         
-        mapManager.map.removeOverlays(mapManager.map.overlays)
+        map.removeOverlays(map.overlays)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             movingTime += 1
@@ -93,8 +94,8 @@ extension TotalMapView {
                     Button(action: {
                         isRecordEnd = true
                         currentModal = 1
-                        CardViewModel.longitude = mapManager.map.region.center.longitude
-                        CardViewModel.latitude = mapManager.map.region.center.latitude
+                        CardViewModel.longitude = map.region.center.longitude
+                        CardViewModel.latitude = map.region.center.latitude
                     }) {
                         ZStack {
                             Rectangle()
