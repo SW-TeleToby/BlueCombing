@@ -65,7 +65,6 @@
 		B23C44B828D461F30096DE8F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44B728D461F30096DE8F /* MapView.swift */; };
 		B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BA28D464040096DE8F /* MapDelegate.swift */; };
 		B23C44BD28D4687D0096DE8F /* TotalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44BC28D4687D0096DE8F /* TotalMapView.swift */; };
-		B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C728D499000096DE8F /* CustomModalView.swift */; };
 		B23C44CA28D4B9850096DE8F /* MultiModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C44C928D4B9850096DE8F /* MultiModal.swift */; };
 		B28CB29228D533BE00202F33 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28CB29128D533BE00202F33 /* CanvasView.swift */; };
 		B2DC0DA028D4504000867084 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC0D9F28D4504000867084 /* AppData.swift */; };
@@ -128,7 +127,6 @@
 		B23C44B728D461F30096DE8F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B23C44BA28D464040096DE8F /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B23C44BC28D4687D0096DE8F /* TotalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMapView.swift; sourceTree = "<group>"; };
-		B23C44C728D499000096DE8F /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		B23C44C928D4B9850096DE8F /* MultiModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModal.swift; sourceTree = "<group>"; };
 		B28CB29128D533BE00202F33 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		B2DC0D9F28D4504000867084 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				708B5A7128D4DA4A00B863E8 /* AttractionView */,
 				0EE72C3228D5195900C54505 /* MyActivityView */,
 				16F42DF528CDBF0F00995F1E /* Authenications */,
-				B23C44C728D499000096DE8F /* CustomModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,7 +476,6 @@
 				16F42DE528CDB7BB00995F1E /* Attraction.swift in Sources */,
 				B23C44B828D461F30096DE8F /* MapView.swift in Sources */,
 				0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */,
-				B23C44C828D499000096DE8F /* CustomModalView.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				16F157D728D6196F0001B422 /* LocationViewModel.swift in Sources */,
