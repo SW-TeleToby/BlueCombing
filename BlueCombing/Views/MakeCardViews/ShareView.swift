@@ -18,6 +18,25 @@ struct ShareView: View {
     var routeImage: Image
     var dismissAction: () -> Void
     
+    
+    var cardCircleBlurEffect: some View {
+        ZStack {
+            Circle()
+                .fill(Color(hex: 0x0024DE, alpha: 0.1))
+                .blur(radius: 60)
+                .frame(width: 400, height: 400)
+                .position(x: 500, y:100)
+                .clipped()
+            Circle()
+                .fill(Color(hex: 0x00DED1, alpha: 0.1))
+                .blur(radius: 60)
+                .frame(width: 200, height: 200)
+                .position(x: 300, y:200)
+                .clipped()
+        }
+    }
+    
+    
     var ShareImageView: some View {
         VStack(spacing:0){
             ZStack {
@@ -36,6 +55,7 @@ struct ShareView: View {
                     .font(.system(size: 19, weight: .medium))
                     .lineSpacing(3)
                     .foregroundColor(Color(red: 0.003, green: 0.124, blue: 0.437))
+                cardCircleBlurEffect
             }.frame(width: containerWidth, height: 126)
         // .edgesIgnoringSafeArea(.all) 얘를 넣어줘야 위에 여백 안생긴다.
         }
@@ -53,7 +73,6 @@ struct ShareView: View {
                 Text("비치코밍 인증하기")
                     .font(.system(size: 17, weight: .bold))
                 Button(action: {
-                    print(ShareImageView)
                     let shareImage = ShareImageView.snapshot()
                     UIImageWriteToSavedPhotosAlbum(shareImage,nil,nil,nil)
                     saveAlert.toggle()
@@ -80,8 +99,10 @@ struct ShareView: View {
                 ZStack {
                     Rectangle()
                         .fill(Color.combingGradient1)
-                        .frame(width: containerWidth, height: 56)
+                        .frame(height: 60)
                         .cornerRadius(16)
+                        .padding(.horizontal, 20)
+                        .scaleEffect(0.9)
                     Text("카드 공유하기")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
@@ -173,14 +194,6 @@ struct ShareSheet: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        // nothing to do here
     }
 }
 
-//struct ShareView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShareView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다.")))) {
-//
-//        }
-//    }
-//}
