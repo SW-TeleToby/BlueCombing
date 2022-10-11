@@ -25,13 +25,13 @@ struct ShareView: View {
                 .fill(Color(hex: 0x0024DE, alpha: 0.1))
                 .blur(radius: 60)
                 .frame(width: 400, height: 400)
-                .position(x: 500, y:100)
+                .position(x: 500, y:50)
                 .clipped()
             Circle()
                 .fill(Color(hex: 0x00DED1, alpha: 0.1))
                 .blur(radius: 60)
                 .frame(width: 200, height: 200)
-                .position(x: 300, y:200)
+                .position(x: 300, y:100)
                 .clipped()
         }
     }
@@ -158,6 +158,7 @@ struct ShareView: View {
     }
     
 }
+
 
 extension View {
     func snapshot() -> UIImage {
