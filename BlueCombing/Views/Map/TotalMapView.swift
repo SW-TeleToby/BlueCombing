@@ -39,7 +39,7 @@ struct TotalMapView: View {
             }
 
             MultiModal(
-                recordEndTrigger: $isRecordEnd,
+                isRecordEnd: $isRecordEnd,
                 isRecordStart: $isRecordStart,
                 currentModal: $currentModal,
                 pathCoordinates: $pathCoordinates,
