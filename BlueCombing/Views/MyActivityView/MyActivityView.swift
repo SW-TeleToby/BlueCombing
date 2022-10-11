@@ -32,6 +32,7 @@ struct MyActivityView: View {
             } else {
                 ScrollView {
                     ZStack(alignment:.top) {
+                        
                         VStack {
                             Rectangle()
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 0.779, green: 0.998, blue: 0.999), Color(red: 0.187, green: 0.704, blue: 0.868)]), startPoint: .top, endPoint: .bottom))
@@ -39,11 +40,12 @@ struct MyActivityView: View {
                             Rectangle()
                                 .fill(.white)
                         }.frame(width: deviceWidth)
+                        
                         VStack(alignment:.center) {
                             LottieView(jsonName: "wave")
                         }.frame(width: deviceWidth, height: deviceHeight)
+                        
                         VStack {
-                            
                             if let user = userViewModel.user {
                                 HStack (spacing:0){
                                     Text("바다의 ")
@@ -60,13 +62,11 @@ struct MyActivityView: View {
                                     Text(user.totalTime.timeToString())
                                         .font(.Body3)
                                         .foregroundColor(.combingBlue5)
-                                }.padding(.top,3)
+                                }.padding(.top,0.1)
                                 
                                 representBadgeView(representBadge: user.representBadge)
                                 
                                 VStack {
-                                    
-                                    
                                     HStack {
                                         Spacer()
                                         NavigationLink(destination: BadgeGradeView(user: userViewModel.user)){
