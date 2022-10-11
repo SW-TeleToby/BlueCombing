@@ -18,7 +18,7 @@ struct MyActivityView: View {
     var image: UIImage?
     var description: String?
     @State var selectedImage: UIImage?
-
+    
     let column = [
         /// define number of caullum here
         GridItem(.flexible()),
@@ -48,62 +48,67 @@ struct MyActivityView: View {
                                 HStack (spacing:0){
                                     Text("바다의 ")
                                         .font(.Heading2)
+                                        .foregroundColor(.combingBlue5)
                                     Text(user.representBadge)
                                         .font(.Heading2)
+                                        .foregroundColor(.combingBlue5)
                                 }.padding(.top,15.0)
                                 HStack (alignment: .bottom){
                                     Text("총 활동시간")
                                         .font(.Body5)
+                                        .foregroundColor(.combingGray4)
                                     Text(user.totalTime.timeToString())
                                         .font(.Body3)
+                                        .foregroundColor(.combingBlue5)
                                 }.padding(.top,3)
+                                
                                 representBadgeView(representBadge: user.representBadge)
                                 
                                 VStack {
                                     
-                                
-                                HStack {
-                                    Spacer()
-                                    NavigationLink(destination: BadgeGradeView(user: userViewModel.user)){
-                                        
-                                        HStack {
-                                            Text("내 등급 보기")
-                                                .font(.Button1)
-                                                .foregroundColor(.white)
-                                            Image(systemName: "chevron.right")
-                                                .font(.Button1)
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                }.padding(.top,15)
-                                        .padding(.bottom,60)
-                                    .padding(.trailing,20)
-//                                    .background(.yellow)
-//                                Spacer()
-//                                    .background(.green)
-                                LazyVGrid(columns:column, spacing: 20) {
-                                    ForEach(userViewModel.combingImages, id:\.self) { image in
-                                        Image(uiImage: image)
-                                            .resizable()
-                                            .frame(width: 172, height: 230)
-                                            .cornerRadius(12)
-                                            .onTapGesture {
-                                                selectedImage = image
-                                                isPresentedDetail.toggle()
-                                            }
                                     
-                                    }
-                                }.padding()
+                                    HStack {
+                                        Spacer()
+                                        NavigationLink(destination: BadgeGradeView(user: userViewModel.user)){
+                                            
+                                            HStack {
+                                                Text("내 등급 보기")
+                                                    .font(.Button1)
+                                                    .foregroundColor(.white)
+                                                Image(systemName: "chevron.right")
+                                                    .font(.Button1)
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                    }.padding(.top,15)
+                                        .padding(.bottom,60)
+                                        .padding(.trailing,20)
+                                    //                                    .background(.yellow)
+                                    //                                Spacer()
+                                    //                                    .background(.green)
+                                    LazyVGrid(columns:column, spacing: 20) {
+                                        ForEach(userViewModel.combingImages, id:\.self) { image in
+                                            Image(uiImage: image)
+                                                .resizable()
+                                                .frame(width: 172, height: 230)
+                                                .cornerRadius(12)
+                                                .onTapGesture {
+                                                    selectedImage = image
+                                                    isPresentedDetail.toggle()
+                                                }
+                                            
+                                        }
+                                    }.padding()
                                         .padding(.bottom)
-//                                    .background(.red)
-//                                Spacer()
+                                    //                                    .background(.red)
+                                    //                                Spacer()
                                 }
                             }
                         }
                     }
                 }
                 .background(Color(red: 0.779, green: 0.998, blue: 0.999))
-//                .edgesIgnoringSafeArea(.bottom)
+                //                .edgesIgnoringSafeArea(.bottom)
             }
         }.sheet(isPresented: $isPresentedDetail){
             DetailSheetView(image: $selectedImage)
@@ -124,7 +129,7 @@ struct MyActivityView: View {
 }
 
 
-struct representBadgeView : View{
+struct representBadgeView : View {
     var representBadge: String
     @State var description: String = "산호초"
     @State var BadgeTitle: String = "img_badge_coral"
@@ -138,7 +143,7 @@ struct representBadgeView : View{
                 .font(.Body4)
                 .multilineTextAlignment(.center)
                 .lineSpacing(3)
-                .foregroundColor(.combingBlue5_2)
+                .foregroundColor(.combingBlue5)
                 .padding(.top,3)
         }.onAppear {
             switch representBadge {
