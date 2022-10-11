@@ -53,11 +53,9 @@ struct MapView: UIViewRepresentable {
         
         guard pathCoordinates.count >= 2 else { return }
         
-        // 찍혀있던 좌표에서 마지막 좌표와 마지막 두번째 좌표 거리 값 더하는 로직입니다.
-        let secondFromBack = pathCoordinates[pathCoordinates.count - 2]
-        let firstFromBackLocation = CLLocation(latitude: firstFromBack.latitude, longitude: firstFromBack.longitude)
-        let secondFromBackLoaction = CLLocation(latitude: secondFromBack.latitude, longitude: secondFromBack.longitude)
-        movingDistance += firstFromBackLocation.distance(from: secondFromBackLoaction)
+        // TODO: 여기서 거리 계산을 하는게 맞는것인가?
+        guard let first = pathCoordinates.first else { return }
+        movingDistance = CLLocation(latitude: first.latitude, longitude: first.longitude).distance(from: CLLocation(latitude: firstFromBack.latitude, longitude: firstFromBack.longitude))
         
         // 지도상에 경로를 그리는 작업입니다. 경로가 그려져 있다면 경로를 삭제후 다시 그립니다.
         let line = MKPolyline(coordinates: pathCoordinates, count: pathCoordinates.count)
