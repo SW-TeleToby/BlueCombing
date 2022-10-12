@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct LoginHome: View {
-    @Environment(\.window) var window: UIWindow?
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.window) private var window: UIWindow?
+    @Environment(\.presentationMode) private var presentationMode
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @Binding var isSignIn: Bool
     
     let loginMode: LoginMode
     let dismissAction: () -> Void
     
-    var guide: String = ""
+    private var guide: String = ""
     
     init(isSignIn: Binding<Bool>, loginMode: LoginMode, dismissAction: @escaping () -> Void) {
         self._isSignIn = isSignIn

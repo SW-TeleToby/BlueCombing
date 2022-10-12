@@ -45,7 +45,6 @@ struct FaceBookLoginButton: UIViewRepresentable {
                 }
             }
         }
-        
     }
     
     func makeUIView(context: Context) -> UIButton {
