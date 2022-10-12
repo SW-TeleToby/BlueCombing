@@ -69,8 +69,10 @@ struct MakeCardView: View {
             ZStack{
                 CardView(card: $cardViewModel.newCard)
                     .frame(width: containerWidth, height: imageHeight)
+                
                 routeImage
                     .resizable()
+                    .scaledToFit()
                     .frame(width: containerWidth/2, height: containerWidth/2)
             }
             if isCustom {
