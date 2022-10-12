@@ -29,7 +29,24 @@ struct MakeCardView: View {
     
     let firebaseAuth = Auth.auth()
     
-    var SaveImageView: some View {
+    var makeCardViewNavbar: some View {
+        HStack{
+            Image(systemName: "chevron.backward")
+                .font(.system(size: 20, weight: .semibold))
+                .padding(.leading,20)
+                .onTapGesture {
+                    dismiss()
+                }
+            Spacer()
+            Text("비치코밍 카드 만들기")
+                .font(.system(size: 17, weight: .bold))
+                .padding(.leading, -40)
+            Spacer()
+        }.padding(.vertical, 10)
+            .padding(.bottom, 10)
+    }
+    
+    var saveImageView: some View {
         VStack(spacing:0){
             ZStack{
                 CardView(card: $cardViewModel.newCard)
@@ -46,7 +63,9 @@ struct MakeCardView: View {
     
     var body: some View {
         VStack(spacing:0) {
-            MakeCardViewNavbar().padding(.vertical,20)
+            
+            makeCardViewNavbar
+            
             ZStack{
                 CardView(card: $cardViewModel.newCard)
                     .frame(width: containerWidth, height: imageHeight)
@@ -92,7 +111,7 @@ struct MakeCardView: View {
             
             Spacer()
             Button(action: {
-                let saveImage = SaveImageView.snapshot()
+                let saveImage = saveImageView.snapshot()
                 presentBadge = userViewModel.user!.representBadge
                 isPresentShareView.toggle()
                 userViewModel.uploadPicture(image: saveImage)
