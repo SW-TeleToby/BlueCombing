@@ -10,6 +10,7 @@ import SwiftUI
 struct StartModal: View {
     @Binding var currentModal: CustomModal
     @Binding var isRecordStart: Bool
+    @Binding var isRecordEnd: Bool
     
     var body: some View {
         VStack {
@@ -35,8 +36,9 @@ struct StartModal: View {
                     
                     Button(action: {
                         withAnimation(.spring()) {
-                            currentModal = .recordConfirmModal
+                            currentModal = .none
                             isRecordStart = true
+                            isRecordEnd = false
                         }
                     }) {
                         ZStack {
@@ -56,5 +58,6 @@ struct StartModal: View {
                 } // VStack
             } // Zstack
         } // VStack
+        .frame(height: currentModal.modalHeight)
     } // body
 }

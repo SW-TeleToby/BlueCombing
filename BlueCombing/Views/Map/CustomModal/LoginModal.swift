@@ -55,7 +55,9 @@ struct LoginModal: View {
                 .frame(height: 56)
                 .alert(isPresented: $showingAlert) {
                     let firstButton = Alert.Button.default(Text("확인")) {
-                        currentModal = .none
+                        withAnimation(.spring()) {
+                            currentModal = .startModal
+                        }
                     }
                     let secondButton = Alert.Button.cancel(Text("취소"))
                     return Alert(title: Text("로그인하지 않으면 비치코밍 기록을 남길 수 없습니다"), primaryButton: firstButton, secondaryButton: secondButton)

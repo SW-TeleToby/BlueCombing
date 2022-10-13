@@ -48,10 +48,6 @@ struct RecordConfirmModal: View {
                 .padding(.horizontal, 16)
                 
                 Spacer().frame(height: 26)
-                //                    Rectangle()
-                //                        .cornerRadius(16)
-                //                        .foregroundColor(.combingBlue2)
-                //                        .padding(.horizontal, 16)
                 
                 // MARK: Canvas View
                 HStack {
@@ -106,9 +102,8 @@ struct RecordConfirmModal: View {
                 Spacer().frame(height: 34)
                 
                 Button(action: {
+                    isRecordStart = false
                     withAnimation(.spring()) {
-                        isRecordStart = false
-                        isRecordEnd = false
                         if isSignIn {
                             currentModal = .cardMakingModal
                         } else {
@@ -130,5 +125,6 @@ struct RecordConfirmModal: View {
                 }
             }
         }
+        .frame(height: currentModal.modalHeight)
     }
 }

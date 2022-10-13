@@ -13,7 +13,7 @@ struct TotalMapView: View {
     @State var map = MKMapView()
     @State var isRecordEnd = false
     @State var isRecordStart = false
-    @State var currentModal = 0
+    @State var currentModal : CustomModal = .startModal
     // TODO: GPS 연결되면 초기값 변경해야 합니다.
     @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830)]
     @State var movingTime: Int = 0
@@ -32,11 +32,6 @@ struct TotalMapView: View {
             if isRecordStart {
                 recordingView
             }
-            
-            if isRecordEnd {
-                VisualEffectView(effect: UIBlurEffect(style: .init(rawValue: 3)!))
-                    .ignoresSafeArea(.container, edges: .top)
-            }
 
             MultiModal(
                 isRecordEnd: $isRecordEnd,
@@ -49,11 +44,14 @@ struct TotalMapView: View {
                 .onChange(of: isRecordStart, perform: { value in
                     if value {
                         startMoving()
-                    } else {
+                    }
+                })
+                .onChange(of: currentModal) { value in
+                    if value == .startModal {
                         map.removeOverlays(map.overlays)
                         pathCoordinates.removeAll()
                     }
-                })
+                }
             
         }
         .navigationBarTitle("")
@@ -93,7 +91,10 @@ extension TotalMapView {
                 VStack {
                     Button(action: {
                         isRecordEnd = true
-                        currentModal = 1
+                        // TODO: 추후에 Spacer의 minHeight를 높여가는 방식으로 애니메이션 변경해야합니다.
+                        withAnimation(.linear) {
+                            currentModal = .recordConfirmModal
+                        }
                         CardViewModel.longitude = map.region.center.longitude
                         CardViewModel.latitude = map.region.center.latitude
                     }) {
@@ -153,12 +154,6 @@ extension TotalMapView {
         }
         
     }
-}
-
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
 
 

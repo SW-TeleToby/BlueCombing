@@ -62,6 +62,7 @@
 		5F01464128F5DDB400DA2A47 /* RecordConfirmModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01464028F5DDB400DA2A47 /* RecordConfirmModal.swift */; };
 		5F01464328F5DEA900DA2A47 /* CardMakingModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01464228F5DEA900DA2A47 /* CardMakingModal.swift */; };
 		5F01464528F5DF6100DA2A47 /* LoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01464428F5DF6100DA2A47 /* LoginModal.swift */; };
+		5F60061A28F78C85000B89BF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60061928F78C85000B89BF /* BlurView.swift */; };
 		708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B5A5D28D46E9100B863E8 /* Colors.swift */; };
 		708B5A6528D4828300B863E8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */; };
 		708B5A6628D4828300B863E8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */; };
@@ -128,6 +129,7 @@
 		5F01464028F5DDB400DA2A47 /* RecordConfirmModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordConfirmModal.swift; sourceTree = "<group>"; };
 		5F01464228F5DEA900DA2A47 /* CardMakingModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMakingModal.swift; sourceTree = "<group>"; };
 		5F01464428F5DF6100DA2A47 /* LoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModal.swift; sourceTree = "<group>"; };
+		5F60061928F78C85000B89BF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		708B5A5D28D46E9100B863E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		708B5A6228D4828300B863E8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		708B5A6328D4828300B863E8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				5F01463D28F5DCE900DA2A47 /* CustomModal */,
 				B23C44B728D461F30096DE8F /* MapView.swift */,
+				5F60061928F78C85000B89BF /* BlurView.swift */,
 				B23C44BC28D4687D0096DE8F /* TotalMapView.swift */,
 				B23C44C928D4B9850096DE8F /* MultiModal.swift */,
 				B28CB29128D533BE00202F33 /* CanvasView.swift */,
@@ -488,6 +491,7 @@
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */,
 				1699082D28D63E7500583006 /* PohangLandmarkNet.mlmodel in Sources */,
+				5F60061A28F78C85000B89BF /* BlurView.swift in Sources */,
 				167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
 				0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */,
