@@ -45,16 +45,16 @@ struct CardView: View {
                 Spacer()
                 HStack{
                     Text(card.distance.distanceToString())
-                        .font(.system(size: 24,weight: .semibold))
+                        .font(.Heading2)
                         .foregroundColor(.white)
                     Text(card.time.timeToString())
-                        .font(.system(size: 24,weight: .semibold))
+                        .font(.Heading2)
                         .foregroundColor(.white)
                     Spacer()
-                }.padding(.bottom,0.1)
+                }.padding(.bottom, 0.1)
                 HStack {
                     Text(card.location)
-                        .font(.system(size: 16))
+                        .font(.Body4)
                         .foregroundColor(.white)
                     Spacer()
                 }

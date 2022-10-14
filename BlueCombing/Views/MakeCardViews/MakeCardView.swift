@@ -77,7 +77,6 @@ struct MakeCardView: View {
             }
             if isCustom {
                 Button(action: {
-                    // 여기서 먼저 action sheet 띄우기
                     showingOption = true
                 }){
                     ZStack {
@@ -89,12 +88,10 @@ struct MakeCardView: View {
                     }.frame(width: containerWidth, height:45)
                 }.confirmationDialog("카드 이미지 변경", isPresented: $showingOption, titleVisibility: .visible) {
                     Button("카메라 촬영"){
-                        // 카메라 촬영 로직. 굳.
                         takePicture()
                     }
                     
                     Button("앨범에서 사진 선택"){
-                        // 이미지 피커 로직. 굳.
                         selectImage()
                     }
                     
@@ -161,7 +158,6 @@ struct MakeCardView: View {
             } else {
                 isSignin = false
             }
-            print("체크!")
             cardViewModel.checkLocation()
             cardViewModel.newCard.distance = movingDistance
             cardViewModel.newCard.time = movingTime
