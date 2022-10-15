@@ -9,10 +9,8 @@ import SwiftUI
 
 struct CardMakingModal: View {
     @Binding var currentModal: CustomModal
-    @Binding var isRecordEnd: Bool
     @Binding var routeImage: Image
-    @Binding var movingDistance: Double
-    @Binding var movingTime: Int
+    @Binding var userActivityData: UserActivityData
     
     var body: some View {
         ZStack {
@@ -36,7 +34,7 @@ struct CardMakingModal: View {
                 Spacer().frame(height: 16)
                 
                 NavigationLink {
-                    MakeCardView(isCustom: true, movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
+                    MakeCardView(isCustom: true, movingDistance: userActivityData.movingDistance, movingTime: userActivityData.movingTime, routeImage: routeImage)
                 } label: {
                     ZStack {
                         Rectangle()
@@ -52,7 +50,7 @@ struct CardMakingModal: View {
                 Spacer().frame(height: 16)
                 
                 NavigationLink {
-                    MakeCardView(isCustom: false, movingDistance: movingDistance, movingTime: movingTime, routeImage: routeImage)
+                    MakeCardView(isCustom: false, movingDistance: userActivityData.movingDistance, movingTime: userActivityData.movingTime, routeImage: routeImage)
                         .onAppear {
                             currentModal = .startModal
                         }

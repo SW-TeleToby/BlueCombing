@@ -11,15 +11,11 @@ import FirebaseAuth
 import SwiftUI
 
 struct MultiModal: View {
-    @State var modalHeight = CGFloat(168)
-    @State var loginCancleAlertTrigger = false
-    @Binding var isRecordEnd: Bool
     @Binding var isRecordStart: Bool
     @Binding var currentModal: CustomModal
-    @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    @Binding var userActivityData: UserActivityData
+    @State var showDeleteActivityDataAlert = false
     @State var routeImage = Image("Is not Load")
-    @Binding var movingTime: Int
-    @Binding var movingDistance: Double
     @State private var showingAlert = false
     let firebaseAuth = Auth.auth()
     @State var isSignIn: Bool = true
@@ -39,27 +35,18 @@ struct MultiModal: View {
                 
                 switch currentModal {
                 case .startModal: StartModal(currentModal: $currentModal,
-                                             isRecordStart: $isRecordStart,
-                                             isRecordEnd: $isRecordEnd)
+                                             isRecordStart: $isRecordStart)
                 case .recordConfirmModal: RecordConfirmModal(currentModal: $currentModal,
-                                                             isRecordEnd: $isRecordEnd,
                                                              isRecordStart: $isRecordStart,
                                                              routeImage: $routeImage,
-                                                             movingTime: $movingTime,
-                                                             movingDistance: $movingDistance,
-                                                             pathCoordinates: $pathCoordinates,
+                                                             userActivityData: $userActivityData,
                                                              isSignIn: $isSignIn)
                 case .cardMakingModal: CardMakingModal(currentModal: $currentModal,
-                                                       isRecordEnd: $isRecordEnd,
                                                        routeImage: $routeImage,
-                                                       movingDistance: $movingDistance,
-                                                       movingTime: $movingTime)
-                .frame(height: currentModal.modalHeight)
+                                                       userActivityData: $userActivityData)
                 case .loginModal: LoginModal(currentModal: $currentModal,
                                              isSignIn: $isSignIn,
-                                             showingAlert: $showingAlert,
-                                             loginCancleAlertTrigger: $loginCancleAlertTrigger)
-                .frame(height: currentModal.modalHeight)
+                                             showDeleteActivityDataAlert: $showDeleteActivityDataAlert)
                 case .none: Spacer()
                         .frame(height: currentModal.modalHeight)
                 }
@@ -67,10 +54,9 @@ struct MultiModal: View {
                 
             }
         }
-        .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $loginCancleAlertTrigger) {
+        .alert("로그인하지 않으면 비치코밍\n기록을 남길 수 없습니다.", isPresented: $showDeleteActivityDataAlert) {
             Button("취소", role: .cancel) { }
             Button("확인", role: .destructive) {
-                isRecordEnd = false
                 isRecordStart = false
                 currentModal = .startModal
             }

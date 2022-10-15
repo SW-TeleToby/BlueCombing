@@ -10,12 +10,9 @@ import MapKit
 
 struct RecordConfirmModal: View {
     @Binding var currentModal: CustomModal
-    @Binding var isRecordEnd: Bool
     @Binding var isRecordStart: Bool
     @Binding var routeImage: Image
-    @Binding var movingTime: Int
-    @Binding var movingDistance: Double
-    @Binding var pathCoordinates: [CLLocationCoordinate2D]
+    @Binding var userActivityData: UserActivityData
     @Binding var isSignIn: Bool
     
     var body: some View {
@@ -30,7 +27,6 @@ struct RecordConfirmModal: View {
                         // TODO: 계속하기 Action
                         withAnimation(.spring()) {
                             currentModal = .none
-                            isRecordEnd = false
                         }
                     }) {
                         Text("계속하기")
@@ -70,7 +66,7 @@ struct RecordConfirmModal: View {
                             .font(.Body5)
                             .foregroundColor(.combingGray4)
                             .padding(.bottom, 4)
-                        Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                        Text(String(format: "%.2f", userActivityData.movingDistance / 1000) + "km")
                             .font(.Heading2)
                             .foregroundColor(.combingBlue5)
                         
@@ -80,8 +76,8 @@ struct RecordConfirmModal: View {
                             .font(.Body5)
                             .foregroundColor(.combingGray4)
                             .padding(.bottom, 4)
-                        if movingTime >= 60 {
-                            Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
+                        if userActivityData.movingTime >= 60 {
+                            Text("\(userActivityData.movingTime / 3600)시간 \(userActivityData.movingTime / 60)분")
                                 .font(.Heading2)
                                 .foregroundColor(.combingBlue5)
                         } else {
@@ -94,7 +90,7 @@ struct RecordConfirmModal: View {
                 } // HStack
                 .padding(.leading, 43)
                 .onAppear {
-                    CanvasView(pathCoordinates: $pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
+                    CanvasView(pathCoordinates: $userActivityData.pathCoordinates).saveAsImage(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) { image in
                         routeImage = Image(uiImage: image)
                     }
                 }

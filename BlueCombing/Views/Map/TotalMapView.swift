@@ -10,46 +10,37 @@ import UIKit
 import MapKit
 
 struct TotalMapView: View {
-    @State var map = MKMapView()
-    @State var isRecordEnd = false
-    @State var isRecordStart = false
-    @State var currentModal : CustomModal = .startModal
-    // TODO: GPS 연결되면 초기값 변경해야 합니다.
-    @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830)]
-    @State var movingTime: Int = 0
-    @State var movingDistance: Double = 0.0
+    @State var totalMapModel = TotalMapModel()
+    @State var userActivityData = UserActivityData()
     @State var timer: Timer? = nil
-    private let digit: Double = pow(10, 2)
     
     var body: some View {
         ZStack {
-            
-            MapView(map: $map, pathCoordinates: $pathCoordinates, movingDistance: $movingDistance)
+            MapView(map: $totalMapModel.map,
+                    pathCoordinates: $userActivityData.pathCoordinates,
+                    movingDistance: $userActivityData.movingDistance)
                 .ignoresSafeArea(.container, edges: .top)
 
             Image("userPin")
             
-            if isRecordStart {
+            if totalMapModel.isRecordStart {
                 recordingView
             }
 
             MultiModal(
-                isRecordEnd: $isRecordEnd,
-                isRecordStart: $isRecordStart,
-                currentModal: $currentModal,
-                pathCoordinates: $pathCoordinates,
-                movingTime: $movingTime,
-                movingDistance: $movingDistance
+                isRecordStart: $totalMapModel.isRecordStart,
+                currentModal: $totalMapModel.currentModal,
+                userActivityData: $userActivityData
             )
-                .onChange(of: isRecordStart, perform: { value in
+            .onChange(of: totalMapModel.isRecordStart, perform: { value in
                     if value {
                         startMoving()
                     }
                 })
-                .onChange(of: currentModal) { value in
+                .onChange(of: totalMapModel.currentModal) { value in
                     if value == .startModal {
-                        map.removeOverlays(map.overlays)
-                        pathCoordinates.removeAll()
+                        totalMapModel.map.removeOverlays(totalMapModel.map.overlays)
+                        userActivityData.pathCoordinates.removeAll()
                     }
                 }
             
@@ -62,7 +53,7 @@ struct TotalMapView: View {
         Task {
             tempCoordinates.publisher.sink(receiveValue: { value in
                 sleep(1) // MARK: 타이머 조절
-                pathCoordinates.append(value)
+                userActivityData.pathCoordinates.append(value)
             })
         }
     }
@@ -70,15 +61,15 @@ struct TotalMapView: View {
     func startMoving() {
         simulatingFunction()
         
-        movingTime = 0
-        movingDistance = 0
+        userActivityData.movingTime = 0
+        userActivityData.movingDistance = 0
         
         timer?.invalidate()
         
-        map.removeOverlays(map.overlays)
+        totalMapModel.map.removeOverlays(totalMapModel.map.overlays)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            movingTime += 1
+            userActivityData.movingTime += 1
         }
     }
 }
@@ -90,13 +81,12 @@ extension TotalMapView {
             HStack {
                 VStack {
                     Button(action: {
-                        isRecordEnd = true
                         // TODO: 추후에 Spacer의 minHeight를 높여가는 방식으로 애니메이션 변경해야합니다.
                         withAnimation(.linear) {
-                            currentModal = .recordConfirmModal
+                            totalMapModel.currentModal = .recordConfirmModal
                         }
-                        CardViewModel.longitude = map.region.center.longitude
-                        CardViewModel.latitude = map.region.center.latitude
+                        CardViewModel.longitude = totalMapModel.map.region.center.longitude
+                        CardViewModel.latitude = totalMapModel.map.region.center.latitude
                     }) {
                         ZStack {
                             Rectangle()
@@ -121,7 +111,7 @@ extension TotalMapView {
                             Text("이동 거리")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                            Text(String(format: "%.2f", userActivityData.movingDistance / 1000) + "km")
                                 .font(.Heading2)
                                 .foregroundColor(.combingGray1)
                             
@@ -131,8 +121,8 @@ extension TotalMapView {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            if movingTime >= 60 {
-                                Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
+                            if userActivityData.movingTime >= 60 {
+                                Text("\(userActivityData.movingTime / 3600)시간 \(userActivityData.movingTime / 60)분")
                                     .font(.Heading2)
                                     .foregroundColor(.combingGray1)
                             } else {

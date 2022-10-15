@@ -10,8 +10,7 @@ import SwiftUI
 struct LoginModal: View {
     @Binding var currentModal: CustomModal
     @Binding var isSignIn: Bool
-    @Binding var showingAlert: Bool
-    @Binding var loginCancleAlertTrigger: Bool
+    @Binding var showDeleteActivityDataAlert: Bool
     
     var body: some View {
         ZStack {
@@ -40,7 +39,7 @@ struct LoginModal: View {
                         currentModal = .cardMakingModal
                     } else {
                         currentModal = .loginModal
-                        showingAlert = true
+                        showDeleteActivityDataAlert.toggle()
                     }
                 }) {
                     ZStack {
@@ -53,19 +52,10 @@ struct LoginModal: View {
                     }
                 }
                 .frame(height: 56)
-                .alert(isPresented: $showingAlert) {
-                    let firstButton = Alert.Button.default(Text("확인")) {
-                        withAnimation(.spring()) {
-                            currentModal = .startModal
-                        }
-                    }
-                    let secondButton = Alert.Button.cancel(Text("취소"))
-                    return Alert(title: Text("로그인하지 않으면 비치코밍 기록을 남길 수 없습니다"), primaryButton: firstButton, secondaryButton: secondButton)
-                }
                 
                 Spacer().frame(height: 16)
                 
-                Button(action: { loginCancleAlertTrigger.toggle() }) {
+                Button(action: { showDeleteActivityDataAlert.toggle() }) {
                     Text("카드를 안 만들래요")
                         .font(.Body3)
                         .foregroundColor(.combingGray2)
@@ -73,5 +63,6 @@ struct LoginModal: View {
             }
             .padding(.leading, 16)
         }
-    } // loginModal
+        .frame(height: currentModal.modalHeight)
+    } // body
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct StartModal: View {
     @Binding var currentModal: CustomModal
     @Binding var isRecordStart: Bool
-    @Binding var isRecordEnd: Bool
     
     var body: some View {
         VStack {
@@ -38,7 +37,6 @@ struct StartModal: View {
                         withAnimation(.spring()) {
                             currentModal = .none
                             isRecordStart = true
-                            isRecordEnd = false
                         }
                     }) {
                         ZStack {
