@@ -24,7 +24,7 @@ struct LoginHome: View {
         self.dismissAction = dismissAction
         
         switch loginMode {
-        case .beachCombing:
+        case .cardMaking:
             guide = "카드를 만들기 위해선\n로그인이 필요해요!"
         case .myActivity:
             guide = "나의 활동을 기록하기 위해선\n로그인이 필요해요!"
@@ -57,7 +57,7 @@ struct LoginHome: View {
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 56)
                 .padding(.horizontal)
                 .padding(.bottom, 8)
-                if loginMode == .beachCombing {
+                if loginMode == .cardMaking {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                         isSignIn = false
@@ -86,13 +86,13 @@ struct LoginHome: View {
 }
 
 enum LoginMode {
-    case beachCombing
+    case cardMaking
     case myActivity
 }
 
 struct LoginHome_Previews: PreviewProvider {
     static var previews: some View {
-        LoginHome(isSignIn: .constant(false), loginMode: .beachCombing) {
+        LoginHome(isSignIn: .constant(false), loginMode: .cardMaking) {
             
         }
     }

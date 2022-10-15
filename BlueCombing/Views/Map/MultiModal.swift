@@ -334,7 +334,7 @@ extension MultiModal {
 
                 Spacer().frame(height: 18)
 
-                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .beachCombing) {
+                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .cardMaking) {
                     if isSignIn {
                         currentModal = 2
                     } else {
