@@ -22,9 +22,9 @@ struct MakeCardView: View {
     @State var cameraDenyAlert = false
     @State var presentBadge = ""
     let isCustom: Bool
-    var movingDistance : Double
-    var movingTime : Int
-    var routeImage: Image
+    let movingDistance : Double
+    let movingTime : Int
+    let routeImage: Image
     
     let firebaseAuth = Auth.auth()
     
@@ -46,12 +46,12 @@ struct MakeCardView: View {
     
     var saveImageView: some View {
             ZStack{
-                CardView(card: $cardViewModel.newCard)
+                CardView(card: $cardViewModel.newCard, routeImage: routeImage)
                     .frame(height: imageHeight)
-                routeImage
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: containerWidth/2, height: containerWidth/2)
+//                routeImage
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: containerWidth/2, height: containerWidth/2)
             }
         .edgesIgnoringSafeArea(.all)
     }
