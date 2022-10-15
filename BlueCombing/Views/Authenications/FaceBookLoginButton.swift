@@ -24,7 +24,6 @@ struct FaceBookLoginButton: UIViewRepresentable {
         
         // Once the button is clicked, show the login dialog
         @objc func loginButtonClicked(_ sender: Any) {
-            print("heelo")
             let loginManager = LoginManager()
             loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
                 if let error = error {

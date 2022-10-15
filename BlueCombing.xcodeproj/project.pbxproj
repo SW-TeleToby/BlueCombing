@@ -733,8 +733,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 		168C242A28CDDB2700036B70 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {

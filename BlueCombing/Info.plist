@@ -19,8 +19,7 @@
 	<string>BlueCombing</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
 	</array>
 	<key>LSMinimumSystemVersion</key>
 	<string>13.0.0</string>
@@ -30,5 +29,9 @@
 		<string>Pretendard-Medium.otf</string>
 		<string>Pretendard-SemiBold.otf</string>
 	</array>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <true/>
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <true/>
 </dict>
 </plist>
