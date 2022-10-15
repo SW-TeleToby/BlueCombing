@@ -51,8 +51,7 @@ struct LoginHome: View {
                 }
                 .padding(.horizontal)
                 FaceBookLoginButton {
-                    presentationMode.wrappedValue.dismiss()
-                    isSignIn = true
+                    facebookLogin()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 56)
                 .padding(.horizontal)
@@ -82,6 +81,11 @@ struct LoginHome: View {
             presentationMode.wrappedValue.dismiss()
         }
         appleLoginCoordinator?.startSignInWithAppleFlow()
+    }
+    
+    func facebookLogin() {
+        isSignIn = true
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
