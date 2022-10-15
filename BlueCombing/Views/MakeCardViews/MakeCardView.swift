@@ -20,7 +20,6 @@ struct MakeCardView: View {
     @State var isPresentedPermissionCheck = false
     @State var isPresentShareView = false
     @State var cameraDenyAlert = false
-    @State var isSignin = false
     @State var presentBadge = ""
     var isCustom: Bool
     var movingDistance : Double
@@ -153,10 +152,8 @@ struct MakeCardView: View {
             }
         }.onAppear {
             if firebaseAuth.currentUser != nil {
-                isSignin = true
                 userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
             } else {
-                isSignin = false
             }
             cardViewModel.checkLocation()
             cardViewModel.newCard.distance = movingDistance
