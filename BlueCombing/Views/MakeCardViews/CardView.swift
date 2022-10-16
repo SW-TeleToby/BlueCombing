@@ -23,7 +23,7 @@ struct CardView: View {
                 .scaledToFill()
                 .frame(width: containerWidth, height: imageHeight)
                 .clipped()
-            // 그레디언트
+
             VStack{
                 Spacer()
                 Rectangle()
@@ -72,11 +72,11 @@ struct CardView: View {
     
     var body: some View {
         ZStack{
-            // 이미지
+
             imageView
-            // 뱃지 공간
+
             badgeView
-            // 텍스트 공간
+
             infoView
             
             routeImage
@@ -109,11 +109,3 @@ extension Int {
         }
     }
 }
-
-
-
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다."))),routeImage: Image(""))
-//    }
-//}
