@@ -73,7 +73,6 @@ struct MyActivityView: View {
                 
             }
         }.padding()
-            .padding(.bottom)
     }
     
     var body: some View {
