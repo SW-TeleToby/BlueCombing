@@ -55,8 +55,8 @@ struct MyActivityView: View {
                 }
             }
         }.padding(.top,15)
-            .padding(.bottom,60)
-            .padding(.trailing,20)
+        .padding(.bottom,60)
+        .padding(.trailing,20)
     }
     
     var myCardListView: some View {
