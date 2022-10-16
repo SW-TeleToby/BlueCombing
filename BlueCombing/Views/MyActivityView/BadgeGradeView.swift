@@ -63,6 +63,9 @@ struct BadgeGradeView: View {
                     }
                     
                 }
+                .onBackSwipe {
+                    dismiss()
+                }
                
         }
         
@@ -157,6 +160,20 @@ struct BadgeInfoView : View {
     }
     
 }
+
+extension View {
+    func onBackSwipe(perform action: @escaping () -> Void) -> some View {
+        gesture(
+            DragGesture()
+                .onEnded({ value in
+                    if value.translation.width > 80 {
+                        action()
+                    }
+                })
+        )
+    }
+}
+
 
 //struct BadgeGradeView_Previews: PreviewProvider {
 //    static var previews: some View {
