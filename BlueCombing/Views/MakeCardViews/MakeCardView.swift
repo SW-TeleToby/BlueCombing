@@ -90,7 +90,7 @@ struct MakeCardView: View {
                     .foregroundColor(Color.combingGray4)
             }
             
-            Spacer()
+            Spacer() 
             Button(action: {
                 let saveImage = SaveImageView.snapshot()
                 presentBadge = userViewModel.user!.representBadge
