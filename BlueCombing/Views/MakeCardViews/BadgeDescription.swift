@@ -7,15 +7,15 @@
 
 import UIKit
 
-enum BadgeDescription {
-    case coral
-    case clam
-    case hippocampus
-    case jellyfish
-    case dolphin
-    case turtle
-    case fishs
-    case whale
+enum BadgeDescription: String {
+    case coral = "산호초"
+    case clam = "조개"
+    case hippocampus = "해마"
+    case jellyfish = "해파리"
+    case dolphin = "돌고래"
+    case turtle = "거북이"
+    case fishs = "물고기 떼"
+    case whale = "고래"
     
     var badgeDescription: String {
         switch self {
