@@ -10,49 +10,39 @@ import UIKit
 import MapKit
 
 struct TotalMapView: View {
-    @State var mapManager = MapDelegate()
-    @State var isRecordEnd = false
-    @State var isRecordStart = false
-    @State var currentModal = 0
-    @State var pathCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 36.0519679, longitude: 129.378830)]
-    @State var movingTime: Int = 0
-    @State var movingDistance: Double = 0.0
+    @State var totalMapModel = TotalMapModel()
+    @State var userActivityData = UserActivityData()
     @State var timer: Timer? = nil
-    private let digit: Double = pow(10, 2)
     
     var body: some View {
         ZStack {
-            
-            MapView(map: mapManager.map, delegate: mapManager, pathCoordinates: $pathCoordinates, movingDistance: $movingDistance)
+            MapView(map: $totalMapModel.map,
+                    pathCoordinates: $userActivityData.pathCoordinates,
+                    movingDistance: $userActivityData.movingDistance)
                 .ignoresSafeArea(.container, edges: .top)
 
             Image("userPin")
             
-            if isRecordStart {
+            if totalMapModel.isRecordStart {
                 recordingView
-            }
-            
-            if isRecordEnd {
-                VisualEffectView(effect: UIBlurEffect(style: .init(rawValue: 3)!))
-                    .ignoresSafeArea(.container, edges: .top)
             }
 
             MultiModal(
-                recordEndTrigger: $isRecordEnd,
-                recordStartTrigger: $isRecordStart,
-                currentModal: $currentModal,
-                pathCoordinates: $pathCoordinates,
-                movingTime: $movingTime,
-                movingDistance: $movingDistance
+                isRecordStart: $totalMapModel.isRecordStart,
+                currentModal: $totalMapModel.currentModal,
+                userActivityData: $userActivityData
             )
-                .onChange(of: isRecordStart, perform: { value in
+            .onChange(of: totalMapModel.isRecordStart, perform: { value in
                     if value {
                         startMoving()
-                    } else {
-                        mapManager.map.removeOverlays(mapManager.map.overlays)
-                        pathCoordinates.removeAll()
                     }
                 })
+                .onChange(of: totalMapModel.currentModal) { value in
+                    if value == .startModal {
+                        totalMapModel.map.removeOverlays(totalMapModel.map.overlays)
+                        userActivityData.pathCoordinates.removeAll()
+                    }
+                }
             
         }
         .navigationBarTitle("")
@@ -63,7 +53,7 @@ struct TotalMapView: View {
         Task {
             tempCoordinates.publisher.sink(receiveValue: { value in
                 sleep(1) // MARK: 타이머 조절
-                pathCoordinates.append(value)
+                userActivityData.pathCoordinates.append(value)
             })
         }
     }
@@ -71,15 +61,15 @@ struct TotalMapView: View {
     func startMoving() {
         simulatingFunction()
         
-        movingTime = 0
-        movingDistance = 0
+        userActivityData.movingTime = 0
+        userActivityData.movingDistance = 0
         
         timer?.invalidate()
         
-        mapManager.map.removeOverlays(mapManager.map.overlays)
+        totalMapModel.map.removeOverlays(totalMapModel.map.overlays)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            movingTime += 1
+            userActivityData.movingTime += 1
         }
     }
 }
@@ -91,10 +81,12 @@ extension TotalMapView {
             HStack {
                 VStack {
                     Button(action: {
-                        isRecordEnd = true
-                        currentModal = 1
-                        CardViewModel.longitude = mapManager.map.region.center.longitude
-                        CardViewModel.latitude = mapManager.map.region.center.latitude
+                        // TODO: 추후에 Spacer의 minHeight를 높여가는 방식으로 애니메이션 변경해야합니다.
+                        withAnimation(.linear) {
+                            totalMapModel.currentModal = .recordConfirmModal
+                        }
+                        CardViewModel.longitude = totalMapModel.map.region.center.longitude
+                        CardViewModel.latitude = totalMapModel.map.region.center.latitude
                     }) {
                         ZStack {
                             Rectangle()
@@ -119,7 +111,7 @@ extension TotalMapView {
                             Text("이동 거리")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            Text(String(format: "%.2f", movingDistance / 1000) + "km")
+                            Text(String(format: "%.2f", userActivityData.movingDistance / 1000) + "km")
                                 .font(.Heading2)
                                 .foregroundColor(.combingGray1)
                             
@@ -129,8 +121,8 @@ extension TotalMapView {
                             Text("이동 시간")
                                 .font(.Body5)
                                 .foregroundColor(.combingGray1)
-                            if movingTime >= 60 {
-                                Text("\(movingTime / 3600)시간 \(movingTime / 60)분")
+                            if userActivityData.movingTime >= 60 {
+                                Text("\(userActivityData.movingTime / 3600)시간 \(userActivityData.movingTime / 60)분")
                                     .font(.Heading2)
                                     .foregroundColor(.combingGray1)
                             } else {
@@ -152,12 +144,6 @@ extension TotalMapView {
         }
         
     }
-}
-
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
 
 
