@@ -10,6 +10,8 @@ import Photos
 import FirebaseAuth
 
 struct MakeCardView: View {
+    @EnvironmentObject var authSession: SessionStore
+    
     @StateObject var cardViewModel = CardViewModel()
     @ObservedObject var userViewModel = UserViewModel()
     @Environment(\.dismiss) var dismiss
@@ -20,7 +22,6 @@ struct MakeCardView: View {
     @State var isPresentedPermissionCheck = false
     @State var isPresentShareView = false
     @State var cameraDenyAlert = false
-    @State var isSignin = false
     @State var presentBadge = ""
     var isCustom: Bool
     var movingDistance : Double
@@ -134,13 +135,9 @@ struct MakeCardView: View {
                 dismiss()
             }
         }.onAppear {
-            if firebaseAuth.currentUser != nil {
-                isSignin = true
-                userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
-            } else {
-                isSignin = false
+            if let uid = authSession.uid {
+                userViewModel.getUserData(uid: uid)
             }
-            print("체크!")
             cardViewModel.checkLocation()
             cardViewModel.newCard.distance = movingDistance
             cardViewModel.newCard.time = movingTime

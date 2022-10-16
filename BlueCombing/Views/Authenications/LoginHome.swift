@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct LoginHome: View {
+    @EnvironmentObject var authSession: SessionStore
+    
     @Environment(\.window) private var window: UIWindow?
     @Environment(\.presentationMode) private var presentationMode
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
-    @Binding var isSignIn: Bool
     
     let loginMode: LoginMode
     let dismissAction: () -> Void
     
     private var guide: String = ""
     
-    init(isSignIn: Binding<Bool>, loginMode: LoginMode, dismissAction: @escaping () -> Void) {
-        self._isSignIn = isSignIn
+    init(loginMode: LoginMode, dismissAction: @escaping () -> Void) {
         self.loginMode = loginMode
         self.dismissAction = dismissAction
         
@@ -59,7 +59,6 @@ struct LoginHome: View {
                 if loginMode == .cardMaking {
                     Button {
                         presentationMode.wrappedValue.dismiss()
-                        isSignIn = false
                     } label: {
                         Text("로그인하지 않을래요")
                             .font(.custom("Pretendard-SemiBold", size: 16))
@@ -77,14 +76,12 @@ struct LoginHome: View {
     
     func appleLogin() {
         appleLoginCoordinator = AppleAuthCoordinator(window: window) {
-            isSignIn = true
             presentationMode.wrappedValue.dismiss()
         }
         appleLoginCoordinator?.startSignInWithAppleFlow()
     }
     
     func facebookLogin() {
-        isSignIn = true
         presentationMode.wrappedValue.dismiss()
     }
 }
@@ -96,7 +93,7 @@ enum LoginMode {
 
 struct LoginHome_Previews: PreviewProvider {
     static var previews: some View {
-        LoginHome(isSignIn: .constant(false), loginMode: .cardMaking) {
+        LoginHome(loginMode: .cardMaking) {
             
         }
     }

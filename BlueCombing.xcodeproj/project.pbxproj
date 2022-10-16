@@ -23,6 +23,7 @@
 		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
 		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
 		163DB13B28D618A800DC6B67 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 163DB13A28D618A700DC6B67 /* location.json */; };
+		16448DB128FC55F100FEB479 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16448DB028FC55F100FEB479 /* SessionStore.swift */; };
 		165AC54628D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		165AC54728D64190009954E2 /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */; };
 		167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA72428D5740A001929F8 /* ViewExtension.swift */; };
@@ -93,6 +94,7 @@
 		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
 		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
 		163DB13A28D618A700DC6B67 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		16448DB028FC55F100FEB479 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
 		167BA72428D5740A001929F8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				0EE72C3B28D51F0100C54505 /* wave.json */,
 				0EE72C3628D51D2F00C54505 /* Lottie.swift */,
 				1699082A28D63BCE00583006 /* ImagePredictor.swift */,
+				16448DB028FC55F100FEB479 /* SessionStore.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				5FC68EE728FAD2C00078289E /* TotalMapModel.swift in Sources */,
 				16F157D728D6196F0001B422 /* LocationViewModel.swift in Sources */,
+				16448DB128FC55F100FEB479 /* SessionStore.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
 				169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,

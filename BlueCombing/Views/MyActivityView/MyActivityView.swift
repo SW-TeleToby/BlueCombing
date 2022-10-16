@@ -11,8 +11,9 @@ import FirebaseAuth
 var deviceHeight = UIScreen.main.bounds.size.height
 var deviceWidth = UIScreen.main.bounds.size.width
 struct MyActivityView: View {
+    @EnvironmentObject var authSession : SessionStore
+    
     @StateObject var userViewModel = UserViewModel()
-    @State var isSignin = false
     @State var isPresentedDetail = false
     let firebaseAuth = Auth.auth()
     var image: UIImage?
@@ -27,8 +28,8 @@ struct MyActivityView: View {
     
     var body: some View {
         VStack {
-            if isSignin == false {
-                LoginHome(isSignIn: $isSignin, loginMode: .myActivity) {}
+            if !authSession.isSignIn {
+                LoginHome(loginMode: .myActivity) {}
             } else {
                 ScrollView {
                     ZStack(alignment:.top) {
@@ -114,11 +115,8 @@ struct MyActivityView: View {
             DetailSheetView(image: $selectedImage)
         }
         .onAppear{
-            if firebaseAuth.currentUser != nil {
-                isSignin = true
-                userViewModel.getUserImages(uid: firebaseAuth.currentUser!.uid)
-            } else {
-                isSignin = false
+            if let uid = authSession.uid {
+                userViewModel.getUserImages(uid: uid)
             }
         }
         .navigationTitle("")
@@ -185,5 +183,6 @@ struct representBadgeView : View {
 struct MyActivityView_Previews: PreviewProvider {
     static var previews: some View {
         MyActivityView()
+            .environmentObject(SessionStore())
     }
 }
