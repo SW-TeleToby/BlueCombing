@@ -20,7 +20,7 @@ struct MakeCardView: View {
     @State var isPresentedPermissionCheck = false
     @State var isPresentShareView = false
     @State var cameraDenyAlert = false
-    @State var presentBadge = ""
+    @State var presentBadge:BadgeDescription = BadgeDescription.coral
     let isCustom: Bool
     let movingDistance : Double
     let movingTime : Int
@@ -48,10 +48,6 @@ struct MakeCardView: View {
             ZStack{
                 CardView(card: $cardViewModel.newCard, routeImage: routeImage)
                     .frame(height: imageHeight)
-//                routeImage
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: containerWidth/2, height: containerWidth/2)
             }
         .edgesIgnoringSafeArea(.all)
     }
@@ -85,7 +81,7 @@ struct MakeCardView: View {
     var completeButton: some View {
         Button(action: {
             let saveImage = saveImageView.snapshot()
-            presentBadge = userViewModel.user!.representBadge
+            presentBadge = userViewModel.user!.representBadge.englishBadge()
             isPresentShareView.toggle()
             userViewModel.uploadPicture(image: saveImage)
             userViewModel.updateUser(uid: userViewModel.user!.id, info: ["total_time": userViewModel.user!.totalTime + movingTime, "total_distance":userViewModel.user!.totalDistance+Int(movingDistance)])
@@ -111,7 +107,6 @@ struct MakeCardView: View {
                 
                 saveImageView
 
-                // 직접 만들러 가기를 누르면
                 if isCustom {
                     changeImageButton
                     
@@ -155,11 +150,11 @@ struct MakeCardView: View {
             }.onAppear {
                 if firebaseAuth.currentUser != nil {
                     userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
-                } else {
                 }
                 cardViewModel.checkLocation()
                 cardViewModel.newCard.distance = movingDistance
                 cardViewModel.newCard.time = movingTime
+                cardViewModel.newCard.badge = presentBadge.badgeImage
             }
         }
         

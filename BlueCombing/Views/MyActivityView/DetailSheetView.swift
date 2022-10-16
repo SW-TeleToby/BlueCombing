@@ -15,7 +15,7 @@ struct DetailSheetView: View {
     @State var isPresentShareSheet = false
     @State var randomScript : String?
     @State var saveAlert = false
-    var ShareImageView: some View {
+    var shareImageView: some View {
         VStack(spacing:0){
             if image != nil {
                 Image(uiImage: image!)
@@ -25,6 +25,8 @@ struct DetailSheetView: View {
                 ZStack{
                     Rectangle()
                         .fill(.white)
+                    //TODO: 이미지 자체를 저장하고 불러오는 것이기 때문에, 뱃지에 대한 정보를 현재 단계에서 불러올 수 없습니다.
+                    //TODO: 문구를 랜덤으로 처리했지만, 추후 수정하겠습니다.
                     if randomScript != nil {
                         Text(randomScript!)
                             .multilineTextAlignment(.center)
@@ -34,8 +36,6 @@ struct DetailSheetView: View {
                     }
                 }.frame(width: containerWidth, height: 126)
             }
-            
-        // .edgesIgnoringSafeArea(.all) 얘를 넣어줘야 위에 여백 안생긴다.
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -51,8 +51,8 @@ struct DetailSheetView: View {
                 Text("비치코밍 인증하기")
                     .font(.system(size: 17, weight: .bold))
                 Button(action: {
-                    print(ShareImageView)
-                    let shareImage = ShareImageView.snapshot()
+                    print(shareImageView)
+                    let shareImage = shareImageView.snapshot()
                     UIImageWriteToSavedPhotosAlbum(shareImage,nil,nil,nil)
                     saveAlert.toggle()
                 }){
@@ -63,7 +63,7 @@ struct DetailSheetView: View {
             }.padding(.top)
             
             VStack(spacing:0){
-                ShareImageView
+                shareImageView
                     .cornerRadius(16)
                     .shadow(radius: 20)
             }
@@ -72,7 +72,6 @@ struct DetailSheetView: View {
             
             
             Button(action: {
-                // 공유 로직 작성
                 isPresentShareSheet.toggle()
             }){
                 ZStack {
@@ -87,7 +86,6 @@ struct DetailSheetView: View {
             }
             .padding(.bottom)
             Button(action: {
-                // 메인 지도 화면으로 돌아가는 로직 작성. 일단 디스미스만
                 dismiss()
             }){
                 Text("홈으로 가기")
@@ -96,7 +94,7 @@ struct DetailSheetView: View {
             }
         }
         .onAppear {
-            shareImage = ShareImageView.snapshot()
+            shareImage = shareImageView.snapshot()
             randomScript = randomDescription.randomElement()
         }.sheet(isPresented: $isPresentShareSheet){
             ShareSheet(activityItems: [shareImage!])

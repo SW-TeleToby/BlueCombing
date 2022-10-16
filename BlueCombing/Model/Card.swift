@@ -13,5 +13,5 @@ struct Card {
     var time: Int
     var location: String
     var backgroundImage: UIImage
-    var badge: Badge
+    var badge: UIImage
 }

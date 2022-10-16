@@ -37,7 +37,7 @@ struct CardView: View {
         VStack {
             HStack{
                 Spacer()
-                Image(uiImage: card.badge.badgeImage)
+                Image(uiImage: card.badge)
                     .resizable()
                     .frame(width: 76, height: 76)
             }
@@ -112,8 +112,8 @@ extension Int {
 
 
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다."))),routeImage: Image(""))
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(card: .constant(Card(id: 0, distance: 2.0, time: 2000, location: "경상북도 포항시", backgroundImage: UIImage(systemName: "xmark")!, badge:Badge(id: 0, badgeImage: UIImage(named: "testBadge1")!, longExplanation: "1번째 뱃지 설명입니다.\n1번째 뱃지 설명은 이러이러합니다."))),routeImage: Image(""))
+//    }
+//}
