@@ -152,7 +152,7 @@ struct presentBadgeView : View{
                 .foregroundColor(.combingBlue5_2)
                 .padding(.top,3)
         }.onAppear {
-            let badge = presentBadge.englishBadge()
+            let badge = presentBadge.translateBadge()
             description = badge.badgeDescription
             badgeImage = badge.badgeImage
         }

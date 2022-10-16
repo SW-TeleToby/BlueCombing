@@ -81,7 +81,7 @@ struct MakeCardView: View {
     var completeButton: some View {
         Button(action: {
             let saveImage = saveImageView.snapshot()
-            presentBadge = userViewModel.user!.representBadge.englishBadge()
+            presentBadge = userViewModel.user!.representBadge.translateBadge()
             isPresentShareView.toggle()
             userViewModel.uploadPicture(image: saveImage)
             userViewModel.updateUser(uid: userViewModel.user!.id, info: ["total_time": userViewModel.user!.totalTime + movingTime, "total_distance":userViewModel.user!.totalDistance+Int(movingDistance)])

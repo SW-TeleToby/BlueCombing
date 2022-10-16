@@ -75,7 +75,7 @@ struct BadgeGradeView: View {
                 badgesView
                     .onAppear{
                         if let user = user {
-                            let presentBadge:BadgeDescription = user.representBadge.englishBadge()
+                            let presentBadge:BadgeDescription = user.representBadge.translateBadge()
                             myBadges = presentBadge.myBadges
                             lockBadges = 8 - myBadges.count
                         }
@@ -110,7 +110,7 @@ struct BadgeInfoView : View {
             }
             Spacer()
         }.onAppear {
-            let badge = presentBadge.englishBadge()
+            let badge = presentBadge.translateBadge()
             description = badge.badgeDescription
             badgeImage = badge.badgeImage
         }.padding(.horizontal,20)
