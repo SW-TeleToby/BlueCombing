@@ -51,7 +51,6 @@ struct DetailSheetView: View {
                 Text("비치코밍 인증하기")
                     .font(.system(size: 17, weight: .bold))
                 Button(action: {
-                    print(shareImageView)
                     let shareImage = shareImageView.snapshot()
                     UIImageWriteToSavedPhotosAlbum(shareImage,nil,nil,nil)
                     saveAlert.toggle()

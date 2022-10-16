@@ -66,7 +66,6 @@ class CardViewModel: ObservableObject {
 
         let formattedPredictions = formatPredictions(predictions)
         let predictionString = formattedPredictions.joined(separator: "\n")
-        print(predictionString)
         
         let target = predictions[0]
         
