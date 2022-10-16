@@ -138,7 +138,7 @@ struct MyActivityView: View {
 struct presentBadgeView : View{
     var presentBadge: String
     @State var description: String = ""
-    @State var badgeImage: UIImage = UIImage(named: "img_badge_coral")!
+    @State var badgeImage = UIImage(named: "img_badge_coral")!
     
     var body: some View {
         VStack{
