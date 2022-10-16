@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct LoginHome: View {
-    @Environment(\.window) var window: UIWindow?
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.window) private var window: UIWindow?
+    @Environment(\.presentationMode) private var presentationMode
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @Binding var isSignIn: Bool
     
     let loginMode: LoginMode
     let dismissAction: () -> Void
     
-    var guide: String = ""
+    private var guide: String = ""
     
     init(isSignIn: Binding<Bool>, loginMode: LoginMode, dismissAction: @escaping () -> Void) {
         self._isSignIn = isSignIn
@@ -24,7 +24,7 @@ struct LoginHome: View {
         self.dismissAction = dismissAction
         
         switch loginMode {
-        case .beachCombing:
+        case .cardMaking:
             guide = "카드를 만들기 위해선\n로그인이 필요해요!"
         case .myActivity:
             guide = "나의 활동을 기록하기 위해선\n로그인이 필요해요!"
@@ -51,13 +51,12 @@ struct LoginHome: View {
                 }
                 .padding(.horizontal)
                 FaceBookLoginButton {
-                    presentationMode.wrappedValue.dismiss()
-                    isSignIn = true
+                    facebookLogin()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 56)
                 .padding(.horizontal)
                 .padding(.bottom, 8)
-                if loginMode == .beachCombing {
+                if loginMode == .cardMaking {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                         isSignIn = false
@@ -83,16 +82,21 @@ struct LoginHome: View {
         }
         appleLoginCoordinator?.startSignInWithAppleFlow()
     }
+    
+    func facebookLogin() {
+        isSignIn = true
+        presentationMode.wrappedValue.dismiss()
+    }
 }
 
 enum LoginMode {
-    case beachCombing
+    case cardMaking
     case myActivity
 }
 
 struct LoginHome_Previews: PreviewProvider {
     static var previews: some View {
-        LoginHome(isSignIn: .constant(false), loginMode: .beachCombing) {
+        LoginHome(isSignIn: .constant(false), loginMode: .cardMaking) {
             
         }
     }

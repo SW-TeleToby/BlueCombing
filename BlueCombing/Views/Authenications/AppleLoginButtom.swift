@@ -22,7 +22,6 @@ struct AppleLoginButtom: View {
         }
         .background(Color(hex: 0x131313)) // If you have this
         .cornerRadius(16)
-        
     }
 }
 
