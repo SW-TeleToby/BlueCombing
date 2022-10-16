@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 
 var deviceHeight = UIScreen.main.bounds.size.height
 var deviceWidth = UIScreen.main.bounds.size.width
@@ -15,7 +14,6 @@ struct MyActivityView: View {
     
     @StateObject var userViewModel = UserViewModel()
     @State var isPresentedDetail = false
-    let firebaseAuth = Auth.auth()
     var image: UIImage?
     var description: String?
     @State var selectedImage: UIImage?

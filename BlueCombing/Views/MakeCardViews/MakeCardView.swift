@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Photos
-import FirebaseAuth
 
 struct MakeCardView: View {
     @EnvironmentObject var authSession: SessionStore
@@ -27,8 +26,6 @@ struct MakeCardView: View {
     var movingDistance : Double
     var movingTime : Int
     var routeImage: Image
-    
-    let firebaseAuth = Auth.auth()
     
     var SaveImageView: some View {
         VStack(spacing:0){

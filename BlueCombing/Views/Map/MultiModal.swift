@@ -7,19 +7,15 @@
 
 import MapKit
 import UIKit
-import FirebaseAuth
 import SwiftUI
 
-struct MultiModal: View {
-    @EnvironmentObject var authSession: SessionStore
-    
+struct MultiModal: View {    
     @Binding var isRecordStart: Bool
     @Binding var currentModal: CustomModal
     @Binding var userActivityData: UserActivityData
     @State var showDeleteActivityDataAlert = false
     @State var routeImage = Image("Is not Load")
     @State private var showingAlert = false
-    let firebaseAuth = Auth.auth()
     @State var isCustom: Bool = true
     
     
