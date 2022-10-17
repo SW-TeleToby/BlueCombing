@@ -135,27 +135,23 @@ struct MyActivityView: View {
 
 
 struct presentBadgeView : View{
+    @StateObject var badgeVM = BadgeViewModel()
     var presentBadge: String
-    @State var description: String = ""
-    @State var badgeImage = UIImage(named: "img_badge_coral")!
     
     var body: some View {
         VStack{
-            Image(uiImage: badgeImage)
+            Image(uiImage: badgeVM.badgeImage)
                 .resizable()
                 .frame(width: 142, height: 142)
-            Text(description)
+            Text(badgeVM.description)
                 .font(.Body4)
                 .multilineTextAlignment(.center)
                 .lineSpacing(3)
                 .foregroundColor(.combingBlue5_2)
                 .padding(.top,3)
         }.onAppear {
-            let badge = presentBadge.translateBadge()
-            description = badge.badgeDescription
-            badgeImage = badge.badgeImage
+            badgeVM.changeDescription(presentBadge: presentBadge)
         }
-        
     }
     
 }

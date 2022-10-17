@@ -86,13 +86,12 @@ struct BadgeGradeView: View {
 }
 
 struct BadgeInfoView : View {
+    @StateObject var badgeVM = BadgeViewModel()
     var presentBadge: String
-    @State var description: String = ""
-    @State var badgeImage: UIImage = UIImage(named: "img_badge_coral")!
     
     var body: some View {
         HStack{
-            Image(uiImage: badgeImage)
+            Image(uiImage: badgeVM.badgeImage)
                 .resizable()
                 .frame(width: 100, height: 100)
             Spacer()
@@ -102,7 +101,7 @@ struct BadgeInfoView : View {
                     .font(.Heading3)
                 Spacer()
                     .frame(height: 4)
-                Text(description)
+                Text(badgeVM.description)
                     .font(.Body4)
                     .multilineTextAlignment(.leading)
                     .lineSpacing(3)
@@ -110,9 +109,7 @@ struct BadgeInfoView : View {
             }
             Spacer()
         }.onAppear {
-            let badge = presentBadge.translateBadge()
-            description = badge.badgeDescription
-            badgeImage = badge.badgeImage
+            badgeVM.changeDescription(presentBadge: presentBadge)
         }.padding(.horizontal,20)
     }
 }
