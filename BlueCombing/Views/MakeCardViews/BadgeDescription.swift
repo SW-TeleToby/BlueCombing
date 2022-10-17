@@ -65,19 +65,19 @@ enum BadgeDescription: String {
         case .coral:
             return Array(badgeList[0...0])
         case .clam:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...1])
         case .hippocampus:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...2])
         case .jellyfish:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...3])
         case .dolphin:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...4])
         case .turtle:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...5])
         case .fishs:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...6])
         case .whale:
-            return Array(badgeList[0...0])
+            return Array(badgeList[0...7])
         }
     }
 }
