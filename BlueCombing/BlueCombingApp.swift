@@ -12,10 +12,12 @@ import FacebookCore
 @main
 struct BlueCombingApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var authSession = SessionStore()
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .environmentObject(authSession)
         }
     }
     

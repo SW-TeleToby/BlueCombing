@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LoginModal: View {
+    @EnvironmentObject var authSession: SessionStore
+    
     @Binding var currentModal: CustomModal
-    @Binding var isSignIn: Bool
     @Binding var showDeleteActivityDataAlert: Bool
     
     var body: some View {
@@ -34,8 +35,8 @@ struct LoginModal: View {
                 
                 Spacer().frame(height: 18)
                 
-                NavigationLink(destination: LoginHome(isSignIn: $isSignIn, loginMode: .cardMaking) {
-                    if isSignIn {
+                NavigationLink(destination: LoginHome(loginMode: .cardMaking) {
+                    if authSession.isSignIn {
                         currentModal = .cardMakingModal
                     } else {
                         currentModal = .loginModal

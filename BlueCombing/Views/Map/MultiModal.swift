@@ -7,18 +7,15 @@
 
 import MapKit
 import UIKit
-import FirebaseAuth
 import SwiftUI
 
-struct MultiModal: View {
+struct MultiModal: View {    
     @Binding var isRecordStart: Bool
     @Binding var currentModal: CustomModal
     @Binding var userActivityData: UserActivityData
     @State var showDeleteActivityDataAlert = false
     @State var routeImage = Image("Is not Load")
     @State private var showingAlert = false
-    let firebaseAuth = Auth.auth()
-    @State var isSignIn: Bool = true
     @State var isCustom: Bool = true
     
     
@@ -39,13 +36,11 @@ struct MultiModal: View {
                 case .recordConfirmModal: RecordConfirmModal(currentModal: $currentModal,
                                                              isRecordStart: $isRecordStart,
                                                              routeImage: $routeImage,
-                                                             userActivityData: $userActivityData,
-                                                             isSignIn: $isSignIn)
+                                                             userActivityData: $userActivityData)
                 case .cardMakingModal: CardMakingModal(currentModal: $currentModal,
                                                        routeImage: $routeImage,
                                                        userActivityData: $userActivityData)
                 case .loginModal: LoginModal(currentModal: $currentModal,
-                                             isSignIn: $isSignIn,
                                              showDeleteActivityDataAlert: $showDeleteActivityDataAlert)
                 case .none: Spacer()
                         .frame(height: currentModal.modalHeight)
@@ -61,13 +56,6 @@ struct MultiModal: View {
                 currentModal = .startModal
             }
         }
-            .onAppear {
-                if firebaseAuth.currentUser != nil {
-                    isSignIn = true
-                } else {
-                    isSignIn = false
-                }
-            }
     }
 }
 

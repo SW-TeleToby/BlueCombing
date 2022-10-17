@@ -9,11 +9,12 @@ import SwiftUI
 import MapKit
 
 struct RecordConfirmModal: View {
+    @EnvironmentObject var authSession: SessionStore
+    
     @Binding var currentModal: CustomModal
     @Binding var isRecordStart: Bool
     @Binding var routeImage: Image
     @Binding var userActivityData: UserActivityData
-    @Binding var isSignIn: Bool
     
     var body: some View {
         ZStack {
@@ -100,7 +101,7 @@ struct RecordConfirmModal: View {
                 Button(action: {
                     isRecordStart = false
                     withAnimation(.spring()) {
-                        if isSignIn {
+                        if authSession.isSignIn {
                             currentModal = .cardMakingModal
                         } else {
                             currentModal = .loginModal
