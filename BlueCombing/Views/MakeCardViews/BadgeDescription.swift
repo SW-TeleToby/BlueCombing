@@ -61,27 +61,23 @@ enum BadgeDescription: String {
     
     var myBadges: Array<String> {
         let badgeList = ["산호초", "조개", "해마", "해파리", "돌고래", "거북이", "물고기 떼", "고래"]
-        let badgeCount: ArraySlice<String>
-        
         switch self {
         case .coral:
-            badgeCount =  badgeList[0...0]
+            return Array(badgeList[0...0])
         case .clam:
-            badgeCount =  badgeList[0...1]
+            return Array(badgeList[0...0])
         case .hippocampus:
-            badgeCount =  badgeList[0...2]
+            return Array(badgeList[0...0])
         case .jellyfish:
-            badgeCount =  badgeList[0...3]
+            return Array(badgeList[0...0])
         case .dolphin:
-            badgeCount =  badgeList[0...4]
+            return Array(badgeList[0...0])
         case .turtle:
-            badgeCount =  badgeList[0...5]
+            return Array(badgeList[0...0])
         case .fishs:
-            badgeCount =  badgeList[0...6]
+            return Array(badgeList[0...0])
         case .whale:
-            badgeCount =  badgeList[0...7]
+            return Array(badgeList[0...0])
         }
-        let badgesArray = Array(badgeCount)
-        return badgesArray
     }
 }
