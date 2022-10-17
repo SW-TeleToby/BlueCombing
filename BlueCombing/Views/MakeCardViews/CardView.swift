@@ -65,8 +65,9 @@ struct CardView: View {
                     .foregroundColor(.white)
                 Spacer()
             }
-        }.padding(.leading, 30)
-            .padding(.bottom, 30)
+        }
+        .padding(.leading, 30)
+        .padding(.bottom, 30)
     }
     
     

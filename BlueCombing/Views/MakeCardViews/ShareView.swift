@@ -44,7 +44,7 @@ struct ShareView: View {
         VStack(spacing:0){
             ZStack {
                 CardView(card: $card, routeImage: routeImage)
-                .frame(height: imageHeight)
+                    .frame(height: imageHeight)
             }
             ZStack{
                 Rectangle()
@@ -114,7 +114,7 @@ struct ShareView: View {
             }
         }
     }
-        
+    
 }
 
 extension View {

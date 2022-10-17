@@ -40,15 +40,16 @@ struct MakeCardView: View {
                 .font(.system(size: 17, weight: .bold))
                 .padding(.leading, -20)
             Spacer()
-        }.padding(.vertical, 10)
-            .padding(.bottom, 10)
+        }
+        .padding(.vertical, 10)
+        .padding(.bottom, 10)
     }
     
     var saveImageView: some View {
-            ZStack{
-                CardView(card: $cardViewModel.newCard, routeImage: routeImage)
-                    .frame(height: imageHeight)
-            }
+        ZStack{
+            CardView(card: $cardViewModel.newCard, routeImage: routeImage)
+                .frame(height: imageHeight)
+        }
         .edgesIgnoringSafeArea(.all)
     }
     
@@ -72,8 +73,7 @@ struct MakeCardView: View {
                 selectImage()
             }
             
-            Button("취소", role: .cancel){
-            }
+            Button("취소", role: .cancel){}
             
         }
     }
@@ -106,7 +106,7 @@ struct MakeCardView: View {
                 makeCardViewNavbar
                 
                 saveImageView
-
+                
                 if isCustom {
                     changeImageButton
                     
@@ -120,7 +120,7 @@ struct MakeCardView: View {
                 
                 Spacer()
                 completeButton
-
+                
             }
             .frame(width: containerWidth)
             .navigationTitle("")
@@ -135,9 +135,7 @@ struct MakeCardView: View {
                 Camera(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
             }
             .alert("이 기능을 사용하려면 카메라 엑세스 권한이 필요합니다", isPresented: $cameraDenyAlert) {
-                Button("나중에 하기") {
-                    
-                }
+                Button("나중에 하기") {}
                 Button("설정 열기") {
                     if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)

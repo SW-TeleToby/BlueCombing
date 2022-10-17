@@ -10,7 +10,7 @@ import SwiftUI
 
 class BadgeViewModel: ObservableObject {
     @Published var description: String = ""
-    @Published var badgeImage: UIImage = UIImage(named: "img_badge_coral")!
+    @Published var badgeImage = UIImage(named: "img_badge_coral")!
     
     func changeDescription(presentBadge: String) {
         let badge = presentBadge.translateBadge()

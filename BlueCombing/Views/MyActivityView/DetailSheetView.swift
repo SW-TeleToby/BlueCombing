@@ -66,8 +66,8 @@ struct DetailSheetView: View {
                     .cornerRadius(16)
                     .shadow(radius: 20)
             }
-                .scaleEffect(0.9)
-                .padding(.top, -10)
+            .scaleEffect(0.9)
+            .padding(.top, -10)
             
             
             Button(action: {
@@ -102,8 +102,8 @@ struct DetailSheetView: View {
                 
             }
         }
-            
-            
+        
+        
     }
 }
 

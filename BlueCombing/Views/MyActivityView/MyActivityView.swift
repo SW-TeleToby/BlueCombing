@@ -54,7 +54,8 @@ struct MyActivityView: View {
                         .foregroundColor(.white)
                 }
             }
-        }.padding(.top,15)
+        }
+        .padding(.top,15)
         .padding(.bottom,60)
         .padding(.trailing,20)
     }
