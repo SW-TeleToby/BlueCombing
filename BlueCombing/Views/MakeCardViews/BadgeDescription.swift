@@ -16,6 +16,7 @@ enum BadgeDescription: String {
     case turtle = "거북이"
     case fishs = "물고기 떼"
     case whale = "고래"
+    case unknown = "알수없음"
     
     var badgeDescription: String {
         switch self {
@@ -35,6 +36,8 @@ enum BadgeDescription: String {
             return "작은 노력을 모아 바다를 돌보는\n당신은 거대한 물고기 떼 같아요"
         case .whale:
             return "항상 변함없이 바다를 지키는\n당신은 바다의 주인인 고래 같아요"
+        case .unknown:
+            return "알수없음"
         }
     }
     
@@ -56,6 +59,8 @@ enum BadgeDescription: String {
             return UIImage(named: "img_badge_fishs")!
         case .whale:
             return UIImage(named: "img_badge_whale")!
+        case .unknown:
+            return UIImage(named: "img_badge_lock")!
         }
     }
     
@@ -78,6 +83,8 @@ enum BadgeDescription: String {
             return Array(badgeList[0...6])
         case .whale:
             return Array(badgeList[0...7])
+        case .unknown:
+            return Array()
         }
     }
 }

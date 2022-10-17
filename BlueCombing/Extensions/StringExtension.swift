@@ -27,8 +27,8 @@ extension String {
         case "고래":
             return .whale
         default:
-            return .coral
+            return .unknown
         }
-
     }
 }
+
