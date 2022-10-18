@@ -12,7 +12,7 @@ var containerWidth:CGFloat = UIScreen.main.bounds.width - 32.0
 var imageHeight: CGFloat = UIScreen.main.bounds.height - 366.67
 
 struct CardView: View {
-    @Binding var card: Card
+    @Binding var card: CardData
     let routeImage: Image
     
     var imageView: some View {
@@ -37,7 +37,7 @@ struct CardView: View {
         VStack {
             HStack{
                 Spacer()
-                Image(uiImage: card.badge)
+                Image(uiImage: card.badgeImage)
                     .resizable()
                     .frame(width: 76, height: 76)
             }

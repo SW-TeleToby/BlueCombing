@@ -47,7 +47,7 @@ struct MakeCardView: View {
     
     var saveImageView: some View {
         ZStack{
-            CardView(card: $cardViewModel.newCard, routeImage: routeImage)
+            CardView(card: $cardViewModel.card, routeImage: routeImage)
                 .frame(height: imageHeight)
         }
         .edgesIgnoringSafeArea(.all)
@@ -126,13 +126,13 @@ struct MakeCardView: View {
             .navigationTitle("")
             .navigationBarHidden(true)
             .sheet(isPresented: $isPresentedAllImage){
-                AllImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
+                AllImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.card)
             }
             .sheet(isPresented: $isPresentedLimitedImage){
-                LimitedImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
+                LimitedImagePicker(cardViewModel: cardViewModel, card: $cardViewModel.card)
             }
             .sheet(isPresented: $isPresentedCamera) {
-                Camera(cardViewModel: cardViewModel, card: $cardViewModel.newCard)
+                Camera(cardViewModel: cardViewModel, card: $cardViewModel.card)
             }
             .alert("이 기능을 사용하려면 카메라 엑세스 권한이 필요합니다", isPresented: $cameraDenyAlert) {
                 Button("나중에 하기") {}
@@ -142,7 +142,7 @@ struct MakeCardView: View {
                     }
                 }
             }.sheet(isPresented: $isPresentShareView){
-                ShareView(card: $cardViewModel.newCard, presentBadge: $presentBadge, routeImage: routeImage) {
+                ShareView(card: $cardViewModel.card, presentBadge: $presentBadge, routeImage: routeImage) {
                     dismiss()
                 }
             }.onAppear {
@@ -150,9 +150,9 @@ struct MakeCardView: View {
                     userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
                 }
                 cardViewModel.checkLocation()
-                cardViewModel.newCard.distance = movingDistance
-                cardViewModel.newCard.time = movingTime
-                cardViewModel.newCard.badge = presentBadge.badgeImage
+                cardViewModel.card.distance = movingDistance
+                cardViewModel.card.time = movingTime
+                cardViewModel.card.badgeImage = presentBadge.badgeImage
             }
         }
         

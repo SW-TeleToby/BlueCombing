@@ -13,7 +13,7 @@ import PhotosUI
 struct AllImagePicker: UIViewControllerRepresentable {
     let cardViewModel: CardViewModel
     
-    @Binding var card: Card
+    @Binding var card: CardData
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration()
         config.filter = .images

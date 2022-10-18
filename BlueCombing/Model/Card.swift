@@ -7,11 +7,11 @@
 import SwiftUI
 import Foundation
 
-struct Card {
+struct CardData {
     var id: Int
     var distance: Double
     var time: Int
     var location: String
     var backgroundImage: UIImage
-    var badge: UIImage
+    var badgeImage: UIImage
 }

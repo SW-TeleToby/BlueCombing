@@ -11,7 +11,7 @@ import UIKit
 struct Camera: UIViewControllerRepresentable {
     let cardViewModel: CardViewModel
     
-    @Binding var card: Card
+    @Binding var card: CardData
     @Environment(\.presentationMode) var presentationMode
     var sourceType: UIImagePickerController.SourceType = .camera
     

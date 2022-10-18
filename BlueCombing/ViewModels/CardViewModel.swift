@@ -9,9 +9,8 @@ import Foundation
 import MapKit
 
 class CardViewModel: ObservableObject {
-    @Published var newCard = Card(id: 0, distance: 0, time: 0, location: "포항시 영일대 해수욕장", backgroundImage: UIImage(named: "img_card_default")!, badge: UIImage(named: "img_badge_coral")!)
+    @Published var card = CardData(id: 0, distance: 0.0, time: 0, location: "", backgroundImage: UIImage(named: "img_card_default") ?? UIImage(systemName: "xmark")!, badgeImage: UIImage(named: "img_badge_lock") ?? UIImage(systemName: "xmark")!)
     
-
     public static var longitude: Double = 0.0
     public static var latitude: Double = 0.0
     public static var location: String = ""
@@ -20,10 +19,6 @@ class CardViewModel: ObservableObject {
     
     private let imagePredictor = ImagePredictor()
     private let predictionsToShow = 2
-
-    init() {
-        
-    }
     
     func checkLocation() {
         let location = CLLocation(latitude: CardViewModel.latitude, longitude: CardViewModel.longitude)
@@ -45,7 +40,7 @@ class CardViewModel: ObservableObject {
                 }
                 
                 
-                self.newCard.location = collab
+                self.card.location = collab
                 CardViewModel.location = collab
             }
             
@@ -78,9 +73,9 @@ class CardViewModel: ObservableObject {
                 name = String(name.prefix(upTo: firstComma))
             }
 
-            self.newCard.location = name
+            self.card.location = name
         } else {
-            self.newCard.location = CardViewModel.location
+            self.card.location = CardViewModel.location
         }
         
         
@@ -102,12 +97,12 @@ class CardViewModel: ObservableObject {
         return topPredictions
     }
     
-    func makeNewCard(card: Card) {
-        newCard = card
+    func makeCard(card: CardData) {
+        self.card = card
     }
     
     func changeBackgroundImage(image: UIImage) {
-        newCard.backgroundImage = image
+        card.backgroundImage = image
     }
     
 }

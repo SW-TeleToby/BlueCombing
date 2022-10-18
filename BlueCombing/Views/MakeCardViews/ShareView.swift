@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShareView: View {
     @Environment(\.dismiss) var dismiss
-    @Binding var card: Card
+    @Binding var card: CardData
     @Binding var presentBadge: BadgeDescription
     @State var shareImage:UIImage?
     @State var isPresentShareSheet = false

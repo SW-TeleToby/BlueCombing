@@ -12,7 +12,7 @@ struct LimitedImagePicker: View {
     let cardViewModel: CardViewModel
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var card: Card
+    @Binding var card: CardData
     private let threeColumnGrid = [
         GridItem(.flexible(minimum: 40), spacing: 2),
         GridItem(.flexible(minimum: 40), spacing: 2),
