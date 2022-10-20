@@ -6,18 +6,18 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 
 var deviceHeight = UIScreen.main.bounds.size.height
 var deviceWidth = UIScreen.main.bounds.size.width
+
 struct MyActivityView: View {
+    @EnvironmentObject var authSession : SessionStore
+    
     @StateObject var userViewModel = UserViewModel()
-    @State var isSignin = false
     @State var isPresentedDetail = false
-    let firebaseAuth = Auth.auth()
+    @State var selectedImage: UIImage?
     var image: UIImage?
     var description: String?
-    @State var selectedImage: UIImage?
     
     let column = [
         GridItem(.flexible()),
@@ -71,15 +71,13 @@ struct MyActivityView: View {
                         selectedImage = image
                         isPresentedDetail.toggle()
                     }
-                
             }
         }.padding()
     }
-    
     var body: some View {
         VStack {
-            if isSignin == false {
-                LoginHome(isSignIn: $isSignin, loginMode: .myActivity) {}
+            if !authSession.isSignIn {
+                LoginHome(loginMode: .myActivity) {}
             } else {
                 ScrollView {
                     ZStack(alignment:.top) {
@@ -102,9 +100,7 @@ struct MyActivityView: View {
                                     Text(user.totalTime.timeToString())
                                         .font(.Body3)
                                 }.padding(.top,3)
-                                
                                 presentBadgeView(presentBadge: user.representBadge)
-                                
                                 VStack {
                                     moveToMyGradeButton
                                     
@@ -120,20 +116,14 @@ struct MyActivityView: View {
             DetailSheetView(image: $selectedImage)
         }
         .onAppear{
-            if firebaseAuth.currentUser != nil {
-                isSignin = true
-                userViewModel.getUserImages(uid: firebaseAuth.currentUser!.uid)
-            } else {
-                isSignin = false
+            if let uid = authSession.uid {
+                userViewModel.getUserImages(uid: uid)
             }
         }
         .navigationTitle("")
         .navigationBarHidden(true)
     }
-    
-    
 }
-
 
 struct presentBadgeView : View{
     @StateObject var badgeVM = BadgeViewModel()
@@ -153,13 +143,5 @@ struct presentBadgeView : View{
         }.onAppear {
             badgeVM.changeDescription(presentBadge: presentBadge)
         }
-    }
-    
-}
-
-
-struct MyActivityView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyActivityView()
     }
 }

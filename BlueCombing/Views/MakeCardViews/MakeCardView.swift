@@ -7,9 +7,10 @@
 
 import SwiftUI
 import Photos
-import FirebaseAuth
 
 struct MakeCardView: View {
+    @EnvironmentObject var authSession: SessionStore
+    
     @StateObject var cardViewModel = CardViewModel()
     @ObservedObject var userViewModel = UserViewModel()
     @Environment(\.dismiss) var dismiss
@@ -25,8 +26,6 @@ struct MakeCardView: View {
     let movingDistance : Double
     let movingTime : Int
     let routeImage: Image
-    
-    let firebaseAuth = Auth.auth()
     
     var makeCardViewNavbar: some View {
         HStack{
@@ -98,7 +97,6 @@ struct MakeCardView: View {
         }
     }
     
-    
     var body: some View {
         VStack {
             VStack(spacing:0) {
@@ -146,8 +144,8 @@ struct MakeCardView: View {
                     dismiss()
                 }
             }.onAppear {
-                if firebaseAuth.currentUser != nil {
-                    userViewModel.getUserData(uid: firebaseAuth.currentUser!.uid)
+                if let uid = authSession.uid {
+                    userViewModel.getUserData(uid: uid)
                 }
                 cardViewModel.checkLocation()
                 cardViewModel.card.distance = movingDistance
@@ -155,10 +153,7 @@ struct MakeCardView: View {
                 cardViewModel.card.badgeImage = presentBadge.badgeImage
             }
         }
-        
-        
     }
-    
     
     func selectImage() {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
@@ -198,15 +193,7 @@ struct MakeCardView: View {
             return
         default:
             return
-            
         }
     }
-    
-    
 }
 
-struct MakeCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MakeCardView(isCustom: false, movingDistance: 0.0, movingTime: 1, routeImage: Image("img_tour"))
-    }
-}

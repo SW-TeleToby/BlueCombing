@@ -11,38 +11,38 @@ import FacebookCore
 
 @main
 struct BlueCombingApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var authSession = SessionStore()
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
-//            ContentView()
+                .environmentObject(authSession)
         }
     }
     
     class AppDelegate: NSObject, UIApplicationDelegate {
-            func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-                
-                ApplicationDelegate.shared.application(
-                    application,
-                    didFinishLaunchingWithOptions: launchOptions
-                )
-                    
-                FirebaseApp.configure()
-                
-                return true
-            }
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             
+            ApplicationDelegate.shared.application(
+                application,
+                didFinishLaunchingWithOptions: launchOptions
+            )
             
-            func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-                
-                ApplicationDelegate.shared.application(
-                    app,
-                    open: url,
-                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                    annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-                )
-            }
+            FirebaseApp.configure()
+            
+            return true
         }
+        
+        
+        func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+            
+            ApplicationDelegate.shared.application(
+                app,
+                open: url,
+                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+            )
+        }
+    }
 }

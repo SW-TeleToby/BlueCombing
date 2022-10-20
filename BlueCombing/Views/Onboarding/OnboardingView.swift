@@ -25,9 +25,10 @@ struct OnboardingView: View {
                         .ignoresSafeArea()
                 }
             if onboardingState == .done {
-                VisualEffectView(effect: UIBlurEffect(style: .init(rawValue: 3)!))
+                BlurView()
                     .ignoresSafeArea()
             }
+            
             VStack {
                 if onboardingState == .done {
                     Spacer()
