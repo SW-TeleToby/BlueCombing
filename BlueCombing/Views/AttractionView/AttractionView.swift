@@ -67,7 +67,6 @@ struct CustomTabView: View {
                                 .tag("레저")
 
                         }
-//                            .navigationBarHidden(true)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                             .tabViewStyle(.page(indexDisplayMode: .never))
 
@@ -107,13 +106,6 @@ struct CustomTabView: View {
         VStack {
             ForEach(tourCourses) { course in
                 TourCourseItem(namespace: namespace, course: course, show: $show)
-                    .onTapGesture {
-                    withAnimation(.openCard) {
-                        show.toggle()
-                        showStatusBar = false
-                        selectedID = course.id
-                    }
-                }
             }
             Spacer(minLength: UIScreen.main.bounds.height * 0.25)
         }
