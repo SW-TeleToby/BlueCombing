@@ -10,7 +10,6 @@ import SwiftUI
 struct TourCourseItem: View {
     var namespace: Namespace.ID
     var course: Course
-    @Binding var show: Bool
     
     var body: some View {
         VStack {

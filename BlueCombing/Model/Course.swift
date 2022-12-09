@@ -11,7 +11,6 @@ struct Course: Identifiable {
     let id = UUID()
     var name: String
     var location: String
-    var text: String
     var background: String
 }
 
