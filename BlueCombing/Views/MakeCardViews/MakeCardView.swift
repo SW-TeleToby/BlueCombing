@@ -91,10 +91,12 @@ struct MakeCardView: View {
             Spacer() 
             Button(action: {
                 let saveImage = SaveImageView.snapshot()
-                presentBadge = userViewModel.user!.representBadge
+                if let user = userViewModel.user {
+                    self.presentBadge = user.representBadge
+                    userViewModel.uploadPicture(image: saveImage)
+                    userViewModel.updateUser(uid: user.id, info: ["total_time": user.totalTime + movingTime, "total_distance": user.totalDistance+Int(movingDistance)])
+                }
                 isPresentShareView.toggle()
-                userViewModel.uploadPicture(image: saveImage)
-                userViewModel.updateUser(uid: userViewModel.user!.id, info: ["total_time": userViewModel.user!.totalTime + movingTime, "total_distance":userViewModel.user!.totalDistance+Int(movingDistance)])
             }){
                 ZStack {
                     Rectangle()
