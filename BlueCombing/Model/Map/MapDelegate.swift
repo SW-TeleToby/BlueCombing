@@ -53,14 +53,14 @@ class MapDelegate: UIViewController, MKMapViewDelegate {
             let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             annotationView?.image = resizedImage
         case "picker":
-            let pickerImage = UIImage(named: "img_trash")
+            let pickerImage = UIImage(named: "img_picker")
             let size = CGSize(width: 70, height: 70)
             UIGraphicsBeginImageContext(size)
             pickerImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
             let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             annotationView?.image = resizedImage
         case "trash-bag":
-            let trashBagImage = UIImage(named: "img_trash")
+            let trashBagImage = UIImage(named: "img_trash_bag")
             let size = CGSize(width: 70, height: 70)
             UIGraphicsBeginImageContext(size)
             trashBagImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
