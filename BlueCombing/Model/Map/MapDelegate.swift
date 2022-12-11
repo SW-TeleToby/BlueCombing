@@ -46,11 +46,26 @@ class MapDelegate: UIViewController, MKMapViewDelegate {
         //Set image
         switch annotation.title {
         case "trash":
-            annotationView?.image = UIImage(named: "img_trash")
+            let trashImage = UIImage(named: "img_trash")
+            let size = CGSize(width: 70, height: 70)
+            UIGraphicsBeginImageContext(size)
+            trashImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            annotationView?.image = resizedImage
         case "picker":
-            annotationView?.image = UIImage(named: "img_picker")
+            let pickerImage = UIImage(named: "img_picker")
+            let size = CGSize(width: 70, height: 70)
+            UIGraphicsBeginImageContext(size)
+            pickerImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            annotationView?.image = resizedImage
         case "trash-bag":
-            annotationView?.image = UIImage(named: "img_trash_bag")
+            let trashBagImage = UIImage(named: "img_trash_bag")
+            let size = CGSize(width: 70, height: 70)
+            UIGraphicsBeginImageContext(size)
+            trashBagImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            annotationView?.image = resizedImage
         default:
             break
         }
