@@ -12,7 +12,7 @@ struct LimitedImagePicker: View {
     let cardViewModel: CardViewModel
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var card: Card
+    @Binding var card: CardData
     private let threeColumnGrid = [
         GridItem(.flexible(minimum: 40), spacing: 2),
         GridItem(.flexible(minimum: 40), spacing: 2),
@@ -25,7 +25,6 @@ struct LimitedImagePicker: View {
     var body: some View {
         ZStack {
             VStack {
-                // 앨범에서 선택한 사진이 없을때 어떻게 보여줄 것인가?
                 HStack{
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()

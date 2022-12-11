@@ -35,6 +35,9 @@ struct CardMakingModal: View {
                 
                 NavigationLink {
                     MakeCardView(isCustom: true, movingDistance: userActivityData.movingDistance, movingTime: userActivityData.movingTime, routeImage: routeImage)
+                        .onAppear {
+                            currentModal = .startModal
+                        }
                 } label: {
                     ZStack {
                         Rectangle()

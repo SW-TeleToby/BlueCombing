@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05164F28D5B59200B066DA /* DetailSheetView.swift */; };
 		0EE72C1328D4607E00C54505 /* MakeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1228D4607E00C54505 /* MakeCardView.swift */; };
-		0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */; };
 		0EE72C1A28D4662200C54505 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1928D4662200C54505 /* CardView.swift */; };
 		0EE72C2028D46CE100C54505 /* LimitedImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */; };
 		0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */; };
@@ -21,7 +20,8 @@
 		0EE72C3A28D51E8C00C54505 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE72C3928D51E8C00C54505 /* Lottie */; };
 		0EE72C3C28D51F0100C54505 /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE72C3B28D51F0100C54505 /* wave.json */; };
 		0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */; };
-		0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */; };
+		0EFB5B9E28FAF34200174291 /* BadgeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB5B9D28FAF34200174291 /* BadgeDescription.swift */; };
+		0EFB5BA028FC3E6D00174291 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB5B9F28FC3E6D00174291 /* StringExtension.swift */; };
 		163DB13B28D618A800DC6B67 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 163DB13A28D618A700DC6B67 /* location.json */; };
 		16448DB128FC55F100FEB479 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16448DB028FC55F100FEB479 /* SessionStore.swift */; };
 		165AC54628D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
@@ -80,7 +80,6 @@
 /* Begin PBXFileReference section */
 		0E05164F28D5B59200B066DA /* DetailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSheetView.swift; sourceTree = "<group>"; };
 		0EE72C1228D4607E00C54505 /* MakeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardView.swift; sourceTree = "<group>"; };
-		0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCardViewNavbar.swift; sourceTree = "<group>"; };
 		0EE72C1928D4662200C54505 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0EE72C1F28D46CE100C54505 /* LimitedImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedImagePicker.swift; sourceTree = "<group>"; };
 		0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagePicker.swift; sourceTree = "<group>"; };
@@ -91,7 +90,8 @@
 		0EE72C3628D51D2F00C54505 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		0EE72C3B28D51F0100C54505 /* wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeView.swift; sourceTree = "<group>"; };
-		0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGradeViewNavbar.swift; sourceTree = "<group>"; };
+		0EFB5B9D28FAF34200174291 /* BadgeDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDescription.swift; sourceTree = "<group>"; };
+		0EFB5B9F28FC3E6D00174291 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		163DB13A28D618A700DC6B67 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		16448DB028FC55F100FEB479 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				0EE72C2128D46CEB00C54505 /* AllImagePicker.swift */,
 				0EE72C1928D4662200C54505 /* CardView.swift */,
 				0EE72C2928D4949000C54505 /* ShareView.swift */,
-				0EE72C1528D4629100C54505 /* MakeCardViewNavbar.swift */,
+				0EFB5B9D28FAF34200174291 /* BadgeDescription.swift */,
 			);
 			path = MakeCardViews;
 			sourceTree = "<group>";
@@ -182,7 +182,6 @@
 				0EE72C3328D5196E00C54505 /* MyActivityView.swift */,
 				0E05164F28D5B59200B066DA /* DetailSheetView.swift */,
 				0EE72C3F28D5584000C54505 /* BadgeGradeView.swift */,
-				0EE72C4128D5587800C54505 /* BadgeGradeViewNavbar.swift */,
 			);
 			path = MyActivityView;
 			sourceTree = "<group>";
@@ -210,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				167BA72428D5740A001929F8 /* ViewExtension.swift */,
+				0EFB5B9F28FC3E6D00174291 /* StringExtension.swift */,
 				165AC54428D64190009954E2 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				165AC54528D64190009954E2 /* VNClassificationObservation+confidenceString.swift */,
 			);
@@ -482,7 +482,6 @@
 				16F42DE728CDB7C400995F1E /* Badge.swift in Sources */,
 				0EE72C3428D5196E00C54505 /* MyActivityView.swift in Sources */,
 				169919EF28D5CF0E007109D4 /* AttractionView.swift in Sources */,
-				0EE72C4228D5587800C54505 /* BadgeGradeViewNavbar.swift in Sources */,
 				0EE72C3728D51D2F00C54505 /* Lottie.swift in Sources */,
 				167BA72528D5740A001929F8 /* ViewExtension.swift in Sources */,
 				708B5A5E28D46E9100B863E8 /* Colors.swift in Sources */,
@@ -490,6 +489,7 @@
 				B23C44BB28D464040096DE8F /* MapDelegate.swift in Sources */,
 				0E05165028D5B59200B066DA /* DetailSheetView.swift in Sources */,
 				1699082D28D63E7500583006 /* PohangLandmarkNet.mlmodel in Sources */,
+				0EFB5BA028FC3E6D00174291 /* StringExtension.swift in Sources */,
 				5F60061A28F78C85000B89BF /* BlurView.swift in Sources */,
 				167BA72828D594EB001929F8 /* OnboardingView.swift in Sources */,
 				168C242928CDD21200036B70 /* BadgeViewModel.swift in Sources */,
@@ -503,11 +503,12 @@
 				0EE72C4028D5584000C54505 /* BadgeGradeView.swift in Sources */,
 				5F01463F28F5DCF700DA2A47 /* StartModal.swift in Sources */,
 				16F42DFE28CDC79000995F1E /* AppleAuthCoordinator.swift in Sources */,
-				0EE72C1628D4629100C54505 /* MakeCardViewNavbar.swift in Sources */,
 				5FC68EE728FAD2C00078289E /* TotalMapModel.swift in Sources */,
 				16F157D728D6196F0001B422 /* LocationViewModel.swift in Sources */,
 				16448DB128FC55F100FEB479 /* SessionStore.swift in Sources */,
 				0EE72C2228D46CEB00C54505 /* AllImagePicker.swift in Sources */,
+				169919F028D5CF0E007109D4 /* TourCourseView.swift in Sources */,
+				0EFB5B9E28FAF34200174291 /* BadgeDescription.swift in Sources */,
 				0EE72C2628D46EDC00C54505 /* CameraView.swift in Sources */,
 				165AC54728D64190009954E2 /* VNClassificationObservation+confidenceString.swift in Sources */,
 				16F42DE128CDB77200995F1E /* User.swift in Sources */,
