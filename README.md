@@ -15,3 +15,13 @@ ESG 경영에 대해 "알고 있다"고 응답한 MZ세대는 29.2%로 나타났
 ![9](https://user-images.githubusercontent.com/55151796/207097872-6c565ced-9bf1-4618-864d-026e10cf800f.jpg)
 ![10](https://user-images.githubusercontent.com/55151796/207097885-b05d7b30-e133-44e4-a26d-9d0ce35e4f7f.jpg)
 ![12](https://user-images.githubusercontent.com/55151796/207097900-f2253fbf-8f90-4ca1-9c84-af970c67b4e1.jpg)
+![Slide 16_9 - 33](https://user-images.githubusercontent.com/55151796/207098748-83f90207-12f7-41e8-b43e-e353d51eec03.jpg)
+
+
+## 사용 기술
+```
+SwiftUI
+MapKit (UIKit)
+Firebase
+Lottie
+```
